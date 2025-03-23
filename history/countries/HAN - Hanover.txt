@@ -1,4 +1,4 @@
-﻿capital = 59
+capital = 59
 
 # Starting tech
 set_technology = {
@@ -8,11 +8,11 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-
-	naval_bomber1 = 1
+	
 	mobile_warfare = 1
 	trade_interdiction = 1
 	formation_flying = 1
@@ -23,28 +23,6 @@ set_technology = {
 	
 }
 
-recruit_character = HAN_Ernest_augustus_hannover
-recruit_character = HAN_Nikolaus_oldenburg
-recruit_character = HAN_coi
-recruit_character = HAN_aa2
-recruit_character = HAN_democratic_guy
-recruit_character = HAN_acd2
-recruit_character = HAN_acr
-recruit_character = HAN_fascist_guy
-recruit_character = HAN_stc
-recruit_character = HAN_ncs
-recruit_character = HAN_awt
-recruit_character = HAN_mt
-recruit_character = HAN_communist_guy
-recruit_character = HAN_ai2
-recruit_character = HAN_ar
-recruit_character = HAN_acas
-recruit_character = HAN_acgs
-recruit_character = HAN_ncm
-recruit_character = HAN_nt
-recruit_character = HAN_pot
-recruit_character = HAN_nccr
-recruit_character = HAN_aco2
 if = {
 	limit = {
 		NOT = { has_dlc = "By Blood Alone" }
@@ -56,6 +34,8 @@ if = {
 		tactical_bomber1 = 1
 		strategic_bomber1 = 1
 		CAS1 = 1
+		naval_bomber1 = 1
+		
 	}
 }
 
@@ -102,9 +82,6 @@ if = {
 	}
 }
 
-
-
-
 set_research_slots = 3
 set_convoys = 50
 set_stability = 0.75
@@ -119,6 +96,8 @@ set_stability = 0.75
 	
 
 	set_technology = {
+		improved_light_tank = 1 
+		basic_medium_tank = 1 
 		CAS2 = 1
 		heavy_fighter1 = 1
 		interwar_artillery = 1
@@ -146,8 +125,7 @@ set_stability = 0.75
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
-		decimetric_radar = 1
+		cavity_magnatron = 1
 		mechanical_computing = 1
 		computing_machine = 1
 		basic_encryption = 1
@@ -167,62 +145,26 @@ set_stability = 0.75
 		dispersed_industry4 = 1
 
 	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = no
+	elections_allowed = yes
 
 }
 set_popularities = {
-	democratic = 30
-	fascism = 10
-	neutrality = 60
+	democratic = 5
+	fascism = 20
+	communism = 25
+	neutrality = 50
 }
 
 add_ideas = {
-neutrality_idea 
-communism_banned
 }
 
-
-
-#create_country_leader = {
-#	name = "Dennis Fredauer"
-#	desc = ""
-#	picture = "Portrait_Germany_Konrad_Adenauer.dds"
-#	expire = "1965.1.1"
-#	ideology = conservatism
-#	traits = {
-#	}
-#}
-#
-
-#create_country_leader = {
-#	name = "Otto Wels"
-#	desc = "POLITICS_OTTO_WELS_DESC"
-#	picture = "Portrait_Germany_Adolf_Hitler.dds"
-#	expire = "1939.1.16"
-#	ideology = socialism
-#	traits = {
-#		exiled
-#		union_man
-#	}
-#}
-#
-#create_country_leader = {
-#	name = "Ernst Thälmann"
-#	desc = "POLITICS_ERNST_THALMANN_DESC"
-#	picture = "Portrait_Germany_Adolf_Hitler.dds"
-#	expire = "1956.1.1"
-#	ideology = stalinism
-#	traits = {
-#		assassination_survivor
-#		stalins_puppet
-#		political_prisoner
-#	}
-#}
-
-
+#recruit_character = HAN_ernest_august 

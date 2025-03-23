@@ -1,16 +1,22 @@
-state = {
-	id = 160
-	name = "STATE_160"
+state={
+	id=160
+	name="STATE_160"
+	resources={
+		steel=20 # was: 32.000
+		aluminium=11 # was: 18.000
+	}
+	
+	state_category = large_city
 
-	history = {
+	history={
 		owner = ITA
 		victory_points = {
-			11584 10
+			11584 10 
 		}
 		buildings = {
 			infrastructure = 6
-			arms_factory = 1
-			industrial_complex = 2
+			arms_factory = 2
+			industrial_complex = 4
 			dockyard = 1
 			air_base = 3
 			11584 = {
@@ -19,38 +25,21 @@ state = {
 			}
 
 		}
-		add_core_of = ITA 
-		add_core_of = RSI
-		#add_core_of = VEC
-		add_core_of = KLV
+		add_core_of = ITA
 		1939.1.1 = {
 			buildings = {
 				dockyard = 2
-				industrial_complex = 3
+				industrial_complex = 5
 
 			}
 
 		}
 
-		1944.1.1 = {
-			owner = RSI
-			controller = RSI
-			add_core_of = RSI
-		}
-
-		1946.1.1 = {
-			owner = ITA
-			controller = ITA
-			#remove_core_of = RSI
-		}
-
 	}
 
-	provinces = {
-		603 3604 9582 11584
+	provinces={
+		603 628 3604 3657 6656 9582 9613 11584 
 	}
-	manpower = 1940121
-	buildings_max_level_factor = 1.000
-	state_category = city
-	local_supplies=5.0 
+	manpower=3963151
+	buildings_max_level_factor=1.000
 }

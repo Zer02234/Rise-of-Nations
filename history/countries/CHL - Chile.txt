@@ -1,295 +1,471 @@
-RON_universal_setup = yes
+﻿capital = 279
+
+IF = {
+	limit = { 
+		has_dlc = "Trial of Allegiance"
+	}
+	#set_oob = "CHL_TOA_1936"
+}
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	#set_oob = "CHL_1936"
+}
 
 
+IF = {
+	limit = { 
+		has_dlc = "Trial of Allegiance"
+	}
+	### Set National Spirits ###
+	add_ideas = {
+		CHL_the_mapuche_conflict
+		idea_CHL_the_Hacienda_inquilinaje_system
+		idea_CHL_near_anarchic_society
+		idea_CHL_repubican_guard
+		SMB_MTG_naval_arms_race_legacy
+	}
 
-capital = 279
-oob = "CHL_1900"
-add_ideas = {
-	export_focus
-	tax_low
-	tariffs_average
-	civilian_economy
-	press_regulated
-	key_industries
-	fdi_allowed
-	security_minor_restrictions
-	foreign_volunteers
-	train_none
-	officer_train_none
-	education_budget2
-	health_budget2
-	foreign_isolationism
+	### Set Base Values ###
+	set_war_support = 0.25 
+	set_stability = 0.40
+
+	### Set dynamic modifiers ###
+	add_dynamic_modifier = {
+		modifier = CHL_chilean_economy_dynamic_modifier
+	}
+	JUNO_set_shared_military_branch_defaults = yes
+
+	# The Economy Modifier 
+	set_variable = { CHL_economy_stability_factor = -0.05 }
+	set_variable = { CHL_economy_consumer_goods_factor = 0.1 }
+	set_variable = { CHL_economy_production_speed_buildings_factor = -0.15 }
+	set_variable = { CHL_economy_local_resources_factor = -0.1 }
+	set_variable = { CHL_economy_industrial_capacity_dockyard = -0.05 }
+	set_variable = { CHL_economy_industrial_capacity_factory = -0.15 }
+	set_variable = { CHL_economy_political_advisor_cost_factor = 0.00 }
+
+	# Mapuche Nationalism Modifier
+	set_variable = { CHL_mapuche_nationalism_stability_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_production_speed_buildings_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_war_support_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_recruitable_population_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_consumer_goods_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_political_power_factor = 0.15 }
+	set_variable = { CHL_mapuche_nationalism_industrial_capacity_dockyard = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_industrial_capacity_factory = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_research_speed_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_army_core_defence_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_modifier_compliance_gain = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_resistance_target_on_our_occupied_states = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_army_org_factor = 0.0 }
+	set_variable = { CHL_mapuche_nationalism_army_morale_factor = 0.0 }
+
+	### Activate Missions ###
+	country_event = {
+		id = CHL_political_events.95
+		days = 7
+	}
+
+	### Set Country Flags ###
+	set_country_flag = CHL_no_fascist_focuses_done 
+
+}
+
+### Starting technologies ###
+set_technology = {
+	infantry_weapons = 1
+	tech_trucks = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	basic_train = 1
+}
+
+IF = {
+	limit = { has_dlc = "Man the Guns" }
+		#set_naval_oob = "CHL_1936_naval_mtg"
+	ELSE = {
+		#set_naval_oob = "CHL_1936_naval_legacy"
+	}
+}
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "CHL_1936_air_bba"
+		set_technology = {
+			iw_small_airframe = 1
+			early_bombs = 1
+			air_torpedoe_1 = 1
+			aa_lmg = 1
+			engines_1 = 1
+		}
+	ELSE = {
+		#set_air_oob = "CHL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			cv_early_fighter = 1
+			early_bomber = 1
+		}
+	}
+}
+
+IF = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+}
+IF = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		coastal_defense_ships = 1
+		mtg_transport = 1
+	}
+}
+
+### Recruiting Characters ###
+IF = {
+	limit = { 
+		NOT = {
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	#recruit_character = CHL_arturo_alessandri
+	#recruit_character = CHL_jorge_gonzález_von_marées
+	#recruit_character = CHL_carlos_contreras_labarca
+	#recruit_character = CHL_escudero_oscar_otárola
+	#recruit_character = CHL_domingo_blanco # not in the dlc
+	#recruit_character = CHL_julio_allard_pinto
+	#recruit_character = CHL_gustavo_silva # not in the dlc
+	#recruit_character = CHL_jose_luis_sanchez_besa
+	#recruit_character = CHL_marmaduke_grove
+	#recruit_character = CHL_e_novoa_fuentes
+	#recruit_character = CHL_dario_mujica_gamboa
+	#recruit_character = CHL_c_j_de_la_motte
+	#recruit_character = CHL_carlos_fuentes_rabe
+	#recruit_character = CHL_arturo_espinoza_mujica
+	#recruit_character = CHL_carlos_puga_monsalve
+	#recruit_character = CHL_francisco_o_ryan_orrego
+	#recruit_character = CHL_ernesto_m_orlando
+	#recruit_character = CHL_dario_cellejas_rojas
+	#recruit_character = CHL_ariosto_herrera
+	#recruit_character = CHL_luis_alamos_barros
+	#recruit_character = CHL_miguel_cruchaga_tacomal
+	#recruit_character = CHL_gustavo_ross_santa_maria
+	ELSE_IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+		#recruit_character = CHL_arturo_alessandri
+		#recruit_character = CHL_jorge_gonzález_von_marées
+		#recruit_character = CHL_carlos_contreras_labarca
+		#recruit_character = CHL_pedro_aguirre_cerda
+		#recruit_character = CHL_escudero_oscar_otárola
+		#recruit_character = CHL_julio_allard_pinto
+		#recruit_character = CHL_jose_luis_sanchez_besa
+		#recruit_character = CHL_marmaduke_grove
+		#recruit_character = CHL_e_novoa_fuentes
+		#recruit_character = CHL_carlos_fuentes_rabe
+		#recruit_character = CHL_arturo_espinoza_mujica
+		#recruit_character = CHL_ariosto_herrera
+		#recruit_character = CHL_luis_alamos_barros
+		#recruit_character = CHL_miguel_cruchaga_tacomal
+		#recruit_character = CHL_gustavo_ross_santa_maria
+		#recruit_character = CHL_elias_lafertte_gavino
+		#recruit_character = CHL_carlos_ibanez
+		#recruit_character = CHL_carlos_keller_reuff
+		#recruit_character = CHL_juan_gomez_millas
+		#recruit_character = CHL_manuel_hidalgo_plaza
+		#recruit_character = CHL_juan_antonio_rios
+		#recruit_character = CHL_gabriel_gonzales_videla
+		#recruit_character = CHL_eduardo_cruz_coke
+		#recruit_character = CHL_fernando_alessandri
+		#recruit_character = CHL_antoine_iii
+		#recruit_character = CHL_manuel_manquilef
+		#recruit_character = CHL_venancio_huenchual
+		#recruit_character = CHL_esteban_romero_sandoval
+		#recruit_character = CHL_bartolome_blanche
+		#recruit_character = CHL_pedro_dartnell
+		#recruit_character = CHL_guillermo_barrios_tirado
+		#recruit_character = CHL_francisco_valderrama
+		#recruit_character = CHL_augustin_de_guevara
+		#recruit_character = CHL_pedro_calderon
+		#recruit_character = CHL_ricardo_aguayo
+		#recruit_character = CHL_humberto_valdivieso
+		#recruit_character = CHL_gregorio_tascon
+		#recruit_character = CHL_rafael_reyes
+		#recruit_character = CHL_vincente_merino_bielich
+		#recruit_character = CHL_oscar_reeves_leiva
+		#recruit_character = CHL_oscar_fuentes_pantoja
+		#recruit_character = CHL_alfredo_portales_mourgues
+		#recruit_character = CHL_olegario_reyes
+		#recruit_character = CHL_emilio_soto
+		#recruit_character = CHL_jorge_cobo
+		#recruit_character = CHL_peter_hansen
+		#recruit_character = CHL_manuel_pedregal
+		#recruit_character = CHL_augusto_pimochet
+		#recruit_character = CHL_carlos_prats
+		#recruit_character = CHL_rene_schneider
+		#recruit_character = CHL_ulk
+		#recruit_character = CHL_arnaldo_carrasco
+		#recruit_character = CHL_elena_caffarena
+		#recruit_character = CHL_pablo_neruda
+		#recruit_character = CHL_jaime_quintana
+		#recruit_character = CHL_maria_de_la_cruz
+		#recruit_character = CHL_salvador_allende
+		#recruit_character = CHL_rayen_quitral
+		#recruit_character = CHL_jorge_alessandri
+		#recruit_character = CHL_guido_beck
+		#recruit_character = CHL_gabriela_mistral
+		#recruit_character = CHL_juan_rosetti
+		#recruit_character = CHL_emilio_codesido
+		#recruit_character = CHL_ernesto_jarpa
+		#recruit_character = CHL_francisco_encina
+		#recruit_character = CHL_jose_morales
+		#recruit_character = CHL_ramon_perez
+		#recruit_character = CHL_manuel_panguilef
+		#recruit_character = CHL_oskar_schnake
+		#recruit_character = CHL_bernardo_leighton
+		#recruit_character = CHL_tancredo_pinochet
+		#recruit_character = CHL_emilio_diaz
+		#recruit_character = CHL_radomiro_romero
+		#recruit_character = CHL_roberto_araya
+		#recruit_character = CHL_arturo_olavaria
+		#recruit_character = CHL_rolando_reyes
+		#recruit_character = CHL_diego_aguilar
+		#recruit_character = CHL_arturo_benitez
+		#recruit_character = CHL_jeronimo_mendez
+		#recruit_character = CHL_miguel_serrano
+		#recruit_character = CHL_manuel_neculman
+		#recruit_character = CHL_benjamin_larrain
+		#recruit_character = CHL_pedro_alfonso
+		#recruit_character = CHL_guillermo_araya
+		#recruit_character = CHL_marta_vergara
+		#recruit_character = CHL_osvaldo_lira_perez
+		#recruit_character = CHL_quintin_lame
+		#recruit_character = CHL_carlos_huayquinir
+	}
+}
+
+IF = {
+	limit = {
+		AND = {
+			has_dlc = "La Resistance"
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	JUNO_create_rosita_serrano_operative = yes
 }
 
 set_country_flag = monroe_doctrine
-set_convoys = 20
 
-1900.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1896.9.18"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 51
-		neutrality = 49
-	}
+set_convoys = 50
 
-	recruit_character = CHL_federico_errazuriz_echaurren
-	set_party_name = { ideology = democratic  long_name = CHL_coalicion name = CHL_coalicion }
-
-	recruit_character = CHL_malaquias_concha_ortiz
-	set_party_name = { ideology = communism  long_name = CHL_partido_democrata_long name = CHL_partido_democrata }
-
-	recruit_character = CHL_jorge_montt
-	set_party_name = { ideology = fascism  long_name = CHL_junta_long name = CHL_junta }
-
-	recruit_character = CHL_pedro_montt_montt
-	set_party_name = { ideology = neutrality  long_name = CHL_alianza_liberal_long name = CHL_alianza_liberal }
-
-	recruit_character = CHL_jorge_boonen
-	recruit_character = CHL_pedro_dartnell
-	recruit_character = CHL_aristides_pinto_concha			
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.10.30"
+	election_frequency = 72  #but 4 years after this one in 1938.
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 80
+	communism = 10
+	fascism = 7
+	neutrality = 3
 }
 
-1901.1.1 = {
-	recruit_character = CHL_german_riesco_errazuriz			
-}
+# Setting up 1939 oobs and focuses
+1939.1.1 = {
 
-1901.7.12 = {
-	retire_character = CHL_federico_errazuriz_echaurren			
-}
+	add_political_power = 1198
+	add_command_power = 100
+	
+	IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+		set_country_flag = CHL_1939_flag
+		set_global_flag = nacista_coup_attempt_happened
+		# Unique Focuses
+		complete_national_focus = CHL_endorse_the_constitution
+		complete_national_focus = CHL_policies_of_arturo_alessandri
+		complete_national_focus = CHL_construct_the_estadio_nacional
+		complete_national_focus = CHL_inflation_control_by_the_central_bank
+		complete_national_focus = CHL_suppress_the_nacistas
+		complete_national_focus = CHL_public_works
+		complete_national_focus = SMB_army
+		complete_national_focus = CHL_cooperation_with_the_falange
+		complete_national_focus = CHL_contract_efe
+		complete_national_focus = CHL_devalue_the_peso
+		complete_national_focus = SMB_navy
+		complete_national_focus = SMB_construct_naval_bases
+		complete_national_focus = CHL_expand_the_forestry
+		complete_national_focus = SMB_army_academy
+		complete_national_focus = SMB_regular_infantry
+		complete_national_focus = SMB_artillery
+		complete_national_focus = SMB_purchase_destroyers_and_subs
+		complete_national_focus = SMB_expand_repair_yards
+		complete_national_focus = SMB_foreign_designs
+		complete_national_focus = SMB_foreign_advisors
+		complete_national_focus = CHL_connect_the_northern_railways
+		complete_national_focus = CHL_establish_corfo
+		complete_national_focus = CHL_privatize_national_industries
+		complete_national_focus = CHL_strengthen_instituto_nacional
+		complete_national_focus = CHL_host_spanish_refugees
 
-1905.1.1 = {
-	recruit_character = CHL_ramon_barros_luco			
-}
-
-1910.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1906.6.25"
-		election_frequency = 60
-		elections_allowed = yes
+		ELSE = {
+			# Generic Focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
 	}
-	set_popularities = {
-		democratic = 32
-		neutrality = 62
-		communism = 1
-		fascism = 5
+	
+	IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+		#set_oob = "CHL_TOA_1939"
 	}
-	retire_character = CHL_german_riesco_errazuriz
-	set_party_name = { ideology = democratic  long_name = CHL_partido_liberal_long name = CHL_partido_liberal }
-
-	set_party_name = { ideology = communism  long_name = CHL_partido_democrata_long name = CHL_partido_democrata }
-
-	recruit_character = CHL_tancredo_pinochet
-	promote_character = CHL_tancredo_pinochet
-	set_party_name = { ideology = fascism  long_name = CHL_un_long name = CHL_un }
-
-	set_party_name = { ideology = neutrality  long_name = CHL_alianza_liberal_long name = CHL_alianza_liberal }
+	IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Trial of Allegiance"
+			}
+		}
+		#set_oob = "CHL_1939"
+	}
+	
+	IF = {
+		limit = { has_dlc = "Man the Guns" }
+			#set_naval_oob = "CHL_1939_naval_mtg"
+		ELSE = {
+			#set_naval_oob = "CHL_1939_naval_legacy"
+		}
+	}
+	IF = {
+		limit = { has_dlc = "By Blood Alone" }
+			#set_air_oob = "CHL_1939_air_bba"
+		ELSE = {
+			#set_air_oob = "CHL_1939_air_legacy"
+			set_technology = {
+				tactical_bomber1 = 1
+				CAS1 = 1
+			}
+		}
+	}
 
 	set_technology = {
-		tech_support = 1
-		early_infantry_weapons = 1
-		light_field_gun1 = 1
-		heavy_field_gun1 = 1
-		# Navy
-		ww1_destroyer0 = 1
-		ww1_destroyer1 = 1
-		ww1_light_cruiser1 = 1
-		ww1_light_cruiser0 = 1
-		ww1_battlecruiser0 = 1
-		ww1_battleship0 = 1
-		ww1_submarine1 = 1
-		ww1_coastal_submarine1 = 1
-		transport = 1
-		horses = 1
-		ww1_electronic_mechanical_engineering = 1
+		interwar_artillery = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
 	}
-
-	recruit_character = CHL_juan_pablo_bennett
-	recruit_character = CHL_luis_altamirano	
-	recruit_character = CHL_francisco_diaz_valderrama
-	recruit_character = CHL_jose_luis_sanchez_besa			
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 
-1910.2.1 = {
-	recruit_character = CHL_elias_fernandez	
-}
-
-1910.8.16 = {
-	recruit_character = CHL_senado_2	
-	retire_character = CHL_pedro_montt_montt	
-}
-
-1910.9.6 = {
-	retire_character = CHL_elias_fernandez	
-}
-
-1910.12.22 = {
-	recruit_character = CHL_arturo_alessandri_WW1
-}
-
-1910.12.23 = {
-	retire_character = CHL_senado_2	
-}
-
-1914.1.1 = {
-	oob = "CHL_1914"
-	recruit_character = CHL_c_j_de_la_motte	
-	recruit_character = CHL_juan_luis_sanfuentes_andonaegui	
-}
-
-1915.1.1 = {
-	retire_character = CHL_jorge_montt		
-}
-
-1919.1.1 = {
+# Setting up 1939 Politics
+1939.1.1 = {
 	set_politics = {
 		ruling_party = democratic
-		last_election = "1915.6.25"
-		election_frequency = 60
+		last_election = "1938.10.25"
+		election_frequency = 48
 		elections_allowed = yes
 	}
+
 	set_popularities = {
-		democratic = 49
-		neutrality = 50
-		communism = 1
-	}
-	
-	retire_character = CHL_ramon_barros_luco
-	recruit_character= CHL_emiliano_figueroa	
-	set_party_name = { ideology = democratic  long_name = CHL_coalicion name = CHL_coalicion }
-
-	
-	recruit_character= CHL_carlos_davila_espinoza
-	set_party_name = { ideology = communism  long_name = CHL_PS_long name = CHL_PS }
-	
-	set_party_name = { ideology = neutrality  long_name = CHL_union_liberal_long name = CHL_union_liberal }
-
-	set_party_name = { ideology = fascism  long_name = CHL_regimen_long name = CHL_regimen }	
-
-	recruit_character = CHL_luis_villarroel_de_la_rosa
-	recruit_character = CHL_bartolome_blanche_espejo
-	recruit_character = CHL_arturo_puga_osorio			
-}
-
-1920.1.1 = {
-	recruit_character = CHL_carlos_ibanez_del_campo	
-	retire_character = CHL_malaquias_concha_ortiz				
-}
-
-1920.12.23 = {
-	retire_character = CHL_juan_luis_sanfuentes_andonaegui				
-}
-
-1921.1.1 = {
-	retire_character = CHL_jorge_boonen	
-	retire_character = CHL_aristides_pinto_concha		
-}
-
-1925.1.1 = {
-	recruit_character = CHL_julio_allard_pinto
-	recruit_character = CHL_olegario_reyes_del_rio
-	recruit_character = CHL_vicente_merino_bielich
-	recruit_character = CHL_oscar_otarola
-	recruit_character = CHL_rafael_fernandez_reyes
-	retire_character = CHL_juan_pablo_bennett
-	retire_character = CHL_tancredo_pinochet
-	recruit_character = CHL_marmaduke_grove	
-	recruit_character = CHL_juan_esteban_montero								
-}
-
-1927.1.1 = {
-	retire_character = CHL_emiliano_figueroa						
-}
-
-1927.2.1 = {
-	recruit_character = CHL_arturo_alessandri_WW2						
-}
-
-1927.2.2 = {
-	retire_character = CHL_arturo_alessandri_WW1						
-}
-
-1930.1.1 = {
-	recruit_character = CHL_oscar_fuentes_pantoja
-	recruit_character = CHL_carlos_fuentes_rabe	
-	recruit_character = CHL_diego_aracena_aguilar	
-	retire_character = CHL_francisco_diaz_valderrama
-	recruit_character = CHL_pedro_aguirre_cerda							
-}
-
-1932.6.1 = {
-	recruit_character = CHL_carlos_contreras_labarca
-	recruit_character = CHL_jorge_gonzalez_von_marees							
-}
-
-1932.6.4 = {
-	retire_character = CHL_juan_esteban_montero							
-}
-
-1932.9.13 = {
-	retire_character = CHL_carlos_davila_espinoza						
-}
-
-1933.1.1 = {
-	set_air_oob = "CHL_1936_air_bba"
-	oob = "CHL_1933"
-	set_naval_oob = "CHL_1933_naval_legacy"
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1932.6.25"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 27
-		neutrality = 55
-		communism = 18
+		democratic = 80
+		communism = 10
+		fascism = 10
 	}
 
-	recruit_character = CHL_carlos_ibanez_del_campo_old
-
-	set_party_name = { ideology = democratic  long_name = CHL_frente_popular_long name = CHL_frente_popular }
-
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	promote_character = CHL_jorge_gonzalez_von_marees
-	retire_character = CHL_carlos_ibanez_del_campo
-	set_party_name = { ideology = fascism  long_name = CHL_MNS_long name = CHL_MNS }
-
-	set_party_name = { ideology = neutrality  long_name = CHL_partido_liberal_long name = CHL_partido_liberal }
-
-	recruit_character = CHL_francisco_o_ryan_orrego	
-
-	if = {
+	IF = {
 		limit = {
-			has_start_date > 1930.01.01
-			has_start_date < 1949.01.01
+			NOT = {
+				has_dlc = "Trial of Allegiance"
+			}
 		}
-		add_ideas = {
-			CHL_pacts_of_may_idea
-			CHL_dissident_activity
-			the_greatest_depression
-			CHL_agrarian_reform
-			prussian_ethos
-			milicia_republicana
-			paramilitary_police	
-			CHL_rampant_crime
+		#recruit_character = CHL_pedro_aguirre_cerda
+		promote_character = CHL_pedro_aguirre_cerda
+		retire_character = CHL_arturo_alessandri
+		ELSE_IF = {
+			limit = {
+				has_dlc = "Trial of Allegiance"
+			}
+			add_country_leader_role = {
+			    character = CHL_pedro_aguirre_cerda
+			    promote_leader = yes
+			    country_leader = {
+			        ideology = socialism
+			        expire = "1965.1.1.1"
+			        traits = { JUNO_gobernar_es_educar }
+			    }
+			}
+			retire_character = CHL_arturo_alessandri
 		}
 	}
-
-	recruit_character = CHL_guillermo_barrios_tirado
-	recruit_character = CHL_daniel_herrera	
-	recruit_character = CHL_gustavo_ross_santa_maria	
+	
 }
 
-1936.1.1 = {
-	set_air_oob = "CHL_1936_air_bba"
-	### VARIANTS ###
-	# 1936 Start #
+### VARIANTS ###
+# 1936 Start #
+IF = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
 	### Ship Variants ###
 	create_equipment_variant = {
 		name = "Capitán O'Brien Class"
@@ -311,583 +487,122 @@ set_convoys = 20
 			ship_anti_air_upgrade = 1
 		}
 	}
-	oob = "CHL_1936"
-	set_naval_oob = "CHL_1936_naval_legacy"
-	# Starting tech
-	set_technology = {
-		infantry_weapons = 1
-		gw_artillery = 1
-		interwar_antiair = 1
-		early_submarine = 1
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
-		early_battleship = 1
-		transport = 1
-	}
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1932.6.25"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 50
-		neutrality = 49
-		communism = 0
-		fascism = 1
-	}
-	set_party_name = { ideology = democratic  long_name = CHL_frente_popular_long name = CHL_frente_popular }
-
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	set_party_name = { ideology = fascism  long_name = CHL_alianza_popular_libertadora_long name = CHL_alianza_popular_libertadora }
-
-	set_party_name = { ideology = neutrality  long_name = CHL_partido_liberal_long name = CHL_partido_liberal }
-
-	recruit_character = CHL_salvador_allende	
-	recruit_character = CHL_francisco_javier_diaz_ww2
-	recruit_character = CHL_emilio_daroch_soto
-	recruit_character = CHL_arturo_espinoza_mujica	
-	recruit_character = CHL_oscar_izurieta_molina		
 }
-
-1938.1.1 = {
-	retire_character = CHL_luis_altamirano				
-}
-
-1938.2.1 = {
-	recruit_character = CHL_jeronimo_mendez			
-}
-
-1939.1.1 = {
-	oob = "CHL_1939"
-	set_naval_oob = "CHL_1939_naval_legacy"
-	recruit_character = CHL_silvestre_urizar_banderas
-	retire_character = CHL_diego_aracena_aguilar		
-}
-
-1940.1.1 = {
-	oob = "CHL_1940"
-	set_naval_oob = "CHL_1940_naval_legacy"
-	recruit_character = CHL_jorge_videla_cobo
-}
-
-1941.11.25 = {
-	retire_character = CHL_pedro_aguirre_cerda					
-}
-
-1941.11.26 = {
-	recruit_character = CHL_juan_antonio					
-}
-
-1942.4.2 = {
-	retire_character = CHL_jeronimo_mendez					
-}
-
-1943.1.1 = {
-	retire_character = CHL_arturo_puga_osorio	
-	retire_character = CHL_luis_villarroel_de_la_rosa
-	retire_character = CHL_pedro_dartnell	
-}
-
-1944.1.1 = {
-	retire_character = CHL_julio_allard_pinto
-	retire_character = CHL_arturo_espinoza_mujica	
-}
-
-1945.1.1 = {
-	retire_character = CHL_c_j_de_la_motte	
-}
-
-1946.1.1 = {
-	retire_character = CHL_oscar_fuentes_pantoja
-	recruit_character = CHL_alfredo_duhalde	
-}
-
-1946.6.27 = {
-	recruit_character = CHL_gabriel_gonzalez_videla	
-	retire_character = CHL_juan_antonio
-}
-
-1946.11.3 = {
-	retire_character = CHL_alfredo_duhalde
-}
-
-1949.1.1 = {
-	oob = "CHL_1949"
-	set_naval_oob = "CHL_1949_naval_legacy"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1946.6.25"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 20
-		neutrality = 27
-		communism = 6
-		fascism = 47
-	}
-
-	retire_character = CHL_carlos_contreras_labarca	
-
-	recruit_character = CHL_jorge_alessandri
-
-	set_party_name = { ideology = democratic  long_name = CHL_frente_popular_long name = CHL_frente_popular }
-
-	promote_character = CHL_salvador_allende
-	retire_character = CHL_carlos_contreras_labarca
-	set_party_name = { ideology = communism  long_name = CHL_frente_nacional_long name = CHL_frente_nacional }
-
-	promote_character = CHL_carlos_ibanez_del_campo_old
-	set_party_name = { ideology = fascism  long_name = CHL_agrario_laborista_long name = CHL_agrario_laborista }
-
-	promote_character = CHL_jorge_alessandri
-	retire_character = CHL_arturo_alessandri_WW2
-	set_party_name = { ideology = neutrality  long_name = CHL_alessandri_long name = CHL_alessandri }
-	if = {
-		limit = {
-			has_start_date > 1949.01.01
-			has_start_date < 1973.09.11
+IF = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "H1 Class"				
+		type = ship_hull_submarine_1
+		name_group = CHL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
 		}
-		create_corps_commander = {
-			name = "Carlos Prat"
-			picture = "gfx/leaders/CHL/CW/carlos_prat.dds"
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Capitán O'Brien Class"				
+		type = ship_hull_submarine_1
+		name_group = CHL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_torpedo_sub_1
 		}
-        create_corps_commander = {
-			name = "Carlos Contreras Tascón"
-			picture = "gfx/leaders/CHL/Carlos_Contreras_Labarca.dds"
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Almirante Lynch Class"				
+		type = ship_hull_light_1
+		name_group = CHL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
 		}
-		create_corps_commander = {
-			name = "Gregorio Rodríguez Tascón"
-			picture = "gfx/leaders/CHL/CW/gregorio_rodriguez_tascon.dds"
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Serrano Class"	
+		type = ship_hull_light_1
+		name_group = CHL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
 		}
-		create_corps_commander = {
-			name = "Manuel Contreras"
-			picture = "gfx/leaders/CHL/CW/Manuel_Contreras.dds"
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 3
+	}
+	# Cruisers #
+	create_equipment_variant = {
+		name = "O'Higgins Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHL_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
 		}
-		create_field_marshal = {
-			name = "Augusto Pinochet"
-			picture = "gfx/leaders/CHL/CW/Augusto_Pinochet.dds"
-			traits = {
-				skilled_staffer
-				politically_connected
-				inflexible_strategist
-			}
-			skill = 5
-			attack_skill = 5
-			defense_skill = 5
-			planning_skill = 5
-			logistics_skill = 5
+	}
+	create_equipment_variant = {
+		name = "Chacabuco Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHL_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_1
 		}
-		create_corps_commander = {
-			name = "Raúl Iturriaga"
-			picture = "gfx/leaders/CHL/CW/Raul_Iturriaga.dds"
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "Almirante Latorre Class"	
+		type = ship_hull_heavy_1
+		name_group = CHL_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_airplane_launcher_1
+			rear_1_custom_slot = empty
 		}
-		create_corps_commander = {
-			name = "René Schneider"
-			picture = "gfx/leaders/CHL/CW/Rene_Schneider.dds"
-			traits = {
-				brilliant_strategist
-			}			
-			skill = 4
-			attack_skill = 4
-			defense_skill = 4
-			planning_skill = 4
-			logistics_skill = 4
-		}
-		create_corps_commander = {
-			name = "César Mendoza"
-			picture = "gfx/leaders/CHL/CW/Cesar_Mendoza.dds"
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-		}
-		create_corps_commander = {
-			name = "Ramón Cañas Montalva.dds"
-			picture = "gfx/leaders/CHL/CW/Ramon_Canas_Montalva.dds"
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
-		}
-		create_navy_leader = {
-			name = "José Toribio Merino.dds"
-			picture = "gfx/leaders/CHL/CW/Jose_Toribio_Merino.dds"
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			#planning_skill = 3
-			#logistics_skill = 3
-		}
-
-	    retire_character = CHL_carlos_fuentes_rabe		
-	    retire_character = CHL_marmaduke_grove
-	    retire_character = CHL_jose_luis_sanchez_besa		
 	}
-}
-
-1952.1.1 = {
-	retire_character = CHL_daniel_herrera
-}
-
-1955.1.1 = {
-	retire_character = CHL_bartolome_blanche_espejo	
-	retire_character = CHL_jorge_videla_cobo
-	retire_character = CHL_guillermo_barrios_tirado	
-
-	recruit_character = CHL_bernardo_leighton
-	recruit_character = CHL_luis_corvalan	
-}
-
-1957.1.1 = {
-	retire_character = CHL_oscar_otarola
-}
-
-1960.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1958.6.25"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 46
-		communism = 29
-		fascism = 5
-		neutrality = 20
-	}	
-	
-	recruit_character = CHL_eduardo_frei_montalva
-	promote_character = CHL_eduardo_frei_montalva
-	retire_character = CHL_gabriel_gonzalez_videla
-    retire_character = CHL_olegario_reyes_del_rio
-	retire_character = CHL_vicente_merino_bielich		
-	set_party_name = { ideology = democratic  long_name = CHL_democrata_cristiano_long name = CHL_democrata_cristiano }
-
-
-	promote_character = CHL_salvador_allende
-	retire_character = CHL_carlos_contreras_labarca
-	set_party_name = { ideology = communism  long_name = CHL_unidad_popular_long name = CHL_unidad_popular }
-
-	recruit_character = CHL_augusto_pinochet
-	promote_character = CHL_augusto_pinochet
-	retire_character = CHL_carlos_ibanez_del_campo_old
-	set_party_name = { ideology = fascism  long_name = CHL_junta_pinochet_long name = CHL_junta_pinochet }
-
-	promote_character = CHL_jorge_alessandri
-	retire_character = CHL_arturo_alessandri_WW2
-	set_party_name = { ideology = neutrality  long_name = CHL_alessandri_long name = CHL_alessandri }
-
-	retire_character = CHL_emilio_daroch_soto
-	retire_character = CHL_rafael_fernandez_reyes
-	retire_character = CHL_gustavo_ross_santa_maria			
-}
-
-1968.1.1 = {
-	retire_character = CHL_francisco_o_ryan_orrego
-	retire_character = CHL_silvestre_urizar_banderas	
-}
-
-1970.1.1 = {
-	oob = "CHL_1970"
-	set_naval_oob = "CHL_1970_naval_legacy"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1964.9.4"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 23
-		neutrality = 30
-		communism = 32
-		fascism = 15
-	}
-
-	recruit_character = CHL_francisco_javier_errazuriz
-
-	recruit_character = CHL_eduardo_frei_montalva
-	promote_character = CHL_eduardo_frei_montalva
-	retire_character = CHL_gabriel_gonzalez_videla
-	set_party_name = { ideology = democratic  long_name = CHL_democrata_cristiano_long name = CHL_democrata_cristiano }
-
-	promote_character = CHL_salvador_allende
-	retire_character = CHL_carlos_contreras_labarca
-	set_party_name = { ideology = communism  long_name = CHL_unidad_popular_long name = CHL_unidad_popular }
-
-	set_party_name = { ideology = fascism  long_name = CHL_junta_pinochet_long name = CHL_junta_pinochet }
-
-	promote_character = CHL_jorge_alessandri
-	retire_character = CHL_arturo_alessandri_WW2
-	set_party_name = { ideology = neutrality  long_name = CHL_alessandri_long name = CHL_alessandri }
-
-	recruit_character = CHL_gladys_marin	
-}
-
-1976.1.1 = {
-	retire_character = CHL_oscar_izurieta_molina	
-
-	recruit_character = CHL_eduardo_frei_ruiz_tagle
-	recruit_character = CHL_pablo_rodriguez_grez
-	recruit_character = CHL_joaquin_lavin_infante	
-}
-
-1980.1.1 = {
-	set_politics = {
-		ruling_party = fascism
-		last_election = "1977.9.4"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 15
-		neutrality = 10
-		communism = 5
-		fascism = 70
-	}
-	promote_character = CHL_bernardo_leighton
-	retire_character = CHL_eduardo_frei_montalva
-	set_party_name = { ideology = democratic  long_name = CHL_democrata_cristiano_long name = CHL_democrata_cristiano }
-
-	promote_character = CHL_luis_corvalan
-	retire_character = CHL_salvador_allende
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	set_party_name = { ideology = fascism  long_name = CHL_junta_pinochet_long name = CHL_junta_pinochet }
-
-	promote_character = CHL_francisco_javier_errazuriz
-	retire_character = CHL_jorge_alessandri
-	set_party_name = { ideology = neutrality  long_name = CHL_liberal_socialista_long name = CHL_liberal_socialista }
-
-	set_portraits = {
-		character = CHL_augusto_pinochet
-		civilian = {
-			large = "gfx/leaders/CHL/CW/Chile_1980_Old_Pinochet.dds"
-		}
-		army = {
-			large = "gfx/leaders/CHL/CW/Chile_1980_Old_Pinochet.dds"
-		}		
-	}	
-
-}
-
-1990.1.1 = {
-	set_politics = {
-		ruling_party = fascism
-		last_election = "1986.3.11"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 55
-		communism = 0
-		fascism = 29
-		neutrality = 16
-	}
-	recruit_character = CHL_patricio_aylwin_azocar
-	promote_character = CHL_patricio_aylwin_azocar
-	retire_character = CHL_bernardo_leighton
-	set_party_name = { ideology = democratic  long_name = CHL_concertacion_long name = CHL_concertacion }
-
-	recruit_character = CHL_pedro_vuskovic
-	promote_character = CHL_pedro_vuskovic
-	retire_character = CHL_luis_corvalan
-	set_party_name = { ideology = communism  long_name = CHL_movimiento_allendista_long name = CHL_movimiento_allendista }
-
-	set_party_name = { ideology = fascism  long_name = CHL_junta_pinochet_long name = CHL_junta_pinochet }
-
-	promote_character = CHL_francisco_javier_errazuriz
-	retire_character = CHL_jorge_alessandri
-	set_party_name = { ideology = neutrality  long_name = CHL_liberal_socialista_long name = CHL_liberal_socialista }
-}
-
-2000.1.1 = {
-	oob = "CHL_2000"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2000.3.11"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 48
-		communism = 4
-		fascism = 1
-		neutrality = 47
-	}
-	promote_character = CHL_eduardo_frei_ruiz_tagle
-	retire_character = CHL_patricio_aylwin_azocar
-	set_party_name = { ideology = democratic  long_name = CHL_concertacion_long name = CHL_concertacion }
-
-	promote_character = CHL_gladys_marin
-	retire_character = CHL_pedro_vuskovic
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	promote_character = CHL_pablo_rodriguez_grez
-	retire_character = CHL_augusto_pinochet
-	set_party_name = { ideology = fascism  long_name = CHL_fnpl_long name = CHL_fnpl }
-
-	promote_character = CHL_joaquin_lavin_infante
-	retire_character = CHL_francisco_javier_errazuriz
-	set_party_name = { ideology = neutrality  long_name = CHL_coalicion_pinera_long name = CHL_coalicion_pinera }
-}
-2008.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2005.12.11"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 48
-		communism = 1
-		neutrality = 51
-	}
-	recruit_character = CHL_michelle_bachelet_jeria
-	promote_character = CHL_michelle_bachelet_jeria
-	retire_character = CHL_eduardo_frei_ruiz_tagle
-	set_party_name = { ideology = democratic  long_name = CHL_concertacion_long name = CHL_concertacion }
-
-	promote_character = CHL_gladys_marin
-	retire_character = CHL_pedro_vuskovic
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	promote_character = CHL_pablo_rodriguez_grez
-	retire_character = CHL_augusto_pinochet
-	set_party_name = { ideology = fascism  long_name = CHL_fnpl_long name = CHL_fnpl }
-
-	recruit_character = CHL_sebastian_pinera
-	promote_character = CHL_sebastian_pinera
-	retire_character = CHL_joaquin_lavin_infante
-	set_party_name = { ideology = neutrality  long_name = CHL_coalicion_pinera_long name = CHL_coalicion_pinera }
-}
-
-2013.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "2009.12.13"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 48
-		communism = 1
-		neutrality = 51
-	}
-	recruit_character = CHL_michelle_bachelet_jeria
-	promote_character = CHL_michelle_bachelet_jeria
-	retire_character = CHL_eduardo_frei_ruiz_tagle
-	set_party_name = { ideology = democratic  long_name = CHL_concertacion_long name = CHL_concertacion }
-
-	recruit_character = CHL_guillermo_teillier
-	promote_character = CHL_guillermo_teillier
-	retire_character = CHL_gladys_marin
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	recruit_character = CHL_roberto_thieme
-	promote_character = CHL_roberto_thieme
-	retire_character = CHL_pablo_rodriguez_grez
-	set_party_name = { ideology = fascism  long_name = CHL_fnpl_long name = CHL_fnpl }
-
-	recruit_character = CHL_sebastian_pinera
-	promote_character = CHL_sebastian_pinera
-	retire_character = CHL_joaquin_lavin_infante
-	set_party_name = { ideology = neutrality  long_name = CHL_coalicion_pinera_long name = CHL_coalicion_pinera }
-}
-
-2016.1.1 = {
-	oob = "CHL_2016"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2013.12.13"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 45
-		communism = 0
-		neutrality = 55
-	}
-	recruit_character = CHL_michelle_bachelet_jeria
-	promote_character = CHL_michelle_bachelet_jeria
-	retire_character = CHL_eduardo_frei_ruiz_tagle
-	set_party_name = { ideology = democratic  long_name = CHL_nueva_mayoria_long name = CHL_nueva_mayoria }
-
-	recruit_character = CHL_guillermo_teillier
-	promote_character = CHL_guillermo_teillier
-	retire_character = CHL_gladys_marin
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	recruit_character = CHL_roberto_thieme
-	promote_character = CHL_roberto_thieme
-	retire_character = CHL_pablo_rodriguez_grez
-	set_party_name = { ideology = fascism  long_name = CHL_fnpl_long name = CHL_fnpl }
-
-	recruit_character = CHL_sebastian_pinera
-	promote_character = CHL_sebastian_pinera
-	retire_character = CHL_joaquin_lavin_infante
-	set_party_name = { ideology = neutrality  long_name = CHL_vamos_long name = CHL_vamos }
-}
-
-2020.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "2013.12.13"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 45
-		communism = 0
-		neutrality = 55
-	}
-	recruit_character = CHL_gabriel_boric
-	promote_character = CHL_gabriel_boric
-	retire_character = CHL_michelle_bachelet_jeria
-	set_party_name = { ideology = democratic  long_name = CHL_ad_long name = CHL_ad }
-
-	recruit_character = CHL_guillermo_teillier
-	promote_character = CHL_guillermo_teillier
-	retire_character = CHL_gladys_marin
-	set_party_name = { ideology = communism  long_name = CHL_partido_comunista_long name = CHL_partido_comunista }
-
-	recruit_character = CHL_roberto_thieme
-	promote_character = CHL_roberto_thieme
-	retire_character = CHL_pablo_rodriguez_grez
-	set_party_name = { ideology = fascism  long_name = CHL_fnpl_long name = CHL_fnpl }
-
-	recruit_character = CHL_sebastian_pinera
-	promote_character = CHL_sebastian_pinera
-	retire_character = CHL_joaquin_lavin_infante
-	set_party_name = { ideology = neutrality  long_name = CHL_vamos_long name = CHL_vamos }
 }

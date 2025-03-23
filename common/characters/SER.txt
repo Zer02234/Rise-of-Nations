@@ -4,7 +4,7 @@ characters={
 		name = "Alexander I"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SER/DNC/SER_Alexander_I.dds"
+				large = "gfx/leaders/SER/DNC/Portrait_Serbia_Alexander_I.dds"
 			}
 		}
 		country_leader = {
@@ -15,14 +15,7 @@ characters={
 			}
 		}
 	}
-	SER_Nikolai_Pasic = {
-		name = "Nikolai Pasic"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/SER/DNC/SER_Nikola_Pasic.dds"
-			}
-		}
-	}
+
 	SER_petar_i = {
 		name = "Prince Petar Karadordević"
 		portraits = {
@@ -101,7 +94,7 @@ characters={
 		name = "Milan II"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SER/DNC/SER_Milan_George_Obrenovic.dds"
+				large = "gfx/leaders/SER/DNC/Portrait_Serbia_Milan_George_Obrenovic.dds"
 			}
 		}
 	}	
@@ -110,7 +103,7 @@ characters={
 		name = "Dragutin Dimitrijević"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SER/DNC/SER_Dragutin_Dimitrijevic.dds"
+				large = "gfx/leaders/SER/DNC/Portrait_Serbia_Dragutin_Dimitrijevic.dds"
 			}
 		}
 		country_leader = {
@@ -126,7 +119,7 @@ characters={
 		name = "Jakov Prodanović"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SER/DNC/SER_Jakov_Prodanovic.dds"
+				large = "gfx/leaders/SER/DNC/Portrait_Serbia_Jakov_Prodanovic.dds"
 			}
 		}
 		country_leader = {
@@ -142,7 +135,7 @@ characters={
 		name = "Dimitrije Tucović"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SER/DNC/SER_Dimitrije_Tucovic.dds"
+				large = "gfx/leaders/SER/DNC/Portrait_Serbia_Dimitrije_Tucovic.dds"
 			}
 		}
 		country_leader = {
@@ -180,7 +173,7 @@ characters={
 		}
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/FM-Radomir_Putnik.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Radomir_Putnik.dds"
 				small = "GFX_idea_SER_radomir_putnik"
 			}
 		}
@@ -203,7 +196,7 @@ characters={
 		name = "Petar Bojović"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/FM-Petar_Bojovia.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Petar_Bojovia.dds"
 				small = "GFX_idea_SER_petar_bojovic"
 			}
 		}
@@ -245,7 +238,7 @@ characters={
 		name = "Pavle Jurišić Šturm"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General-Pavle_Jurisic_Sturm.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Pavle_Jurisic_Sturm.dds"
 				#small = "gfx/interface/ideas/SER/idea_SER_jurisic_sturm.dds"
 			}
 		}
@@ -270,7 +263,7 @@ characters={
 		name = "Stepa Stepanović"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General-Stepa_Stepanovic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Stepa_Stepanovic.dds"
 				small = "gfx/interface/ideas/SER/idea_SER_Stepan_Stepanovic.dds"
 			}
 		}
@@ -313,7 +306,7 @@ characters={
 		name = "Stevan Hadžić"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General_Stevan_Hadzic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Stevan_Hadzic.dds"
 				#small = "gfx/interface/ideas/SER/idea_SER_stevan_hadzic.dds"
 			}
 		}
@@ -350,7 +343,7 @@ characters={
 		name = "Miloš Vasić"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General_Milos_Vasic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Milos_Vasic.dds"
 				small = GFX_idea_SER_milos_vasic
 			}
 		}
@@ -393,7 +386,7 @@ characters={
 		name = "Ilija Gojković"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/FM_Ilija_Gojkovic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Ilija_Gojkovic.dds"
 			}
 		}
 		field_marshal = {
@@ -415,7 +408,7 @@ characters={
 		name = "Bogoljub Ilić"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General_Bogoljub_Ilic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Bogoljub_Ilic.dds"
 			}
 		}
 		corps_commander = {
@@ -437,7 +430,7 @@ characters={
 		name = "Živojin Mišić"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General_Zivojin_Misic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Zivojin_Misic.dds"
 				#small = "gfx/interface/ideas/SER/idea_SER_zivojin_misic.dds"
 			}
 		}
@@ -483,7 +476,7 @@ characters={
 		name = "Božidar Janković"
 		portraits = {
 			army = {
-				large="gfx/leaders/SER/WW1/General_Bozidar_Jankovic.dds"
+				large="gfx/leaders/SER/WW1/Portrait_Serbia_Bozidar_Jankovic.dds"
 				#small = "gfx/interface/ideas/SER/idea_SER_bozidar_jankovic.dds"
 			}
 		}
@@ -506,7 +499,7 @@ characters={
 		name = "Mihailo Zivković-Gvozdeni"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General_Mihailo_Zivkovic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Mihailo_Zivkovic.dds"
 			}
 		}
 		corps_commander = {
@@ -536,7 +529,7 @@ characters={
 		name ="Petar Živković"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SER/WW1/General_Petar_Zivkovic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Petar_Zivkovic.dds"
 				#small = "gfx/interface/ideas/SER/idea_SER_petar_zivkovic.dds"
 			}
 			army = {
@@ -582,7 +575,7 @@ characters={
 		name = "Vladimir Kondić"
 		portraits = {
 			army = {
-				large = "gfx/leaders/SER/WW1/General_Vladimir_Kondic.dds"
+				large = "gfx/leaders/SER/WW1/Portrait_Serbia_Vladimir_Kondic.dds"
 			}
 		}
 		corps_commander = {
@@ -644,7 +637,7 @@ characters={
 		name="Dragoljub Draza Mihailovic"
 		portraits={
 			army={
-				large="gfx/leaders/SER/Portrait_Yugoslav_Dragoljub_Draza_Mihailovic.dds"
+				large="gfx/leaders/SER/Portrait_Serbia_Dragoljub_Draza_Mihailovic.dds"
 				small="GFX_idea_YUG_draza_mihailovic"
 			}
 		}	

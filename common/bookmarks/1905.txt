@@ -1,0 +1,137 @@
+bookmarks = {
+	bookmark = {
+		name = "RUSSO_JAPANESE_NAME"
+		desc = "RUSSO_JAPANESE_DESC"
+		date = 1905.1.1.1
+		picture = "GFX_select_date_1905"
+		default_country = "GER"
+		default = no
+		GER = {
+			history = "GER_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		AUH = {
+			history = "AUS_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		OTT = {
+			history = "TUR_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		RUS = {
+			history = "SOV_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		ENG = {
+			history = "ENG_RUSSO_JAPANESE_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		FRA = {
+			history = "FRA_RUSSO_JAPANESE_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		USA = {
+			history = "USA_RUSSO_JAPANESE_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		QIN = {
+			minor = yes
+			history = "QIN_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		COL = {
+			minor = yes
+			history = "COL_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		SPR = {
+			minor = yes
+			history = "SPA_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		SER = {
+			minor = yes
+			history = "SER_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		KOR = {
+			minor = yes
+			history = "KOR_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		JAP = {
+			minor = yes
+			history = "JAP_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		MOR = {
+			minor = yes
+			history = "MOR_RUSSO_JAPANESE_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"---" = {
+			history = "OTHER_RUSSO_JAPANESE_DESC"
+		}
+		effect = {
+			randomize_weather = 22345            # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

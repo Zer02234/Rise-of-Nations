@@ -1,37 +1,23 @@
-state = {
-	id = 726
-	name = "STATE_726"
+state={
+	id=726
+	name="STATE_726"
+	manpower=123214
+	state_category = small_island
 
-	history = {
-		owner = ENG
-		add_core_of = SMO
-
-		victory_points = {
-			7290 1
-		}
-
+	history={
+		owner = NZL
+		add_core_of = SAM
 		buildings = {
 			infrastructure = 3
 			7290 = {
 				naval_base = 1
-
 			}
-
 		}
-
-		1907.1.1 = {
-			owner = NZL
-			controller = NZL
+		victory_points = {
+			7290 1
 		}
-
-		1962.1.1 = { owner = SMO controller = SMO }
-
 	}
-
-	provinces = {
-		7290
+	provinces={
+		7290 13080 
 	}
-	manpower = 77210
-	buildings_max_level_factor = 1.000
-	state_category = tiny_island
 }

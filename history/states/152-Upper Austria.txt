@@ -6,34 +6,27 @@ state={
 		aluminium=1.000
 	}
 
-	history = {
+	history={
 		owner = AUH
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 2
+			infrastructure = 7
+			industrial_complex = 3
 
 		}
 		victory_points = {
-			9665 5
+			688 10 
 		}
 		victory_points = {
-			11651 3
+			3673 3 
 		}
 		victory_points = {
-			3703 1
+			9665 3 
 		}
-		add_core_of = AUS
-		add_core_of = AUC
+		victory_points = {
+			732 10 
+		}
 		add_core_of = AUH
-		1910.1.1 = {
-			owner = AUH
-			controller = AUH
-		}
-		1918.11.11 = {
-			owner = AUS
-			controller = AUS
-			#remove_core_of = AUH
-		}
+		add_core_of = AUS
 		1938.3.12 = {
 			owner = GER
 			controller = GER
@@ -41,21 +34,12 @@ state={
 
 		}
 
-		1946.1.1 = {
-			owner = USA
-			controller = USA
-		}
-
-		1956.1.1 = {
-			owner = AUS
-			controller = AUS
-		}
 	}
 
 	provinces={
-		3684 3703 6708 9665 11651 
+		732 3684 3703 6552 6708 6723 9665 11651 
 	}
-	manpower=1225244
+	manpower=1200531
 	buildings_max_level_factor=1.000
 	state_category=large_town
 	local_supplies=0.000

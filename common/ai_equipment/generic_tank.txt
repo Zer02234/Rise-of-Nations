@@ -2,8 +2,8 @@
 
 generic_light_tanks = {
 	category = land
-	#blocked_for = {GER SOV ENG USA FRA JAP ITA}
-	blocked_for = {}
+
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -19,14 +19,14 @@ generic_light_tanks = {
 		priority = {
 			factor = 1
 			modifier = { 
-				has_tech = basic_light_tank
+				has_tech = basic_light_tank_chassis
 				factor = 0 #let's not waste XP here
 			}
 		}
 
 		target_variant = {
 			match_value = 1000
-			type = gw_light_tank_chassis_1
+			type = light_tank_chassis_0
 			modules = {
 				main_armament_slot = tank_heavy_machine_gun
 				turret_type_slot = tank_light_one_man_tank_turret
@@ -38,16 +38,16 @@ generic_light_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 3
-			#	tank_nsb_armor_upgrade = {
-			#		base = 1
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 1
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -63,7 +63,7 @@ generic_light_tanks = {
 		priority = {
 			factor = 100
 			modifier = { 
-				has_tech = improved_light_tank_chassis
+				has_tech = improved_light_tank_chassis 
 				factor = 0 #let's not waste XP here
 			}
 		}
@@ -92,16 +92,16 @@ generic_light_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -123,7 +123,7 @@ generic_light_tanks = {
 		priority = {
 			factor = 10
 			modifier = { 
-				has_tech = advanced_light_tank_chassis
+				has_tech = advanced_light_tank_chassis 
 				factor = 0 #let's not waste XP here
 			}
 		}
@@ -162,16 +162,16 @@ generic_light_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 2
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -197,10 +197,6 @@ generic_light_tanks = {
 	advanced_light_tank_default = {
 		priority = {
 			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_a
-				factor = 0 #let's not waste XP here
-			}
 		}
 
 		target_variant = {
@@ -224,405 +220,16 @@ generic_light_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-	advanced_light_tank_default_a = {
-		priority = {
-			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_b
-				factor = 0 #let's not waste XP here
-			}
-		}
-
-		target_variant = {
-			match_value = 5000
-			type = light_tank_chassis_4
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 2
+						has_war = yes
+					}
 				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-	advanced_light_tank_default_b = {
-		priority = {
-			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_c
-				factor = 0 #let's not waste XP here
-			}
-		}
-
-		target_variant = {
-			match_value = 6000
-			type = light_tank_chassis_5
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
-				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-	advanced_light_tank_default_c = {
-		priority = {
-			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_d
-				factor = 0 #let's not waste XP here
-			}
-		}
-
-		target_variant = {
-			match_value = 7000
-			type = light_tank_chassis_6
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
-				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-	advanced_light_tank_default_d = {
-		priority = {
-			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_e
-				factor = 0 #let's not waste XP here
-			}
-		}
-
-		target_variant = {
-			match_value = 8000
-			type = light_tank_chassis_7
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
-				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-
-	advanced_light_tank_default_e = {
-		priority = {
-			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_f
-				factor = 0 #let's not waste XP here
-			}
-		}
-
-		target_variant = {
-			match_value = 9000
-			type = light_tank_chassis_8
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
-				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-	advanced_light_tank_default_f = {
-		priority = {
-			factor = 10
-			modifier = { 
-				has_tech = advanced_light_tank_chassis_g
-				factor = 0 #let's not waste XP here
-			}
-		}
-
-		target_variant = {
-			match_value = 10000
-			type = light_tank_chassis_9
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
-				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = { 
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_auto_cannon_2  
-			tank_small_cannon_2 
-			tank_close_support_gun  
-			tank_high_velocity_cannon
-			tank_light_three_man_tank_turret
-			tank_torsion_bar_suspension
-			tank_welded_armor
-			tank_gasoline_engine
-		}
-	}
-	advanced_light_tank_default_g = {
-		priority = {
-			factor = 10
-		}
-
-		target_variant = {
-			match_value = 11000
-			type = light_tank_chassis_10
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_close_support_gun 
-						tank_high_velocity_cannon 
-						tank_small_cannon_2 
-						tank_auto_cannon_2 
-					} 
-				}
-				turret_type_slot = tank_light_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_module
-				special_type_slot_2 = empty
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#	}
-			#}
 		}
 
 		allowed_modules = { 
@@ -640,10 +247,11 @@ generic_light_tanks = {
 		}
 	}
 }
+
 generic_light_tank_destroyers = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -654,9 +262,9 @@ generic_light_tank_destroyers = {
 	priority = {
 		factor = 100
 		modifier = {
-			NOT = { has_tech = basic_medium_tank } 
+			NOT = { has_tech = basic_medium_tank_chassis } 
 			any_enemy_country = {
-				has_tech = basic_medium_tank
+				has_tech = basic_medium_tank_chassis
 			}
 			factor = 15
 		}
@@ -684,16 +292,16 @@ generic_light_tank_destroyers = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 3
-			#	tank_nsb_armor_upgrade = {
-			#		base = 1
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 1
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -737,496 +345,16 @@ generic_light_tank_destroyers = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_3 = {
-		priority = {
-			factor = 300
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_3
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
 				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_4 = {
-		priority = {
-			factor = 400
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_4
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_5 = {
-		priority = {
-			factor = 500
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_5
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_6 = {
-		priority = {
-			factor = 600
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_6
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_7 = {
-		priority = {
-			factor = 700
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_7
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_8 = {
-		priority = {
-			factor = 800
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_8
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_9 = {
-		priority = {
-			factor = 900
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_9
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
-		}
-
-		allowed_modules = {
-			tank_radio_3
-			tank_radio_2
-			tank_radio_1
-			tank_medium_cannon 
-			tank_medium_cannon_2 
-			tank_high_velocity_cannon 
-			tank_high_velocity_cannon_2
-			tank_light_fixed_superstructure_turret
-			tank_bogie_suspension
-			tank_riveted_armor
-			tank_diesel_engine
-			extra_ammo_storage
-		}
-	}
-	light_tank_destroyer_10 = {
-		priority = {
-			factor = 1000
-			
-		}
-		enable = {
-			OR = {
-				has_tech = interwar_antitank
-				has_tech = artillery1
-			}
-		}
-
-		target_variant = {
-			match_value = 1500
-			type = light_tank_destroyer_chassis_10
-			modules = {
-				main_armament_slot = { 
-					any_of = { 
-						tank_high_velocity_cannon_2 
-						tank_medium_cannon_2 
-						tank_medium_cannon 
-						tank_high_velocity_cannon 
-					} 
-				}
-				turret_type_slot = tank_light_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = extra_ammo_storage
-				special_type_slot_2 = tank_radio_module
-				special_type_slot_3 = empty
-				special_type_slot_4 = empty
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
 		}
 
 		allowed_modules = {
@@ -1249,7 +377,7 @@ generic_light_tank_destroyers = {
 generic_light_tank_artillery = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -1283,16 +411,16 @@ generic_light_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 3
-			#	tank_nsb_armor_upgrade = {
-			#		base = 1
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 1
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1326,16 +454,16 @@ generic_light_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1370,16 +498,16 @@ generic_light_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1396,7 +524,7 @@ generic_light_tank_artillery = {
 generic_light_tank_anti_air = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -1437,16 +565,16 @@ generic_light_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 3
-			#	tank_nsb_armor_upgrade = {
-			#		base = 1
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 1
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1480,16 +608,16 @@ generic_light_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1524,16 +652,16 @@ generic_light_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1549,7 +677,7 @@ generic_light_tank_anti_air = {
 generic_medium_tanks = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -1565,7 +693,7 @@ generic_medium_tanks = {
 		}
 		modifier = {
 			num_of_factories < 50
-			factor = 0
+			factor = 0.5
 		}
 	}
 
@@ -1599,22 +727,22 @@ generic_medium_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 3
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 2
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 3
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1634,7 +762,7 @@ generic_medium_tanks = {
 		priority = {
 			factor = 100
 			modifier = { 
-				has_tech = advanced_medium_tank_chassis
+				has_tech = advanced_medium_tank_chassis 
 				factor = 0 #let's not waste XP here
 			}
 		}
@@ -1671,22 +799,22 @@ generic_medium_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 3
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 3
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 3
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 3
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1726,28 +854,28 @@ generic_medium_tanks = {
 				special_type_slot_3 = smoke_launchers
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = {
-			#		base = 5
-			#		modifier = {
-			#				add = 3
-			#				has_war = yes
-			#			}
-			#	}
-			#	tank_nsb_armor_upgrade = {
-			#		base = 6
-			#		modifier = {
-			#			add = 3
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			add = 3
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = {
+					base = 5
+					modifier = {
+							add = 3
+							has_war = yes
+						}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 6
+					modifier = {
+						add = 3
+						has_war = yes
+					}
+					modifier = {
+						add = 3
+						any_enemy_country = {
+							is_major = yes
+						}
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1769,7 +897,7 @@ generic_medium_tanks = {
 generic_medium_tank_destroyer = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -1816,16 +944,16 @@ generic_medium_tank_destroyer = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 3
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 3
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1871,16 +999,16 @@ generic_medium_tank_destroyer = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 6
-			#		modifier = {
-			#			add = 4
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 6
+					modifier = {
+						add = 4
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1932,16 +1060,16 @@ generic_medium_tank_destroyer = {
 				special_type_slot_3 = smoke_launchers
 				special_type_slot_4 = extra_ammo_storage
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 6
-			#	tank_nsb_armor_upgrade = {
-			#		base = 6
-			#		modifier = {
-			#			add = 6
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 6
+				tank_nsb_armor_upgrade = {
+					base = 6
+					modifier = {
+						add = 6
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -1966,7 +1094,7 @@ generic_medium_tank_destroyer = {
 generic_medium_tank_artillery = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -2000,16 +1128,16 @@ generic_medium_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 3
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2043,16 +1171,16 @@ generic_medium_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2087,16 +1215,16 @@ generic_medium_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 5
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 5
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2113,7 +1241,7 @@ generic_medium_tank_artillery = {
 generic_medium_tank_anti_air = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -2154,16 +1282,16 @@ generic_medium_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 1
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 1
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2197,16 +1325,16 @@ generic_medium_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2241,16 +1369,16 @@ generic_medium_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2266,7 +1394,7 @@ generic_medium_tank_anti_air = {
 generic_heavy_tanks = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -2286,7 +1414,7 @@ generic_heavy_tanks = {
 		priority = {
 			factor = 10
 			modifier = { 
-				has_tech = improved_heavy_tank_chassis
+				has_tech = improved_heavy_tank_chassis 
 				factor = 0 #let's not waste XP here
 			}
 			
@@ -2313,22 +1441,22 @@ generic_heavy_tanks = {
 				special_type_slot_3 = secondary_turret_hmg
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 3
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 2
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 3
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2352,7 +1480,7 @@ generic_heavy_tanks = {
 		priority = {
 			factor = 10
 			modifier = { 
-				has_tech = advanced_heavy_tank_chassis
+				has_tech = advanced_heavy_tank_chassis 
 				factor = 0 #let's not waste XP here
 			}
 		}
@@ -2384,22 +1512,22 @@ generic_heavy_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 8
-			#	tank_nsb_armor_upgrade = {
-			#		base = 7
-			#		modifier = {
-			#			add = 3
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 3
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = {
+					base = 7
+					modifier = {
+						add = 3
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 3
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2445,28 +1573,28 @@ generic_heavy_tanks = {
 				special_type_slot_3 = smoke_launchers
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = {
-			#		base = 8
-			#		modifier = {
-			#				add = 3
-			#				has_war = yes
-			#			}
-			#	}
-			#	tank_nsb_armor_upgrade = {
-			#		base = 8
-			#		modifier = {
-			#			add = 4
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			add = 4
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = {
+					base = 8
+					modifier = {
+							add = 3
+							has_war = yes
+						}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 8
+					modifier = {
+						add = 4
+						has_war = yes
+					}
+					modifier = {
+						add = 4
+						any_enemy_country = {
+							is_major = yes
+						}
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2490,7 +1618,7 @@ generic_heavy_tanks = {
 generic_heavy_tank_destroyer = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -2537,16 +1665,16 @@ generic_heavy_tank_destroyer = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 3
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 3
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2593,16 +1721,16 @@ generic_heavy_tank_destroyer = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 6
-			#	tank_nsb_armor_upgrade = {
-			#		base = 6
-			#		modifier = {
-			#			add = 6
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 6
+				tank_nsb_armor_upgrade = {
+					base = 6
+					modifier = {
+						add = 6
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2655,16 +1783,16 @@ generic_heavy_tank_destroyer = {
 				special_type_slot_3 = smoke_launchers
 				special_type_slot_4 = extra_ammo_storage
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 8
-			#	tank_nsb_armor_upgrade = {
-			#		base = 8
-			#		modifier = {
-			#			add = 6
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = {
+					base = 8
+					modifier = {
+						add = 6
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2689,7 +1817,7 @@ generic_heavy_tank_destroyer = {
 generic_heavy_tank_artillery = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -2723,16 +1851,16 @@ generic_heavy_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2766,16 +1894,16 @@ generic_heavy_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2811,16 +1939,16 @@ generic_heavy_tank_artillery = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 6
-			#	tank_nsb_armor_upgrade = {
-			#		base = 5
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 6
+				tank_nsb_armor_upgrade = {
+					base = 5
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2837,7 +1965,7 @@ generic_heavy_tank_artillery = {
 generic_heavy_tank_anti_air = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -2878,16 +2006,16 @@ generic_heavy_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2921,16 +2049,16 @@ generic_heavy_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 4
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2965,16 +2093,16 @@ generic_heavy_tank_anti_air = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 3
-			#		modifier = {
-			#			add = 1
-			#			has_war = yes
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -2990,7 +2118,7 @@ generic_heavy_tank_anti_air = {
 generic_super_heavy_tanks = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -3039,22 +2167,22 @@ generic_super_heavy_tanks = {
 				special_type_slot_3 = secondary_turret_hmg
 				special_type_slot_4 = sloped_armor
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 12
-			#	tank_nsb_armor_upgrade = {
-			#		base = 10
-			#		modifier = {
-			#			add = 5
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 5
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 12
+				tank_nsb_armor_upgrade = {
+					base = 10
+					modifier = {
+						add = 5
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 5
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -3082,7 +2210,7 @@ generic_super_heavy_tanks = {
 generic_modern_tanks = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -3125,22 +2253,22 @@ generic_modern_tanks = {
 				special_type_slot_3 = easy_maintenance
 				special_type_slot_4 = sloped_armor
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 12
-			#	tank_nsb_armor_upgrade = {
-			#		base = 4
-			#		modifier = {
-			#			add = 3
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 2
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 12
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 3
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 2
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -3167,7 +2295,7 @@ generic_modern_tanks = {
 generic_modern_tank_destroyer = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -3211,22 +2339,22 @@ generic_modern_tank_destroyer = {
 				special_type_slot_3 = stabilizer
 				special_type_slot_4 = sloped_armor
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 18
-			#	tank_nsb_armor_upgrade = {
-			#		base = 8
-			#		modifier = {
-			#			add = 5
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 5
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 18
+				tank_nsb_armor_upgrade = {
+					base = 8
+					modifier = {
+						add = 5
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 5
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -3253,7 +2381,7 @@ generic_modern_tank_destroyer = {
 generic_amphibious_tanks = {
 	category = land
 
-	blocked_for = {}
+	blocked_for = {GER SOV ENG USA FRA JAP ITA HUN}
 
 	available_for = {}
 
@@ -3292,22 +2420,22 @@ generic_amphibious_tanks = {
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 5
-			#	tank_nsb_armor_upgrade = {
-			#		base = 2
-			#		modifier = {
-			#			add = 2
-			#			has_war = yes
-			#		}
-			#		modifier = {
-			#			any_enemy_country = {
-			#				is_major = yes
-			#			}
-			#			add = 3
-			#		}
-			#	}
-			#}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 2
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 3
+					}
+				}
+			}
 		}
 
 		allowed_modules = {
@@ -3319,6 +2447,101 @@ generic_amphibious_tanks = {
 			tank_riveted_armor
 			tank_diesel_engine
 			tank_light_two_man_tank_turret
+		}
+	}
+}
+
+
+
+generic_land_cruiser_tanks = {
+	category = land 
+
+	roles = { 
+		land_mega_heavy_breakthrough_tank  
+	}
+
+	priority = {
+		factor = 200
+		modifier = {
+			num_of_factories < 100
+			factor = 0
+		}
+	}
+
+	basic_land_cruiser_default = {
+		priority = {
+			factor = 10
+			modifier = { 
+				has_government = fascism
+				factor = 5
+			}
+			
+		}
+
+		target_variant = {
+			match_value = 1000
+			type = land_cruiser_chassis_1
+			modules = {
+				lc_main_armament_slot = lc_heavy_naval_guns
+				lc_secondary_armament_slot = lc_medium_naval_guns
+				lc_special_features_slot_1 = lc_radio_module
+				lc_special_features_slot_2 = empty
+				lc_special_features_slot_3 = empty
+				lc_additional_armament_slot_1 = lc_heavy_naval_guns
+				lc_additional_armament_slot_2 = empty
+				lc_additional_armament_slot_3 = empty
+				lc_additional_armament_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 12
+				tank_nsb_armor_upgrade = {
+					base = 10
+					modifier = {
+						add = 5
+						has_war = yes
+					}
+					modifier = {
+						any_enemy_country = {
+							is_major = yes
+						}
+						add = 5
+					}
+				}
+			}
+		}
+
+		allowed_modules = {
+			
+			lc_heavy_naval_guns
+			lc_super_heavy_railway_gun
+			lc_high_impact_obliterator_cannon
+			lc_heavy_anti_air_platform
+			lc_medium_naval_guns
+			lc_hull_mounted_railway_gun
+			lc_super_heavy_howitzer
+			lc_heavy_high_velocity_cannons
+			lc_heavy_anti_air_battery
+			lc_medium_cannon_turret
+			lc_assault_gun
+			lc_high_velocity_cannon_turret
+			lc_light_anti_air_battery
+			lc_flamethrower_turret
+			lc_rocket_launcher
+			lc_radio_1
+			lc_radio_2
+			lc_radio_3
+			lc_command_center
+			lc_radar
+			lc_aircraft_catapult
+			lc_helipad
+			lc_armored_skirts
+			lc_bunker_emplacement
+			lc_obstacle_clearance_gear
+			lc_internal_fuel_tanks
+			lc_internal_ammunition_compartments
+			lc_wet_ammunition_storage
+			lc_smoke_generators
+			lc_stabilizers
 		}
 	}
 }

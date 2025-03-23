@@ -1,14 +1,11 @@
-state =
-{
-	id = 182
-	name = "STATE_182"
+state = {
+	id=182
+	name="STATE_182"
 	manpower = 387900
-
-	state_category = rural
-	history =
-	{
-		owner = OTT
-		add_core_of = OTT
+	
+	state_category = town
+	history = {
+		owner = GRE
 		victory_points = {
 			9940 5
 		}
@@ -16,9 +13,8 @@ state =
 			12058 3
 		}
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			air_base = 1
+			infrastructure = 3
+			air_base = 2
 			12058 = {
 				naval_base = 1
 			}
@@ -26,26 +22,9 @@ state =
 				naval_base = 3
 			}
 		}
-		1909.1.1 = {
-			owner = GRE
-			add_core_of = GRE add_core_of = GRC
-		}
-		
-
-		1941.1.1 = {
-			owner = GER
-			controller = GER
-		}
-
-		1945.1.1 = {
-			owner = GRE
-			controller = GRE
-		}
-
-
+		add_core_of = GRE
 	}
-	provinces =
-	{
-		1164 4170 9940 12058 }
-		local_supplies=0.0 
+	provinces = {
+		1164 4170 9940 12058
+	}
 }

@@ -1,6 +1,6 @@
 ﻿capital = 651 #Ufa
 
-#oob = "BSK_1936"
+##oob = "BSK_1936"
 
 set_research_slots = 3
 
@@ -13,6 +13,7 @@ set_technology = {
 	tech_engineers = 1
 	tech_military_police = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	paratroopers = 1
 	gw_artillery = 1
@@ -22,10 +23,23 @@ set_technology = {
 
 if = {
 	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+		fighter1 = 1
+		early_bomber = 1
+		strategic_bomber1 = 1
+		naval_bomber1 = 1
+	}
+}
+
+if = {
+	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
 	set_technology = {
-		modern_tank_design = 1
+		gwtank = 1
 		basic_light_tank = 1
 	}
 }
@@ -35,8 +49,6 @@ if = {
 	}
 	set_technology = {
 		gwtank_chassis = 1
-		gwtank_chassis_2 = 1
-		modern_tank_chassis_design = 1
 		basic_light_tank_chassis = 1
 	}
 }
@@ -71,20 +83,20 @@ if = {
 	}
 }
 set_politics = {
-	ruling_party = communism
+	ruling_party = democratic
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = yes
 }
 
 set_popularities = {
-	democratic = 20
+	democratic = 50
 	fascism = 10
-	communism = 50
+	communism = 20
 	neutrality = 20
 }
 
 
-recruit_character = BSK_yakov_bykin
+#recruit_character = BSK_yakov_bykin
 
 

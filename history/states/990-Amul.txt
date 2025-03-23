@@ -1,0 +1,22 @@
+state={
+	id=990
+	name="STATE_990"
+
+	history = {
+		owner = BUK
+		buildings = {
+			infrastructure = 0
+		}
+		add_core_of = BUK
+		add_core_of = SOV
+		add_core_of = UZB
+	}
+
+	provinces={
+		756 1632 9605 
+	}
+	manpower=1
+	state_category=enclave
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -16,6 +16,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -30,27 +31,6 @@ set_technology = {
 	basic_train = 1
 	armored_car1 = 1 #Fiat AB611 entered service in 1933
 }
-
-recruit_character = PAP_coi
-recruit_character = PAP_aa2
-recruit_character = PAP_democratic_guy
-recruit_character = PAP_acd2
-recruit_character = PAP_acr
-recruit_character = PAP_fascist_guy
-recruit_character = PAP_stc
-recruit_character = PAP_ncs
-recruit_character = PAP_awt
-recruit_character = PAP_mt
-recruit_character = PAP_communist_guy
-recruit_character = PAP_ai2
-recruit_character = PAP_ar
-recruit_character = PAP_acas
-recruit_character = PAP_acgs
-recruit_character = PAP_ncm
-recruit_character = PAP_nt
-recruit_character = PAP_pot
-recruit_character = PAP_nccr
-recruit_character = PAP_aco2
 if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
@@ -132,16 +112,6 @@ set_popularities = {
 }
 
 
-
-create_country_leader = {
-	name = "Pius XII"
-	picture = "portrait_ITA_papa_pio_xii.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-#
-	}
-}
 
 ### VARIANTS ###
 # 1936 Start #

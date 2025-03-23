@@ -1,0 +1,22 @@
+state={
+	id=970
+	name="STATE_970"
+
+	history = {
+		owner = AUH
+		buildings = {
+			infrastructure = 0
+		}
+		add_core_of = AUH
+		add_core_of = ROM
+		add_core_of = HUN
+	}
+
+	provinces={
+		711 3689 9668 9670 
+	}
+	manpower=1
+	state_category=enclave
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

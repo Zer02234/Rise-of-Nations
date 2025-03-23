@@ -1,793 +1,741 @@
-RON_universal_setup = yes
-  
-capital = 10
-oob = "POL_1919"
+﻿capital = 10
+
+#oob = "POL_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		#set_naval_oob = "POL_1936_naval_mtg"
+	else = {
+		#set_naval_oob = "POL_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "POL_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			aa_cannon_1 = 1
+			iw_small_airframe = 1
+			basic_small_airframe = 1
+			engines_1 = 1
+			early_bombs = 1
+		}
+	else = {
+		#set_air_oob = "POL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+			CAS1 = 1
+		}
+	}
+}
+
 set_research_slots = 3
 
-add_ideas = {
-	export_focus
-	tax_average
-	tariffs_average
-	civilian_economy
-	press_free
-	private_control
-	fdi_allowed
-	foreign_volunteers
-	train_medium
-	officer_train_low
-	security_liberty_first
-	education_budget5
-	health_budget5
-	foreign_neutral
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	trench_warfare = 1
+	fuel_silos = 1
+	synth_oil_experiments = 1
+	basic_train = 1
 }
 
 if = {
 	limit = {
-		has_start_date < 1949.01.01
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_submarine = 1	
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+	}
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_variable = {
+		var = pol_peasant_democracy
+		value = 30
+	}
+	set_variable = {
+		var = pol_peasant_communism
+		value = 30
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Poland: United and Ready"
 	}
 	add_ideas = {
-		neutrality_idea
+		uncontrolled_exports
+		POL_april_constitution_1
+		POL_looming_peasants_strike
+		POL_sanation_left_opposition_1
+		POL_sanation_right_opposition_1
 	}
 }
 
 
-
-POL = {
-	87 = {
-		add_province_modifier = {
-			static_modifiers = { DNCLodz }
-			province = {
-				id = 9508
-			}
-		}
-	}
-	10 = {
-		add_province_modifier = {
-			static_modifiers = { DNCWarsaw }
-			province = {
-				id = 3544
-			}
-		}
-	}
+85 = {
+	add_dynamic_modifier = { modifier = international_city }
 }
 
-1900.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1900.1.1"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		democratic = 18
-		fascism = 15
-		communism = 7
-		neutrality = 60
-	}
-	recruit_character = POL_tomasz_nocznicki
-	promote_character = POL_tomasz_nocznicki
-	set_party_name = { ideology = democratic  long_name = POL_liga_narodowa_long name = POL_liga_narodowa }
-
-	recruit_character = POL_rosa_luxembourg
-	promote_character = POL_rosa_luxembourg
-	set_party_name = { ideology = communism  long_name = POL_SDKPiL_long name = POL_SDKPiL }
-
-	recruit_character = POL_roman_dmowski
-	promote_character = POL_roman_dmowski
-	set_party_name = { ideology = fascism  long_name = POL_endecja_long name = POL_endecja }	
-
-	recruit_character = POL_jozef_pilsudski
-	promote_character = POL_jozef_pilsudski
-	set_party_name = { ideology = neutrality  long_name = POL_partia_socjalistyczna_long name = POL_partia_socjalistyczna }
-
-	recruit_character = POL_stanislav_poplavsky
-	recruit_character = POL_florian_siwicki
-	recruit_character = POL_jerzy_bordzilowski
-	recruit_character = POL_jerzy_zietek
-	recruit_character = POL_marian_spychalski
-	recruit_character = POL_rola_zymierski
-	recruit_character = POL_stanislaw_skalski
-
-	recruit_character = POL_marek_tomaszycki
-	recruit_character = POL_czeslaw_piatas
-	recruit_character = POL_franciszek_gagor
-	recruit_character = POL_mieczyslaw_bieniek
-	recruit_character = POL_mieczyslaw_gocul
-	recruit_character = POL_bronislaw_kwiatkowski
-	recruit_character = POL_mieczyslaw_cieniuch
-	recruit_character = POL_andrzej_korweta
-	recruit_character = POL_roman_krzyzelewski
-	recruit_character = POL_tomasz_mathera
-	recruit_character = POL_leszek_surawski
-	recruit_character = POL_zbigniew_glowienka
-	recruit_character = POL_michal_sikora
-	recruit_character = POL_jaroslaw_mika
-	recruit_character = POL_stanislaw_czosnek
-	recruit_character = POL_rajmund_andrzejczak
-	recruit_character = POL_andrzej_malinowski
-	recruit_character = POL_marek_sokolowski
-	recruit_character = POL_grzegorz_halupka
-	recruit_character = POL_ryszard_pietras
-	recruit_character = POL_stanislaw_kaczynski
-	recruit_character = POL_dariusz_zuchowski
-	recruit_character = POL_slawomir_makosa
-	recruit_character = POL_szymon_lepiarz
-	recruit_character = POL_marek_golan
-	recruit_character = POL_marcin_maj
-	recruit_character = POL_jacek_kwiatkowski
-	recruit_character = POL_bogdan_kula
-	recruit_character = POL_lech_majewski
-	recruit_character = POL_slawomir_kaluzinski
-	recruit_character = POL_slawomir_wojciechowski
-	recruit_character = POL_piotr_patalong
-	recruit_character = POL_jerzy_gut
-	recruit_character = POL_wieslaw_kukula
-	recruit_character = POL_michal_strzelecki
-	recruit_character = POL_ryszard_demczuk
-	recruit_character = POL_krzysztof_teryfter
-	recruit_character = POL_krzysztof_jaworski
-	recruit_character = POL_stanislaw_zarychta
-	recruit_character = POL_krzysztof_zdonek
-	recruit_character = POL_tadeusz_drybczewski
-
+1939.1.1 = {
+	
 	if = {
 		limit = {
-			has_start_date < 1949.01.01
+			has_dlc = "Poland: United and Ready"
 		}
-		recruit_character = POL_wladyslaw_sikorski
-		recruit_character = POL_wladyslaw_bortnowski
-		recruit_character = POL_stanislaw_kopanski
-		recruit_character = POL_wladyslaw_anders
-		recruit_character = POL_roman_abraham
-		recruit_character = POL_wincenty_kowalski
-		recruit_character = POL_stanislaw_sosabowski
-		recruit_character = POL_stanislaw_maczek
-		recruit_character = POL_edward_rydz_smigly
-		recruit_character = POL_jozef_unrug
-		recruit_character = POL_stefan_frankowski
-		recruit_character = POL_karol_korytowski
-		recruit_character = POL_jozef_haller
 
-		recruit_character = POL_kazimierz_sosnkowski
-		recruit_character = POL_zygmunt_buhusz_szysko
-		recruit_character = POL_stanislav_maczek
-		recruit_character = POL_stanislaw_pawluc
-		recruit_character = POL_xawery_czernicki
-		recruit_character = POL_jozef_zajac
-		recruit_character = POL_ludomil_rayski
-		recruit_character = POL_tomislaw_lupaszko
-		recruit_character = POL_wladyslaw_kalkus
-		recruit_character = POL_olgierd_szpakowski
-		recruit_character = POL_stanislaw_radkiewicz
-		recruit_character = POL_mieczyslaw_michalowicz
-		recruit_character = POL_eugeniusz_kwiatkowski
-		recruit_character = POL_jozef_beck
-		recruit_character = POL_jan_kowalewski
+		complete_national_focus = POL_central_region_strategy
+		complete_national_focus = POL_expansion_of_new_towns
+		complete_national_focus = POL_start_central_industrial_region
+		complete_national_focus = POL_fill_the_railways_gaps
+		complete_national_focus = POL_plan_west
+		complete_national_focus = POL_new_military_academy
+		unlock_national_focus = POL_the_four_year_plan
+		complete_national_focus = POL_national_defence_fund
+		complete_national_focus = POL_warsaw_main_railway_station
+		complete_national_focus = POL_invest_in_the_old_polish_region
+		complete_national_focus = POL_additional_research_slot1
+		complete_national_focus = POL_army_modernisation
+		complete_national_focus = POL_modernize_congressional_factories
+		unlock_national_focus = POL_prepare_for_the_next_war
+		unlock_national_focus = POL_standardisation_of_equipment
+		unlock_national_focus = POL_modernising_the_cavalry
+
+		complete_national_focus = POL_hel_fortified_area
+		complete_national_focus = POL_silesia_fortified_area
+
+		complete_national_focus = POL_air_base_expansion 
+		complete_national_focus = POL_develop_polish_ship_building 
+
+		complete_national_focus = POL_complete_april_constitution
+		complete_national_focus = POL_polish_militarism
+		complete_national_focus = POL_consolidate_sanation_government
+
+		remove_ideas = POL_looming_peasants_strike
 	}
-}
 
-1910.1.1 = {
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+
+	add_ideas = {
+		#laws
+		limited_conscription
+		partial_economic_mobilisation
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "Poland: United and Ready" }
+		}
+		add_ideas = {
+			#laws
+			limited_exports
+		}
+	}
+
+
+	
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			#set_naval_oob = "POL_1939_naval_mtg"
+		else = {
+			#set_naval_oob = "POL_1939_naval_legacy"
+		}
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			#set_air_oob = "POL_1939_air_bba"
+			set_technology = {
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				engines_2 = 1
+				improved_small_airframe = 1
+				bba_early_transport_plane = 1
+			}
+		else = {
+			#set_air_oob = "POL_1939_air_legacy"
+			set_technology = {
+				tactical_bomber1 = 1
+				early_transport_plane = 1
+			}
+		}
+	}
+
 	set_technology = {
-		tech_support = 1
-		early_infantry_weapons = 1
-		light_field_gun1 = 1
-		heavy_field_gun1 = 1
-		# Navy
-		ww1_destroyer0 = 1
-		ww1_destroyer1 = 1
-		ww1_light_cruiser1 = 1
-		ww1_light_cruiser0 = 1
-		ww1_battlecruiser0 = 1
-		ww1_battleship0 = 1
-		ww1_submarine1 = 1
-		ww1_coastal_submarine1 = 1
-		transport = 1
-		horses = 1
-		ww1_electronic_mechanical_engineering = 1
-	}
-}
-1919.1.1 = {
+		motorised_infantry = 1
+		support_weapons = 1
+		interwar_artillery = 1
 
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		construction4 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+		concentrated_industry4 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 	if = {
 		limit = {
-			has_start_date > 1918.01.01
-			has_start_date < 1920.01.01
+			NOT = {
+				has_dlc = "No Step Back"
+			}
 		}
-		create_faction = "Treaty of Warsaw"
-		add_to_faction = UKR
+		set_technology = {
+			basic_light_tank = 1
+		}
+		#set_oob = "POL_1939"
 	}
-
 	if = {
 		limit = {
-			has_start_date > 1918.1.1
-			has_start_date < 1920.1.1
-
+			
+			has_dlc = "No Step Back"
+			
 		}
-		996 = {
-			add_province_modifier = {
-				static_modifiers = { POL_curzon_line }
-				province = {
-					all_provinces = yes
-				}
-			}
+		set_technology = {
+			basic_light_tank_chassis = 1
 		}
-		92 = {
-			add_province_modifier = {
-				static_modifiers = { POL_curzon_line }
-				province = {
-					all_provinces = yes
-				}
-			}
-		}
-
-		97 = {
-			add_province_modifier = {
-				static_modifiers = { POL_curzon_line }
-				province = {
-					all_provinces = yes
-				}
-			}
-		}
-
-		997 = {
-			add_province_modifier = {
-				static_modifiers = { POL_curzon_line }
-				province = {
-					all_provinces = yes
-				}
-			}
-		}
-
-
-		POL = {
-			set_variable = { POL_PEASENT_SUPPORT = 60 }
-			set_variable = { POL_MIDDLE_SUPPORT = 20 }
-			set_variable = { POL_UPPER_SUPPORT = 20 }
-			add_ideas = {
-				pol_argacultural_society
-				pol_argacultural_society
-				POL_INT_Broken_Roads
-				mass_migration
-			}
-			puppet = DAN
-			unlock_national_focus = POL_INT_independence_day
-			complete_national_focus = POL_INT_issue_mobilization_laws
-			complete_national_focus = POL_INT_test_the_soviets
-			complete_national_focus = POL_INT_send_the_soviets_our_demands
-			complete_national_focus = POL_INT_polish_soviet_war
+		#set_oob = "POL_1939_nsb"
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_submarine = 1
+			basic_destroyer = 1
 		}
 	}
-
-	recruit_character = POL_julian_marchlewski
-	promote_character = POL_julian_marchlewski
-	retire_character = POL_rosa_luxembourg
-	set_party_name = { ideology = communism  long_name = POL_komunistyczna_partia_long name = POL_komunistyczna_partia }	
-}
-1933.1.1 = {
-	end_puppet = DAN
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_ship_hull_light = 1
+			basic_light_battery = 1
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "By Blood Alone" }
+		}
+		create_equipment_variant = {
+			name = "PZL P.43"
+			type = CAS_equipment_1
+			upgrades = {
+					plane_cas_upgrade = 0
+					plane_range_upgrade = 1
+					plane_engine_upgrade = 2
+					plane_reliability_upgrade = 1
+			}
+		}
+	}
 	if = {
 		limit = {
 			has_dlc = "By Blood Alone"
 		}
 		create_equipment_variant = {
-			name = "PZL P.11"
-			type = small_plane_airframe_7
+			name = "PZL P.43"
+			type = small_plane_cas_airframe_1
 			modules = {
-				fixed_main_weapon_slot = light_mg_4x
+				fixed_main_weapon_slot = bomb_locks
+				fixed_auxiliary_weapon_slot_1 = light_mg_2x
 				engine_type_slot = engine_1_1x
 				special_type_slot_1 = empty
 			}
 			obsolete = yes
 		}
 		create_equipment_variant = {
-			name = "PZL P.24"
-			type = small_plane_airframe_7
+			name = "PZL P.37"
+			type = medium_plane_airframe_1
 			modules = {
-				fixed_main_weapon_slot = aircraft_cannon_1_2x
-				fixed_auxiliary_weapon_slot_1 = light_mg_2x
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = empty
-			}
-		}
-		create_equipment_variant = {
-			name = "PZL P.23"
-			type = small_plane_cas_airframe_8
-			modules = {
-				fixed_main_weapon_slot = bomb_locks
-				engine_type_slot = engine_1_1x
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+				engine_type_slot = engine_2_2x
 				special_type_slot_1 = lmg_defense_turret
 			}
 		}
-	}
-	set_air_oob = "POL_1936_air_bba"
-	if = {
-		limit = {
-			has_start_date > 1932.01.01
-			has_start_date < 1946.01.01
-		}
-		add_ideas = {
-			POL_GER_border_issues
-			POL_between_two_powers
-			POL_hate_bolshevism
-			POL_great_depression
-		}
-		remove_ideas = {
-			pol_argacultural_society
-			POL_INT_Broken_Roads
-			mass_migration
-		}
-	}
-
-	oob = "POL_1933"
-	set_naval_oob = "POL_1933_naval_legacy"
-	remove_ideas = pol_argacultural_society
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1930.11.11"
-		election_frequency = 36
-		elections_allowed = no
-	}
-
-	set_popularities = {
-		democratic = 18
-		fascism = 15
-		communism = 2
-		neutrality = 65
-	}
-
-	recruit_character = POL_mieczyslaw_niedzialkowski
-	promote_character = POL_mieczyslaw_niedzialkowski
-	retire_character = POL_tomasz_nocznicki
-	set_party_name = { ideology = democratic  long_name = POL_partia_socjalistyczna_long name = POL_partia_socjalistyczna }
-
-	recruit_character = POL_maria_koszutska
-	promote_character = POL_maria_koszutska
-	retire_character = POL_julian_marchlewski
-	set_party_name = { ideology = communism  long_name = POL_komunistyczna_partia_long name = POL_komunistyczna_partia }
-
-	recruit_character = POL_joachim_stefan_bartoszewicz
-	promote_character = POL_joachim_stefan_bartoszewicz
-	retire_character = POL_roman_dmowski
-	set_party_name = { ideology = fascism  long_name = POL_stronnictwo_narodowe_long name = POL_stronnictwo_narodowe }	
-
-	recruit_character = POL_ignacy_moscicki
-	promote_character = POL_ignacy_moscicki
-	retire_character = POL_jozef_pilsudski
-	set_party_name = { ideology = neutrality  long_name = POL_sanacja name = POL_sanacja }
-
-	recruit_character = POL_anna_andersson
-	recruit_character = POL_karl_albrecht
-	recruit_character = POL_friedrich_christian
-	recruit_character = POL_august_wilhelm
-	recruit_character = POL_alexander_ferdinand
-	recruit_character = POL_hallelujah_holy_shit
-
-	POL = {
-		87 = {
-			remove_province_modifier = {
-				static_modifiers = { DNCLodz }
-				province = {
-					id = 9508
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { WW2Lodz }
-				province = {
-					id = 9508
-				}
-			}
-		}
-		10 = {
-			remove_province_modifier = {
-				static_modifiers = { DNCWarsaw }
-				province = {
-					id = 3544
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { WW2Warsaw }
-				province = {
-					id = 3544
-				}
+		create_equipment_variant = {
+			name = "PZL P.46"
+			type = small_plane_cas_airframe_2
+			modules = {
+				fixed_main_weapon_slot = bomb_locks
+				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = lmg_defense_turret_2x
 			}
 		}
 	}
 }
 
-1936.1.1 = {
-	set_air_oob = "POL_1936_air_bba"
 
-	oob = "POL_1936"
-	set_naval_oob = "POL_1936_naval_legacy"
+set_convoys = 10
 
-	# Starting tech
-	set_technology = {
-		infantry_weapons = 1
-		infantry_weapons1 = 1
-		tech_mountaineers = 1
-		tech_support = 1
-		tech_engineers = 1
-		tech_recon = 1
-		gw_artillery = 1
-		interwar_antiair = 1
-		trench_warfare = 1
-		early_destroyer = 1
-		early_submarine = 1
-	}
-	create_equipment_variant = {
-		name = "PZL P.24"
-		type = fighter_equipment_0
-		upgrades = {
-			plane_gun_upgrade = 3
-			plane_range_upgrade = 0
-			plane_engine_upgrade = 1
-			plane_reliability_upgrade = 3
-		}
-	}
-
-	recruit_character = POL_boleslaw_piasecki
-	promote_character = POL_boleslaw_piasecki
-	retire_character = POL_joachim_stefan_bartoszewicz
-	set_party_name = { ideology = fascism  long_name = POL_oboz_narodowo_radykalny_long name = POL_oboz_narodowo_radykalny }
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.9.8"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 32
+	fascism = 11
+	communism = 19
+	neutrality = 38
 }
 
 1939.1.1 = {
-	oob = "POL_1939"
-	set_naval_oob = "POL_1939_naval_legacy"
-
 	set_popularities = {
 		democratic = 13
 		fascism = 7
 		communism = 2
 		neutrality = 78
 	}
-
-	recruit_character = POL_wanda_wasilewska
-	promote_character = POL_wanda_wasilewska
-	retire_character = POL_maria_koszutska
-	set_party_name = { ideology = communism  long_name = POL_zwiazek_patriotow_polskich_long name = POL_zwiazek_patriotow_polskich }
 }
 
-1940.1.1 = {
-	recruit_character = POL_wincenty_witos
-	promote_character = POL_wincenty_witos
-	retire_character = POL_mieczyslaw_niedzialkowski
-	set_party_name = { ideology = democratic  long_name = POL_psl_piast_long name = POL_psl_piast }
+#recruit_character = POL_ignacy_moscicki
+#recruit_character = POL_wladyslaw_sikorski
+#recruit_character = POL_boleslaw_wieniawa_glugoszowski
+#recruit_character = POL_wladyslaw_gomulka
+#recruit_character = POL_maria_koszutska
+#recruit_character = POL_stanislaw_mikolajczyk
+#recruit_character = POL_wincenty_witos
+#recruit_character = POL_wladyslaw_raczkiewicz
+#recruit_character = POL_boleslaw_piasecki
+#recruit_character = POL_edward_rydzsmigly
+#recruit_character = POL_wladyslaw_bortnowski
+#recruit_character = POL_stanislaw_kopanski
+#recruit_character = POL_marian_kukiel
+#recruit_character = POL_jozef_haller
+#recruit_character = POL_stanislaw_sosabowski
+#recruit_character = POL_lucjan_zeligowski
+#recruit_character = POL_kazimierz_sosnkowski
+#recruit_character = POL_tadeusz_kutrzeba
+#recruit_character = POL_wladyslaw_anders
+#recruit_character = POL_roman_abraham
+#recruit_character = POL_wincenty_kowalski
+#recruit_character = POL_stefan_frankowski
+#recruit_character = POL_karol_korytowski
+#recruit_character = POL_jozef_unrug
+#recruit_character = POL_xawery_czernicki
+#recruit_character = POL_jozef_zajac
+#recruit_character = POL_ludomil_rayski
+#recruit_character = POL_stanislaw_pawluc
+#recruit_character = POL_stanislav_maczek
+#recruit_character = POL_wladyslaw_kalkus
+#recruit_character = POL_kazimierz_switalski
+#recruit_character = POL_wanda_wasilewska
+#recruit_character = POL_tomislaw_lupaszko
+#recruit_character = POL_zygmunt_buhusz_szysko
+#recruit_character = POL_roman_dmowski
+#recruit_character = POL_witold_pilecki
+#recruit_character = POL_irena_anders
+#recruit_character = POL_mieczyslaw_michalowicz
+#recruit_character = POL_boleslaw_bierut
+#recruit_character = POL_edward_osobka_morawski
+#recruit_character = POL_jozef_beck
+#recruit_character = POL_zdzislaw_lubomirski
+#recruit_character = POL_aleksander_kakowski
+#recruit_character = POL_stanislaw_radkiewicz
+#recruit_character = POL_jan_kowalewski
+#recruit_character = POL_eugeniusz_kwiatkowiski
+#recruit_character = POL_marian_rejewski
+#recruit_character = POL_jerzy_rutkowski
+#recruit_character = POL_karl_albrecht
+#recruit_character = POL_pavel_bermondt_avalov
+#recruit_character = POL_anna_andersson
+#recruit_character = POL_friedrich_christian
+#recruit_character = POL_rudinger_von_der_goltz
+#recruit_character = POL_vladislav_korchits
+#recruit_character = POL_wojtek
 
-	recruit_character = POL_wladyslaw_raczkiewicz
-	promote_character = POL_wladyslaw_raczkiewicz
-	retire_character = POL_ignacy_moscicki
-	set_party_name = { ideology = neutrality  long_name = POL_Raczkiewicza_long name = POL_Raczkiewicza }
+if = {
+	limit = {
+		OR = {
+			has_dlc = "No Step Back"
+			has_dlc = "Poland: United and Ready"
+		}
+	}
+	#recruit_character = POL_walery_slawek
+	#recruit_character = POL_jan_mosdorf
+	#recruit_character = POL_tadeusz_bielecki
+	#recruit_character = POL_joachim_stefan_bartoszewicz
+	#recruit_character = POL_stanislaw_wojciechowski
 }
 
-1944.1.1 = {
-	recruit_character = POL_boleslaw_bierut
-	promote_character = POL_boleslaw_bierut
-	retire_character = POL_wanda_wasilewska
-	set_party_name = { ideology = communism  long_name = POL_zwiazek_patriotow_polskich_long name = POL_zwiazek_patriotow_polskich }
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	#recruit_character = POL_henryk_floyar_rajchman
+	#recruit_character = POL_sejmik_regency
+}
+if = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+	#recruit_character = POL_jan_zumbach
 }
 
-1946.1.1 = {
-	set_politics = {
-		ruling_party = communism
-		elections_allowed = no
+if = {
+	limit = {
+		has_dlc = "La Resistance"
 	}
-	set_popularities = {
-		democratic = 45 #The PSL would have won if not for the electoral fraud
-		communism = 55
+	create_operative_leader = {
+		name = POL_roman_czerniawsi
+		GFX = GFX_portrait_roman_czerniawski
+		traits = { }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { POL }
+	}
+
+	create_operative_leader = {
+		name = POL_krystyna_skarbek
+		GFX = GFX_portrait_krystyna_skarbek
+		traits = { operative_commando operative_seducer }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { POL }
 	}
 }
 
-1949.1.1 = {
-	oob = "POL_1949"
-	set_naval_oob = "POL_1949_naval_legacy"
-	set_politics = {
-		ruling_party = communism
-		last_election = "1947.1.17"
-		election_frequency = 48
-		elections_allowed = yes
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "By Blood Alone"
+		}
 	}
-	set_popularities = {
-		democratic = 45 #The PSL would have won if not for the electoral fraud
-		communism = 55
+	create_equipment_variant = {
+		name = "PZL P.24"
+		type = fighter_equipment_0
+		upgrades = {
+			plane_gun_upgrade = 3
+			plane_range_upgrade = 0  
+			plane_engine_upgrade = 1
+			plane_reliability_upgrade = 3
+		}
+	}
+}
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "PZL P.11"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_4x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "PZL P.24"
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_1_2x
+			fixed_auxiliary_weapon_slot_1 = light_mg_2x
+			engine_type_slot = engine_2_1x
+			special_type_slot_1 = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "PZL P.23"
+		type = small_plane_cas_airframe_1
+		modules = {
+			fixed_main_weapon_slot = bomb_locks
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = lmg_defense_turret
+		}
+	}
+}
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = {
+		has_dlc = "No Step Back"
 	}
 
+	IF = {
+		limit = { has_dlc = "Poland: United and Ready"} 
+
+		create_equipment_variant = {
+			name = "TKS"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+				tank_nsb_engine_upgrade = 1
+			}
+			obsolete = yes #used for #oob
+			icon = "GFX_POL_basic_light_tank_medium"
+		}
+		create_equipment_variant = {
+			name = "7TP dw"
+			type = light_tank_chassis_0
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_hmg
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+				tank_nsb_engine_upgrade = 2
+			}
+			icon = "GFX_POL_improved_light_tank_medium"
+		}
+		create_equipment_variant = {
+			name = "7TP jw"
+			type = light_tank_chassis_0
+			parent_version = 2
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = empty
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+				tank_nsb_engine_upgrade = 2
+			}
+			icon = "GFX_POL_improved_light_tank_medium"
+		}
+	}
+
+	ELSE = {
+		create_equipment_variant = {
+			name = "TKS"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+				tank_nsb_engine_upgrade = 1
+			}
+			obsolete = yes #used for #oob
+		}
+		create_equipment_variant = {
+			name = "7TP dw"
+			type = light_tank_chassis_0
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_hmg
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+				tank_nsb_engine_upgrade = 2
+			}
+		}
+		create_equipment_variant = {
+			name = "7TP jw"
+			type = light_tank_chassis_0
+			parent_version = 2
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = empty
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+				tank_nsb_engine_upgrade = 2
+			}
+		}
+	}
+#	add_equipment_to_stockpile = {
+#		type = light_tank_chassis_0
+#		amount = 550
+#		variant_name = "TKS"
+#	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Wilk Class"				
+		type = ship_hull_submarine_2
+		name_group = POL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Wicher Class"				
+		type = ship_hull_light_1
+		name_group = POL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+}
+
+
+# 1939 Start #
+1939.1.1 = {
 	if = {
-		limit = {
-			has_start_date > 1949.01.01
-			has_start_date < 2000.01.01
-		}
-		
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
 	}
-
-	recruit_character = POL_kazimierz_switon
-	promote_character = POL_kazimierz_switon
-	retire_character = POL_wincenty_witos
-
-	recruit_character = POL_kazimierz_switon
-	promote_character = POL_kazimierz_switon
-	retire_character = POL_boleslaw_piasecki
-	set_party_name = { ideology = fascism  long_name = POL_narodowe_odrodzenie_polski_long name = POL_narodowe_odrodzenie_polski }
-
-	recruit_character = POL_august_zaleski
-	promote_character = POL_august_zaleski
-	retire_character = POL_wladyslaw_raczkiewicz
-	set_party_name = { ideology = neutrality  long_name = POL_zaleski_long name = POL_zaleski }
-
-	retire_character = POL_august_wilhelm
-	promote_character = POL_alexander_ferdinand
-	
-	POL = {
-		87 = {
-			remove_province_modifier = {
-				static_modifiers = { WW2Lodz }
-				province = {
-					id = 9508
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { CWLodz }
-				province = {
-					id = 9508
-				}
-			}
-		}
-		10 = {
-			remove_province_modifier = {
-				static_modifiers = { WW2Warsaw }
-				province = {
-					id = 3544
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { CWWarsaw }
-				province = {
-					id = 3544
-				}
-			}
-		}
-	}
-}
-
-1960.1.1 = {
-	set_politics = {
-		ruling_party = communism
-		last_election = "1957.4.16"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		communism = 56
-		democratic = 25
-		neutrality = 19
-	}
-
-	recruit_character = POL_stefan_ignar
-	promote_character = POL_stefan_ignar
-	retire_character = POL_stanislaw_mikolajczyk
-	set_party_name = { ideology = democratic  long_name = POL_zjednoczone_stronnictwo_ludowe_long name = POL_zjednoczone_stronnictwo_ludowe }
-
-	recruit_character = POL_wladyslaw_gomulka
-	promote_character = POL_wladyslaw_gomulka
-	retire_character = POL_boleslaw_bierut
-}
-
-1970.1.1 = {
-	oob = "POL_1970"
-	set_politics = {
-		ruling_party = communism
-		last_election = "1969.4.16"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-
-	recruit_character = POL_czeslaw_wycech
-	promote_character = POL_czeslaw_wycech
-	retire_character = POL_stefan_ignar
-}
-
-1980.1.1 = {
-	set_politics = {
-		ruling_party = communism
-		last_election = "1975.3.23"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-
-	recruit_character = POL_stanislaw_gucwa
-	promote_character = POL_stanislaw_gucwa
-	retire_character = POL_czeslaw_wycech
-	set_party_name = { ideology = democratic  long_name = POL_komitet_obywatelski_long name = POL_komitet_obywatelski }
-	
-	recruit_character = POL_edward_gierek
-	promote_character = POL_edward_gierek
-	retire_character = POL_wladyslaw_gomulka
-
-	recruit_character = POL_edward_bernard_raczynski
-	promote_character = POL_edward_bernard_raczynski
-	retire_character = POL_august_zaleski
-	set_party_name = { ideology = neutrality  long_name = POL_raczynski_long name = POL_raczynski }
-
-	POL_wojciech_jaruzelski = {
-		remove_unit_leader_role = yes
-	}
-}
-
-1990.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1985.11.25"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 60
-		neutrality = 25
-		communism = 10
-		fascism = 5
-	}
-	
-	recruit_character = POL_lech_walesa
-	promote_character = POL_lech_walesa
-	retire_character = POL_stanislaw_gucwa
-	set_party_name = { ideology = democratic  long_name = POL_komitet_obywatelski_long name = POL_komitet_obywatelski }
-	
-	recruit_character = POL_wojciech_jaruzelski
-	promote_character = POL_wojciech_jaruzelski
-	retire_character = POL_edward_gierek
-
-	recruit_character = POL_adam_gmurczyk
-	promote_character = POL_adam_gmurczyk
-	retire_character = POL_leszek_moczulski
-
-	recruit_character = POL_stanislaw_tyminski
-	promote_character = POL_stanislaw_tyminski
-	retire_character = POL_wojciech_jaruzelski
-	set_party_name = { ideology = neutrality  long_name = POL_partia_X name = POL_partia_X }
-
-	POL = {
-		87 = {
-			remove_province_modifier = {
-				static_modifiers = { CWLodz }
-				province = {
-					id = 9508
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { MDLodz }
-				province = {
-					id = 9508
-				}
-			}
-		}
-		10 = {
-			remove_province_modifier = {
-				static_modifiers = { CWWarsaw }
-				province = {
-					id = 3544
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { MDWarsaw }
-				province = {
-					id = 3544
-				}
-			}
-		}
-	}
-}
-
-2000.1.1 = {
-	oob = "POL_2000"
-	set_naval_oob = "POL_2000_naval_legacy"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1995.12.22"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 54
-		communism = 1
-		fascism = 3
-		neutrality = 42
-	}
-
-	recruit_character = POL_aleksander_kwasniewski
-	promote_character = POL_aleksander_kwasniewski
-	retire_character = POL_lech_walesa
-	set_party_name = { ideology = democratic  long_name = POL_sojusz_lewicy_demokratycznej_long name = POL_sojusz_lewicy_demokratycznej }
-	
-	recruit_character = POL_marcin_adam
-	promote_character = POL_marcin_adam
-	retire_character = POL_wojciech_jaruzelski
-	set_party_name = { ideology = communism  long_name = POL_komunistyczna_partia_long name = POL_komunistyczna_partia }
-
-	recruit_character = POL_andrzej_lepper
-	promote_character = POL_andrzej_lepper
-	retire_character = POL_adam_gmurczyk
-	set_party_name = { ideology = fascism  long_name = POL_samoobrona_long name = POL_samoobrona }
-
-	recruit_character = POL_wojciech_jaruzelski
-	promote_character = POL_wojciech_jaruzelski
-	retire_character = POL_edward_gierek
-	set_party_name = { ideology = neutrality  long_name = POL_stronnictwo_konserwatywno_ludowe_long name = POL_stronnictwo_konserwatywno_ludowe }
-
-	###generals###
-
 	if = {
-		limit = {
-			has_start_date > 2000.01.01
+		limit = { has_dlc = "Man the Guns" }
+		# Submarines #
+		create_equipment_variant = {
+			name = "Orzel Class"				
+			type = ship_hull_submarine_2
+			name_group = POL_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = ship_torpedo_sub_2
+			}
 		}
-		
-	}
-}
-2008.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "2005.6.20"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 53
-		communism = 0
-		fascism = 1
-		neutrality = 46
-	}
-
-	recruit_character = POL_bronislaw_komorowski
-	promote_character = POL_bronislaw_komorowski
-	retire_character = POL_aleksander_kwasniewski
-	set_party_name = { ideology = democratic  long_name = POL_platforma_obywatelska_long name = POL_platforma_obywatelska }
-
-	recruit_character = POL_lech_kaczynski
-	promote_character = POL_lech_kaczynski
-	retire_character = POL_wojciech_jaruzelski
-	set_party_name = { ideology = neutrality  long_name = POL_prawo_sprawiedliwosc_long name = POL_prawo_sprawiedliwosc }
-}
-2010.1.1 = {
-	recruit_character = POL_jaroslaw_kaczynski
-	promote_character = POL_jaroslaw_kaczynski
-	retire_character = POL_lech_kaczynski #neutrality, retire date is smolensk disaster
-}
-2013.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2010.6.20"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-}
-2016.1.1 = {
-	oob = "POL_2016"
-	set_naval_oob = "POL_2016_naval_legacy"
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "2015.8.6"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 51
-		fascism = 3
-		neutrality = 46
-	}
-	recruit_character = POL_andrzej_duda
-	promote_character = POL_andrzej_duda
-	retire_character = POL_jaroslaw_kaczynski
-
-	recruit_character = POL_janusz_korwin_mikke
-	promote_character = POL_janusz_korwin_mikke
-	retire_character = POL_andrzej_lepper
-	set_party_name = { ideology = fascism  long_name = POL_korwin_long name = POL_korwin }
-}
-
-2020.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "2020.8.6"
-		election_frequency = 60
-		elections_allowed = yes
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Grom Class"					
+			type = ship_hull_light_2
+			name_group = POL_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_mine_layer_1
+				rear_1_custom_slot = ship_depth_charge_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Gryf Class"						# minelaying craft
+			type = ship_hull_light_2
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = ship_mine_layer_1
+				rear_1_custom_slot = ship_mine_layer_1
+			}
+		}
 	}
 }

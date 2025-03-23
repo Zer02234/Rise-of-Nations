@@ -1,11 +1,17 @@
-state = {
-	id = 85
-	name = "STATE_85"
+state={
+	id=85
+	name="STATE_85"
 
-	history = {
+	history={
 		owner = GER
 		victory_points = {
-			362 10
+			362 10 
+		}
+		victory_points = {
+			3295 5 
+		}
+		victory_points = {
+			279 1 
 		}
 		buildings = {
 			infrastructure = 6
@@ -20,40 +26,19 @@ state = {
 
 		}
 		add_core_of = GER
-		add_core_of = DAN
-		add_core_of = POL
-		add_core_of = PRE
-
-		1910.1.1 = {
-			owner = GER
-			controller = GER
-		}
-		1918.11.11 = {
-			owner = DAN
-			controller = DAN
-			remove_core_of = GER
-		}
+		add_core_of = DNZ
 		1938.3.12 = {
 			add_claim_by = GER
 
 		}
 
-		1940.1.1 = { owner = GER controller = GER }
-
-		1945.1.1 = {
-			owner = GER
-			controller = GER
-		}
-
-		1946.1.1 = { owner = POL controller = POL remove_core_of = GER }
-
 	}
 
-	provinces = {
-		362
+	provinces={
+		362 
 	}
-	manpower = 330000
-	buildings_max_level_factor = 1.000
-	state_category = city
-	local_supplies=0.0 
+	manpower=1080100
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
 }

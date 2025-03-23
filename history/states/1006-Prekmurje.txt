@@ -1,0 +1,24 @@
+state={
+	id=1006
+	name="STATE_1006"
+
+	history = {
+		owner = AUH
+		buildings = {
+			infrastructure = 5
+		}
+		victory_points = {
+			6672 1 
+		}
+		add_core_of = AUH
+		add_core_of = SLV
+	}
+
+	provinces={
+		6672 
+	}
+	manpower=67395
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,5 +1,3 @@
-RON_universal_setup = yes
-  
 capital = 4
 oob = "AUH_1900"
 set_research_slots = 3
@@ -58,23 +56,14 @@ set_variable = {
 	ROM_support = 55
 }
 set_stability = 0.5
-### WW1 Start Date
+
 add_ideas = {
+	AUH_backward_navy_industry
+	AUH_inexperenced_colonial_administrators
+	AUH_unequal_union
 	multi_ethnic
 	AUH_ww1_House_Habsburg_Lorraine
 }
-
-if = {
-	limit = {
-		has_start_date < 1920.01.01
-	}
-	add_ideas = {
-		AUH_backward_navy_industry
-		AUH_inexperenced_colonial_administrators
-		AUH_unequal_union
-	}
-}
-
 
 set_politics = {
 	ruling_party = neutrality
@@ -90,6 +79,7 @@ set_popularities = {
 }
 
 recruit_character = AUH_franz_joseph_i
+recruit_character = AUH_karl_i
 recruit_character = AUH_heinrich_ritter_von_wittek
 recruit_character = AUH_george_ritter_von_schonerer
 recruit_character = AUH_franz_ferdinand_i
@@ -171,17 +161,18 @@ if = {
 	limit = {
 		has_start_date < 1910.01.01
 	}
-	puppet = BOS
+	set_autonomy = {
+		target = BOS
+		autonomous_state = autonomy_integrated_puppet
+	}
 }
 
 1907.2.1 = {
- recruit_character = AUH_hans_knirsch
+	recruit_character = AUH_hans_knirsch
+	retire_character = AUH_george_ritter_von_schonerer
 }
 
-1907.2.2 = {
- retire_character = AUH_george_ritter_von_schonerer
-}
-
+### WW1 Start Date
 1910.1.1 = {
 	oob = "AUH_1910"
 	set_politics = {
@@ -196,8 +187,6 @@ if = {
 		communism = 5
 		neutrality = 64
 	}
-
- recruit_character = AUH_karl_i
 
 	set_technology = {
 		tech_support = 1
@@ -252,19 +241,16 @@ if = {
 }
 
 1916.11.21 = {
- retire_character = AUH_franz_joseph_i
+	retire_character = AUH_franz_joseph_i
 }
 
 1920.1.2 = {
- recruit_character = AUH_adolf_hitler
+	recruit_character = AUH_adolf_hitler
+	retire_character = AUH_hans_knirsch
 }
 
-1920.1.2 = {
- retire_character = AUH_hans_knirsch
-}
-
-1930.1.1 = {
- recruit_character = AUH_otto_von_habsburg
+1924.1.1 = {
+	recruit_character = AUH_otto_von_habsburg
 }
 
 ### END OF WW1 Start Date

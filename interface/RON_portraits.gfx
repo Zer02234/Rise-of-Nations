@@ -1,0 +1,222 @@
+spriteTypes = {
+
+	### China
+
+	spriteType = {
+		name = "GFX_portrait_China_Dowager_Cixi"
+		texturefile = "gfx/leaders/CHI/DNC/Portrait_China_Dowager_Cixi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_China_Guangxu_Emperor"
+		texturefile = "gfx/leaders/CHI/DNC/Portrait_China_Guangxu_Emperor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_China_Zaifeng"
+		texturefile = "gfx/leaders/CHI/DNC/Portrait_China_Zaifeng.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_China_Puyi_1908"
+		texturefile = "gfx/leaders/CHI/DNC/Portrait_China_Puyi_1908.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_China_Yikuang"
+		texturefile = "gfx/leaders/CHI/DNC/Portrait_China_Yikuang.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_China_Kang_Youwei"
+		texturefile = "gfx/leaders/CHI/DNC/Portrait_China_Kang_Youwei.dds"
+	}
+
+	### Germany
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Wilhelm_II_DNC"
+		texturefile = "gfx/leaders/GER/DNC/Portrait_Germany_Wilhelm_II.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Wilhelm_II_army_DNC"
+		texturefile = "gfx/leaders/GER/DNC/Portrait_Germany_Wilhelm_II_army.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_August_Bebel"
+		texturefile = "gfx/leaders/GER/DNC/Portrait_Germany_August_Bebel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Rosa_Luxemburg"
+		texturefile = "gfx/leaders/GER/DNC/Portrait_Germany_Rosa_Luxemburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Wilhelm_III_WW1"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Wilhelm_III.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Karl_Liebknecht"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Karl_Liebknecht.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Friedrich_Ebert"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Friedrich_Ebert.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Erich_Ludendorff_WW1"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Erich_Ludendorff.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_August_von_Mackensen_WW1"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_August_von_Mackensen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Karl_von_Bulow"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Karl_von_Bulow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Paul_von_Hindenburg_WW1"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Paul_von_Hindenburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Remus_von_Woyrsch"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Remus_von_Woyrsch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Albrecht_von_Wurttemberg"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Albrecht_von_Wurttemberg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Erich_von_Falkenhayn"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Erich_von_Falkenhayn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Felix_Graf_von_Bothmer"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Felix_Graf_von_Bothmer.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Helmuth_von_Moltke"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Helmuth_von_Moltke.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Hermann_von_Eichorn"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Hermann_von_Eichorn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Alexander_von_Kluck"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Alexander_von_Kluck.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Friedrich_Sixt_von_Armin"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Friedrich_Sixt_von_Armin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Ferdinand_von_Quast"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Ferdinand_von_Quast.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Hermann_von_Francois"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Hermann_von_Francois.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Paul_von_Lettow_Vorbeck_WW1"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Paul_von_Lettow_Vorbeck.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Karl_von_Einem"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Karl_von_Einem.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Leopold_von_Wittelsbach"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Leopold_von_Wittelsbach.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Rupprecht_von_Wittelsbach_WW1"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Rupprecht_von_Wittelsbach.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Fritz_von_Below"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Fritz_von_Below.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Alfred_von_Tirpitz"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Alfred_von_Tirpitz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Franz_von_Hipper"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Franz_von_Hipper.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Hugo_von_Pohl"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Hugo_von_Pohl.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Wilhelm_Souchon"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Wilhelm_Souchon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Maximilian_von_Spee"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Maximilian_von_Spee.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Adolf_von_Trotha"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Adolf_von_Trotha.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Ludwig_von_Reuter"
+		texturefile = "gfx/leaders/GER/WW1/Portrait_Germany_Ludwig_von_Reuter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Weimar_Council"
+		texturefile = "gfx/leaders/GER/INT/Portrait_Germany_Weimar_Council.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Kurt_von_Schleicher"
+		texturefile = "gfx/leaders/GER/INT/Portrait_Germany_Kurt_von_Schleicher.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Wolfgang_Kapp"
+		texturefile = "gfx/leaders/GER/INT/Portrait_Germany_Wolfgang_Kapp.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_Germany_Ernst_Thalmann"
+		texturefile = "gfx/leaders/GER/INT/Portrait_Germany_Ernst_Thalmann.dds"
+	}
+
+}

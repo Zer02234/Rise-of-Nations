@@ -1,0 +1,21 @@
+state={
+	id=948
+	name="STATE_948"
+
+	history = {
+		owner = AUH
+		buildings = {
+			infrastructure = 6
+		}
+		add_core_of = AUH
+		add_core_of = AUS
+	}
+
+	provinces={
+		688 3675 
+	}
+	manpower=532418
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

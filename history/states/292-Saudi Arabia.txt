@@ -1,39 +1,35 @@
-state = {
-	id = 292
-	name = "STATE_292"
 
-	history = {
+state={
+	id=292
+	name="STATE_292"
+	resources={
+		oil=3.000
+	}
+
+	history={
 		owner = SAU
 		buildings = {
 			infrastructure = 1
 			arms_factory = 1
 			industrial_complex = 1
+			12702 = {
+				naval_base = 6
+
+			}
 
 		}
 		victory_points = {
-			12727 5
+			12727 10 
 		}
 		add_core_of = SAU
-		add_core_of = JBS
-
-		1910.1.1 = {
-			owner = SAU
-			controller = SAU
-		}
-
-		1920.1.1 = {
-			owner = SAU
-			controller = SAU
-		}
 
 	}
 
-	provinces = {
-		5024 5093 7995 8004 8060 10850 10892 12727 12813 12870
+	provinces={
+		2090 4932 5024 5093 7995 8004 8060 10748 10850 10892 10923 12727 12749 12813 12870 14414 14418 14423 14443 14446 
 	}
-	manpower = 410000
-	buildings_max_level_factor = 1.000
-	state_category = rural
-
-	local_supplies=0.0
+	manpower=1280000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

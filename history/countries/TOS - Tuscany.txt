@@ -1,34 +1,12 @@
 ﻿capital = 162
 
-
-
 set_research_slots = 3
 set_stability = 0.5
 set_war_support = 0.5
-add_ideas = {
-}
 
-recruit_character = TOS_Pietro_Ferdinando
-recruit_character = TOS_coi
-recruit_character = TOS_aa2
-recruit_character = TOS_democratic_guy
-recruit_character = TOS_acd2
-recruit_character = TOS_acr
-recruit_character = TOS_fascist_guy
-recruit_character = TOS_stc
-recruit_character = TOS_ncs
-recruit_character = TOS_awt
-recruit_character = TOS_mt
-recruit_character = TOS_communist_guy
-recruit_character = TOS_ai2
-recruit_character = TOS_ar
-recruit_character = TOS_acas
-recruit_character = TOS_acgs
-recruit_character = TOS_ncm
-recruit_character = TOS_nt
-recruit_character = TOS_pot
-recruit_character = TOS_nccr
-recruit_character = TOS_aco2
+add_ideas = {
+
+}
 
 # Starting tech
 set_technology = {
@@ -37,6 +15,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -51,7 +30,8 @@ set_technology = {
 	basic_train = 1
 	armored_car1 = 1 #Fiat AB611 entered service in 1933
 }
-if = {
+
+IF = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
@@ -60,7 +40,7 @@ if = {
 		basic_light_tank = 1
 	}
 }
-if = {
+IF = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
@@ -69,13 +49,13 @@ if = {
 		basic_light_tank_chassis = 1
 	}
 }
-if = {
+IF = {
 	limit = {
 		has_dlc = "Battle for the Bosporus"
 	}
 	set_technology = { camelry = 1 }
 }
-if = {
+IF = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 		set_technology = {
 		early_submarine = 1
@@ -88,7 +68,7 @@ if = {
 		transport = 1
 	}
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
 		basic_naval_mines = 1
@@ -116,6 +96,7 @@ if = {
 }
 
 
+
 set_convoys = 60
 
 set_politics = {
@@ -124,6 +105,7 @@ set_politics = {
 	election_frequency = 60
 	elections_allowed = no
 }
+
 set_popularities = {
 	democratic = 30
 	fascism = 5
@@ -131,31 +113,23 @@ set_popularities = {
 	neutrality = 60
 }
 
-create_country_leader = {
-	name = "Peter Ferdinand von Habsburg"
-	picture = "gfx/leaders/TOS/Portrait_TUS_Pietro_Ferdinando.png"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-#
-	}
-}
-
+#recruit_character = TOS_joseph_ferdinand_von_habsburg
 
 ### VARIANTS ###
 # 1936 Start #
 #plane variants
 create_equipment_variant = {
-		name = "CR.42"
-		type = fighter_equipment_0
-		upgrades = {
-			plane_gun_upgrade = 1
-			plane_range_upgrade = 0  
-			plane_engine_upgrade = 2
-			plane_reliability_upgrade = 1
-		}
+	name = "CR.42"
+	type = fighter_equipment_0
+	upgrades = {
+		plane_gun_upgrade = 1
+		plane_range_upgrade = 0  
+		plane_engine_upgrade = 2
+		plane_reliability_upgrade = 1
+	}
 }
-if = {
+
+IF = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
@@ -177,7 +151,7 @@ if = {
 		icon = "GFX_ITA_basic_light_tank_medium"
 	}
 }
-if = {
+IF = {
 	limit = {
 		NOT = { has_dlc = "Man the Guns" }
 	}
@@ -262,7 +236,7 @@ if = {
 		}
 	}
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns"}
 	### Battleship Variants	
 	create_equipment_variant = {			# original configuration of class pre-refit (refit in 1937-40)

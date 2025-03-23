@@ -1,0 +1,25 @@
+state={
+	id=1004
+	name="STATE_1004"
+
+	history = {
+		owner = AUH
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+		}
+		victory_points = {
+			9627 5
+		}
+		add_core_of = AUH
+		add_core_of = SLV
+	}
+
+	provinces={
+		6650 9627 
+	}
+	manpower=596745
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

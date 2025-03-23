@@ -2,39 +2,31 @@
 state={
 	id=346
 	name="STATE_346"
+	manpower = 849453
+	
+	state_category = town
 
 	history={
 		owner = OTT
 		buildings = {
 			infrastructure = 3
 			air_base = 5
-
+		}
+		
+		victory_points = {
+			9861 7
 		}
 		victory_points = {
-			940 1 
+			6807 3
 		}
-		add_core_of = TUR
+		victory_points = {
+			784 1
+		}
 		add_core_of = OTT
-		1910.1.1 = {
-			owner = OTT
-			controller = OTT
-
-		}
-		1920.1.1 = {
-			owner = TUR
-			controller = TUR
-
-		}
-		1919.7.1 = {
-			owner = TUR
-			controller = TUR
-		}
+		add_core_of = TUR
 	}
 
 	provinces={
-		940 3788 6807 6894 7143 9755 9763 9811 11792 11860 13122 
+		784 869 940 3788 3876 6807 6894 9755 9763 9811 9861 11792 11860 13122 
 	}
-	manpower=430305
-	buildings_max_level_factor=1.000
-	state_category=rural
 }

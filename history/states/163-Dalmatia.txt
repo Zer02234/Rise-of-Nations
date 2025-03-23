@@ -1,56 +1,27 @@
-state = {
-	id = 163
-	name = "STATE_163"
-
-	history = {
+state=
+{
+	id=163
+	name="STATE_163"
+	manpower = 18000
+	
+	state_category = enclave
+	
+	history={
 		owner = AUH
-		add_core_of = YUG
-		add_core_of = CRO
-		add_core_of = AUH
-		1910.1.1 = {
-			owner = AUH
-			controller = AUH
-
-		}
-		1918.11.11 = {
-			owner = ITA
-			controller = ITA
-			#remove_core_of = AUH
-		}
-
-		1944.1.1 = {
-			owner = CRO
-			controller = CRO
-		}
-
-		1946.1.1 = {
-			owner = YUG
-			controller = YUG
-		}
-
-		1991.1.1 = {
-			owner = CRO
-			controller = CRO
-		}
-		victory_points = {
-			13269 1
-		}
 		buildings = {
 			infrastructure = 5
-			13269 = {
+			3943 = {
 				naval_base = 1
-
 			}
-
 		}
-
+		add_core_of = AUH
+		add_core_of = CRO
+		1918.11.4 = {
+			owner = ITA
+			start_resistance = CRO #Yugoslavia shouldn't resist occupation
+		}
 	}
-
-	provinces = {
-		13269
+	provinces={	
+		3943 
 	}
-	manpower = 18000
-	buildings_max_level_factor = 1.000
-	state_category = enclave
-	local_supplies=0.0 
 }

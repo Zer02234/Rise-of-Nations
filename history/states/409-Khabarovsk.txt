@@ -1,17 +1,14 @@
-state = {
-	id = 409
-	name = "STATE_409"
-	manpower = 274304
-	resources = {
-		chromium = 9 # was: 12
+state={
+	id=409
+	name="STATE_409"
+	resources={
+		chromium=9.000
 	}
 
-	state_category = rural
-
-	history = {
+	history={
 		owner = RUS
 		victory_points = {
-			12189 1
+			12189 1 
 		}
 		buildings = {
 			infrastructure = 3
@@ -19,19 +16,20 @@ state = {
 			air_base = 4
 			9604 = {
 				naval_base = 1
+
 			}
+
 		}
 		add_core_of = RUS
-		set_state_flag = RUS_core 
-		add_core_of = SOV 
-		add_core_of = GUK
+		add_core_of = SOV
 
-		1918.11.11 = { owner = GUK controller = GUK } 
-		1923.1.1 = { owner = SOV controller = SOV } 
-		1992.1.1 = { owner = RUS controller = RUS remove_core_of = GUK }
 	}
 
-	provinces = {
-		725 739 753 1267 1325 1343 1397 1504 3756 3963 4404 6774 7249 7266 7309 9589 9604 9733 9749 10466 11575 11719 12136 12189
+	provinces={
+		725 739 753 1267 1325 1343 1397 1504 3756 3963 4404 4841 6774 7249 7266 7309 7868 9589 9604 9733 9749 10466 11575 11719 12136 12189 
 	}
+	manpower=295605
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

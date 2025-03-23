@@ -1,0 +1,27 @@
+
+state={
+	id=351
+	name="STATE_351"
+
+	history={
+		owner = RUS
+		buildings = {
+			infrastructure = 4
+
+		}
+		add_core_of = RUS
+		add_core_of = SOV
+		victory_points = {
+			9131 3 
+		}
+
+	}
+
+	provinces={
+		60 75 81 129 160 163 166 3057 3124 3154 3157 3160 3175 6017 6073 6097 6182 6189 9102 9131 9199 9207 11036 11062 11103 11107 11168 11177 11189 11213 
+	}
+	manpower=2002100
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

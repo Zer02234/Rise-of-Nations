@@ -1,13 +1,15 @@
-state = {
-	id = 764
-	name = "STATE_764"
+
+state={
+	id=764
+	name="STATE_764"
 	manpower = 585579
 	state_category = rural
 
-	history = {
-		owner = AUH
+	history={
+		owner = YUG
+		controller = YUG
 		victory_points = {
-			11787 1
+			3614 1
 		}
 
 		buildings = {
@@ -15,34 +17,10 @@ state = {
 		}
 		add_core_of = YUG
 		add_core_of = SER
-		add_core_of = AUH
-		1910.1.1 = {
-			owner = AUH
-			controller = AUH
-		}
-		1918.11.11 = {
-			owner = YUG
-			controller = YUG
-			#remove_core_of = AUH
-		}
-
-		1941.1.1 = {
-			owner = SER
-			controller = SER
-		}
-
-		1945.1.1 = {
-			owner = YUG
-			controller = YUG
-		}
-
-		2003.1.1 = {
-			owner = SER
-			controller = SER
-		}
+		add_core_of = TRA
 	}
 
-	provinces = {
+	provinces={
 		614 3614 6643 11787
 	}
 }

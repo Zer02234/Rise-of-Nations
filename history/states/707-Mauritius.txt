@@ -1,12 +1,11 @@
-state = {
-	id = 707
-	name = "STATE_707"
+state={
+	id=707
+	name="STATE_707"
 	manpower = 404458
-
+	
 	state_category = small_island
 
-	history = {
-		add_core_of = MAU
+	history={
 		owner = ENG
 		buildings = {
 			infrastructure = 3
@@ -14,13 +13,9 @@ state = {
 				naval_base = 1
 			}
 		}
-		1968.1.1 = {
-			owner = MAU
-			controller = MAU
-		}
 	}
-
-	provinces = {
-		13018
+	
+	provinces={
+		13018 
 	}
 }

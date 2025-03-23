@@ -16,6 +16,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -30,27 +31,6 @@ set_technology = {
 	basic_train = 1
 	armored_car1 = 1 #Fiat AB611 entered service in 1933
 }
-
-recruit_character = SPM_coi
-recruit_character = SPM_aa2
-recruit_character = SPM_democratic_guy
-recruit_character = SPM_acd2
-recruit_character = SPM_acr
-recruit_character = SPM_fascist_guy
-recruit_character = SPM_stc
-recruit_character = SPM_ncs
-recruit_character = SPM_awt
-recruit_character = SPM_mt
-recruit_character = SPM_communist_guy
-recruit_character = SPM_ai2
-recruit_character = SPM_ar
-recruit_character = SPM_acas
-recruit_character = SPM_acgs
-recruit_character = SPM_ncm
-recruit_character = SPM_nt
-recruit_character = SPM_pot
-recruit_character = SPM_nccr
-recruit_character = SPM_aco2
 if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
@@ -132,16 +112,6 @@ set_popularities = {
 }
 
 
-create_country_leader = {
-	name = "Vittorio Emanuele III"
-	desc = "POLITICS_VITTORIO_EMANUELE_III_DESC"
-	picture = "portrait_ITA_vittorio_emanuele_III.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-#
-	}
-}
 
 ### VARIANTS ###
 # 1936 Start #

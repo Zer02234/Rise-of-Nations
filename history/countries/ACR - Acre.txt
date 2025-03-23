@@ -1,5 +1,3 @@
-RON_universal_setup = yes
-  
 capital = 912
 oob = "ACR_1900"
 set_convoys = 5
@@ -17,66 +15,33 @@ set_popularities = {
 	neutrality = 33
 }
 
-1900.1.1 = {
-	recruit_character = ACR_luis_galvez_rodriguez
-	promote_character = ACR_luis_galvez_rodriguez
-	add_ideas = Brazilian_colonists
+add_ideas = {
+	export_focus
+	tax_average
+	tariffs_high
+	low_economic_mobilisation
+	press_censored
+	major_industries
+	fdi_regulated
+	security_minor_restrictions
+	foreign_legion
+	train_low
+	age_18
+	age_35
+	officer_train_none
+	education_budget3
+	foreign_neutral
 
-	recruit_character = ACR_jose_placido_de_castro
-	ACR_jose_placido_de_castro = {
-		unit_leader_event = { id = generic.207 days = 3142}
-	}
-	recruit_character = ACR_antonio_de_sousa_braga
-	recruit_character = ACR_assembly		
+	ACR_brazilian_colonists
 }
 
-1910.1.1 = {
-	oob = "generic_1910"
+recruit_character = ACR_luis_galvez_rodriguez
+recruit_character = ACR_jose_placido_de_castro
+recruit_character = ACR_antonio_de_sousa_braga
+recruit_character = ACR_assembly
 
+1910.1.1 = {
 	retire_character = ACR_luis_galvez_rodriguez
 	retire_character = ACR_jose_placido_de_castro
 	retire_character = ACR_antonio_de_sousa_braga
-}
-
-1933.1.1 = {
-	set_air_oob = "ACR_1936_air_bba"
-	
-}
-
-1949.1.1 = {
-	SUR = {
-		309 = {
-			remove_province_modifier = {
-				static_modifiers = { WW2Paramaribo }
-				province = {
-					id = 10906
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { CWParamaribo }
-				province = {
-					id = 10906
-				}
-			}
-		}
-	}
-}
-
-2000.1.1 = {
-	SUR = {
-		309 = {
-			remove_province_modifier = {
-				static_modifiers = { CWParamaribo }
-				province = {
-					id = 10906
-				}
-			}
-			add_province_modifier = {
-				static_modifiers = { MDParamaribo }
-				province = {
-					id = 10906
-				}
-			}
-		}
-	}
 }

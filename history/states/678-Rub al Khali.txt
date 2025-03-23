@@ -1,10 +1,9 @@
-state = {
-	id = 678
-	name = "STATE_678"
 
-	impassable = yes
+state={
+	id=678
+	name="STATE_678"
 
-	history = {
+	history={
 		owner = SAU
 		buildings = {
 			infrastructure = 0
@@ -14,10 +13,11 @@ state = {
 
 	}
 
-	provinces = {
-		5081 8030 8118 10870 12740 12768
+	provinces={
+		5081 8118 12740 12768 
 	}
-	manpower = 42
-	buildings_max_level_factor = 1.000
-	state_category = wasteland
+	manpower=42
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
 }

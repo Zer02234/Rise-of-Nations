@@ -1,74 +1,5 @@
-RON_universal_setup = yes
-  
-capital = 266
+﻿capital = 266
 oob = "PER_1900"
-add_ideas = {
-	export_focus
-	tax_low
-	tariffs_average
-	civilian_economy
-	press_regulated
-	key_industries
-	fdi_allowed
-	foreign_volunteers
-	train_none
-	officer_train_none
-	security_minor_restrictions
-	education_budget2
-	health_budget2
-	foreign_isolationism
-}
-
-set_technology = {
-	tech_support = 1
-	early_infantry_weapons = 1
-	light_field_gun1 = 1
-	heavy_field_gun1 = 1
-	# Navy
-	ww1_destroyer0 = 1
-	ww1_destroyer1 = 1
-	ww1_light_cruiser1 = 1
-	ww1_light_cruiser0 = 1
-	ww1_battlecruiser0 = 1
-	ww1_battleship0 = 1
-	ww1_submarine1 = 1
-	ww1_coastal_submarine1 = 1
-	transport = 1
-	horses = 1
-	ww1_electronic_mechanical_engineering = 1
-}
-create_dynamic_country = {
-	original_tag = PER
-	set_cosmetic_tag = PER_SPE
-	set_politics = {
-		ruling_party = communism
-		last_election = "1907.1.12"
-		election_frequency = 60
-		elections_allowed = no
-	}
-
-	set_popularities = {
-		democratic = 10
-		communism = 30
-		neutrality = 60
-	}
-
-	create_country_leader = {
-		name = "Mirza Kuchak Khan"
-		desc = "POLITICS_Shahumyan_DESC"
-		picture = "Mirza_Kuchik_Khan.dds"
-	
-		ideology = leninism
-	}
-	
-}
-if = {
-	limit = {
-		has_start_date < 1926.01.01
-	}
-	set_cosmetic_tag = PER_SUBLIME
-}
-
 set_convoys = 10
 
 set_politics = {
@@ -83,86 +14,88 @@ set_popularities = {
 	islamism = 20
 }
 
-recruit_character = PER_mozaffar_ad_din_shah_qajar
-recruit_character = PER_mohammed_ali_shah_qajar
-recruit_character = PER_ahmad_shah_qajar
-recruit_character = PER_mohammad_hassan_mirza_qajar
-recruit_character = PER_soleyman_eskandari
-recruit_character = PER_hassan_modarres
-recruit_character = PER_reza_khan
-recruit_character = PER_abdollah_amir_tahmasebi
-recruit_character = PER_karim_buzarjomehri
-recruit_character = PER_mohammad_taqi_pessian
-recruit_character = PER_mahmud_khan_puladeen
-recruit_character = PER_mohammad_hosayn_ayrom
-recruit_character = PER_ali_akbar_davar
-recruit_character = PER_reza_shah_pahlavi
-recruit_character = PER_mohammad_reza_pahlavi
+IF = {
+	limit = {
+		has_dlc = "Graveyard of Empires"
+	}
+
+	#recruit_character = PER_reza_shah_pahlavi
+	#recruit_character = PER_mohammed_reza_pahlavi
+	#recruit_character = PER_mohammad_ali_foroughi
+	#recruit_character = PER_ali_dashti
+	#recruit_character = PER_zia_ol_din_tabatabee
+	#recruit_character = PER_mohammad_mosaddegh
+	#recruit_character = PER_iraj_eskandari
+	#recruit_character = PER_soleiman_eskandari
+	#recruit_character = PER_ruhollah_khomeini
+	#recruit_character = PER_fakhrafagh_parsa
+	#recruit_character = PER_andre_godard
+	#recruit_character = PER_arthur_millspaugh
+	#recruit_character = PER_ardeshir_ovanessian
+	#recruit_character = PER_ali_akbar_davar
+	#recruit_character = PER_abdolhossein_hazhir
+	#recruit_character = PER_teymur_bakhtiar
+	#recruit_character = PER_ahmad_ahmadi
+	#recruit_character = PER_nikolai_markov
+	#recruit_character = PER_bahram_aryana
+	#recruit_character = PER_gholam_ali_oveissi
+	#recruit_character = PER_ahmad_amir_ahmadi
+	#recruit_character = PER_fazlollah_zahedi
+	#recruit_character = PER_ali_akbar_derakhshani
+	#recruit_character = PER_ghulam_yahya_daneshian
+	#recruit_character = PER_jafar_kavian
+	#recruit_character = PER_ahmad_khan_nakhjavan
+	#recruit_character = PER_gholamali_bayandor
+	#recruit_character = PER_azad_hashemi
+	#recruit_character = PER_abdollah_zelli
+	#recruit_character = PER_abbas_darja_nawardi
+	#recruit_character = PER_fawzia_faud
+	#recruit_character = PER_teymourtash
+	#recruit_character = PER_irandokht
+	#recruit_character = PER_davud_monshizadeh
+	#recruit_character = PER_hasan_arfa
+	#recruit_character = PER_abol_ghasem_kashani
+	#recruit_character = PER_generic_non_aligned
+	#recruit_character = PER_sky_guy
+	#recruit_character = PER_land_guy
+
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Graveyard of Empires"
+			}
+		}
+		#recruit_character = PER_reza_shah_pahlavi
+		#recruit_character = PER_soleyman_mirza_eskandari
+		#recruit_character = PER_hasan_arfa
+		#recruit_character = PER_dalir_pesyan
+		#recruit_character = PER_sohrab_tahmasebi
+		#recruit_character = PER_mir_afkhami
+		#recruit_character = PER_ahmad_khan_nakhjavan
+		#recruit_character = PER_reza_mizani
+		#recruit_character = PER_ali_razmara
+		#recruit_character = PER_hassan_majid_firooz
+		#recruit_character = PER_ahmad_mira_khosravani
+		#recruit_character = PER_ahmad_khan_nakhjaavan
+		#recruit_character = PER_mohammed_nakhjavani
+		#recruit_character = PER_abdolreza_afkhami
+		#recruit_character = PER_fazlollah_zahedi
+		#recruit_character = PER_mohammed_reza_pahlavi
+		#recruit_character = PER_ali_akbar_deiva
+		#recruit_character = PER_hossein_afkhami
+		#recruit_character = PER_ali_zohayli
+		#recruit_character = PER_mahmud_jam
+		#recruit_character = PER_ali_khan_mansour
+	}
+}
 
 1910.1.1 = {
-	oob = "PER_1910"
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1910.1.1"
-		election_frequency = 60
-		elections_allowed = no
-	}
-
-	set_popularities = {
-		neutrality = 100
-	}
-
-	retire_character = PER_mozaffar_ad_din_shah_qajar
-}
-
-1914.1.1 = {
-	oob = "PER_1914"
-}
-
-1917.1.1 = {
-	recruit_character = PER_fazlollah_zahedi
-}
-
-1921.1.1 = {
-	retire_character = PER_mohammad_taqi_pessian
-	retire_character = PER_reza_khan
-}
-
-1925.12.15 = {
-	recruit_character = PER_mohammad_ali_foroughi 
-	recruit_character = PER_hasan_arfa
-	recruit_character = PER_ahmad_amir_ahmadi
-	add_country_leader_role = {
-		character = PER_reza_shah_pahlavi
-		promote_leader = yes
-		country_leader = {
-			ideology=monarchism
-			desc = "POLITICS_REZA_SHAH_PAHLAVI_DESC"
-			expire="1944.7.26.1"
-			traits={  }
-		}
-	}
-}
-
-1928.1.1 = {
-	retire_character = PER_abdollah_amir_tahmasebi
-	retire_character = PER_mahmud_khan_puladeen
-	recruit_character = PER_haj_ali_razmara
-	recruit_character = PER_assadollah_hosseinpour
-	recruit_character = PER_amanullah_jahanbani
-
-	set_portraits = {
-		character = PER_karim_buzarjomehri
-		army={
-			small="gfx/interface/ideas/PER/PER_Karim_Buzarjomehri.dds"
-			large="gfx/leaders/PER/Karim_Buzarjomehri.dds"
-		}
+	add_ideas = {
+		PER_anglo_iranian_oil_ns
 	}
 }
 
 1933.1.1 = {
-	set_air_oob = "PER_1936_air_bba"
-	oob = "PER_1933"
 	set_politics = {
 		ruling_party = neutrality
 		last_election = "1933.1.1"
@@ -173,50 +106,34 @@ recruit_character = PER_mohammad_reza_pahlavi
 		neutrality = 70
 		islamism = 30
 	}
-
-	if = {
-		limit = {
-			has_start_date > 1930.01.01
-			has_start_date < 1949.01.01
-		}
-		add_ideas = {
-			PER_government_corruption
-			PER_religous_discontent
-			PER_rural_economy_1
-			PER_untrained_officer
-			PER_aioc
-			PER_skoda_armor
-			PER_unruly_tribes
-			limited_conscription
-		}
-	}
-	recruit_character = PER_abdollah_zelli
-	recruit_character = PER_ahmad_khan_nakhjavan
-	recruit_character = PER_ali_zohari
-	recruit_character = PER_arthur_millspaugh
-
-	retire_character = PER_ahmad_shah_qajar
-   
-	set_portraits = {
-		character = PER_mohammad_hassan_mirza_qajar
-		civilian = {
-			large = "gfx/leaders/PER/Portrait_Iran_Hassan_Mirza_Shah_Qajar.dds"
-		}
-		army = {
-			large = "gfx/leaders/PER/Portrait_Iran_Hassan_Mirza_Shah_Qajar.dds"
-		}
-	}
 }
 
 1936.1.1 = {
-	set_air_oob = "PER_1936_air_bba"
-	oob = "PER_1936"
+	#oob = "PER_1936"
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			#set_air_oob = "PER_1936_air_bba"
+		else = {
+			#set_air_oob = "PER_1936_air_legacy"
+			set_technology = {
+				early_fighter = 1
+				CAS1 = 1
+	
+			}
+		}
+	}
+	
 	# Starting tech
 	set_technology = {
 		infantry_weapons = 1
 		infantry_weapons1 = 1
+		tech_trucks = 1
+		tech_support = 1
 		gw_artillery = 1
+		tech_military_police = 1
+		tech_engineers = 1
 	}
+
 	set_politics = {
 		ruling_party = neutrality
 		last_election = "1936.1.1"
@@ -228,205 +145,102 @@ recruit_character = PER_mohammad_reza_pahlavi
 		communism = 21
 		democratic = 36
 	}
-	recruit_character = PER_mahmud_jam
-	recruit_character = PER_yadollah_bayandor
-
-	retire_character = PER_ali_akbar_davar
 }
 
 1939.1.1 = {
-	oob = "PER_1939"
-	retire_character = PER_hassan_modarres	
-	recruit_character = PER_abu_l_hasan_al_isfahani
-}
 
-1940.1.1 = {
-	oob = "PER_1940"
-	recruit_character = PER_ali_mansur
-}
+	add_political_power = 1198
+	add_command_power = 100
+	
+	IF = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+		}
 
-1941.9.16 = {
-	retire_character = PER_reza_shah_pahlavi
-}
+		complete_national_focus = PER_the_pahlavi_imperium
+		complete_national_focus = PER_stand_with_giants
+		complete_national_focus = PER_forced_secularization
+		complete_national_focus = PER_modernizing_iran
+		complete_national_focus = PER_restructure_army
+		complete_national_focus = PER_expand_imperial_guard
+		complete_national_focus = PER_persian_german_trade
+		complete_national_focus = PER_increase_military_funding
+		complete_national_focus = PER_saadabad_treaty
+		complete_national_focus = PER_rapid_industrialization
+		complete_national_focus = PER_tehran_power_plant
+		complete_national_focus = PER_increase_education_funding
+		complete_national_focus = PER_adult_literacy
+		complete_national_focus = PER_develop_cities
+		complete_national_focus = PER_expand_military_facilities
+		complete_national_focus = PER_foreign_retraining
+		complete_national_focus = PER_trial_fifty_three
+		complete_national_focus = PER_open_abadan
+		complete_national_focus = PER_military_high_schools
 
-1942.11.26 = {
-	retire_character = PER_mohammad_ali_foroughi
-	retire_character = PER_mahmud_jam 
-	recruit_character = PER_mohammad_mosaddegh 
-}
-
-1943.1.1 = {
-	recruit_character = PER_zia_ol_din_tabatabaee
-	retire_character = PER_assadollah_hosseinpour 
-}
-
-1944.1.1 = {
-	oob = "PER_1944"
-	retire_character = PER_soleyman_eskandari
-	recruit_character = PER_iraj_eskandari 
-}
-
-1946.1.1 = {
-	oob = "PER_1946"
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1944.2.1"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		neutrality = 100
-	}	
-	recruit_character = PER_jafar_shafaghat
-	retire_character = PER_abu_l_hasan_al_isfahani 
-	retire_character = PER_mohammad_hassan_mirza_qajar
-}
-
-
-1949.1.1 = {
-	oob = "PER_1949"
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1946.1.1"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		neutrality = 100
-	}
-	retire_character = PER_fazlollah_zahedi
-	recruit_character = PER_fazlollah_zahedi_cw
-	retire_character = PER_ahmad_amir_ahmadi 	
-}
-
-1951.1.1 = { 
-	retire_character = PER_haj_ali_razmara
-	retire_character = PER_karim_buzarjomehri
-	retire_character = PER_amanullah_jahanbani
-	recruit_character = PER_amanullah_jahanbani_cw
-}
-
-1953.1.1 = { 
-	retire_character = PER_abdollah_zelli
-	retire_character = PER_hasan_arfa 
-}
-
-1955.1.1 = { 
-	recruit_character = PER_parviz_khosravani
-	retire_character = PER_mohammad_mosaddegh
-}
-
-1960.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1956.1.1"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		neutrality = 100
-	}
-	retire_character = PER_ahmad_khan_nakhjavan
-	retire_character = PER_iraj_eskandari
-	recruit_character = PER_iraj_eskandari_cw
-	recruit_character = PER_ayatollah_khomeini
-	retire_character = PER_fazlollah_zahedi_cw
-	recruit_character = PER_parviz_khosravani   
-
-	set_portraits = {
-		character = PER_mohammad_reza_pahlavi
-		civilian={
-			large="gfx/leaders/PER/CW/Iran_Mohammad_Reza_Pahlavi.dds"
+		ELSE = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
 		}
 	}
-}
-
-1970.1.1 = {
-	oob = "PER_1970"
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1967.8.4"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		neutrality = 70
-		democratic = 20		
-		islamism = 10		
-	}
-	retire_character = PER_amanullah_jahanbani_cw	
-}
-
-1979.2.11 = {
-	set_politics = {
-		ruling_party = islamism
-		last_election = "1975.6.20"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		islamism = 80		
-		neutrality = 20
-	}
-	retire_character = PER_jafar_shafaghat
-	retire_character = PER_parviz_khosravani 	
-	recruit_character = PER_hosseini_khamenei 	
-}
-
-1980.1.1 = {
-	set_politics = {
-		ruling_party = islamism
-		last_election = "1975.6.20"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		islamism = 100
-	}
-}
-
-1990.1.1 = {
-	set_politics = {
-		ruling_party = islamism
-		last_election = "1988.5.3"
-		election_frequency = 48
-		elections_allowed = no
-	}
-	set_popularities = {
-		islamism = 100
-	}
-	retire_character = PER_ayatollah_khomeini	
-}
-
-2000.1.1 = {
-	oob = "PER_2000"
-	set_naval_oob = "PER_2000_naval_legacy"
 	
-	set_portraits = {
-		character = PER_hosseini_khamenei
-		civilian = {
-			large = "gfx/leaders/PER/MD/PER_Ali_Khamenei_Islamic_Authoritarian.dds"
-		}		
-	}   	
-}
-2008.1.1 = {
-	create_country_leader = {
-		name = "Mahmoud Ahmadinejad"
-		picture = "gfx/leaders/PER/MD/Iran_Mahmoud_Ahmadinejad.dds"
-		
-		ideology = conservatism
+	#oob = "PER_1939"
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			#set_air_oob = "PER_1936_air_bba" #intentionally using 36 #oob (No significant airforce expansion)
+		else = {
+			#set_air_oob = "PER_1936_air_legacy"
+		}
 	}
-}
+	set_technology = {
+		tech_support = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		gw_artillery = 1
+		interwar_antiair = 1
+		interwar_artillery = 1
 
-2016.1.1 = {
-	oob = "PER_2016"
-}
+		#doctrines
+		air_superiority = 1
+		mass_assault = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
 
-2020.1.1 = {
-	create_country_leader = {
-		name = "Ali Khamenei"
-		picture = "gfx/leaders/PER/MD/PER_Ali_Khamenei_Islamic_Authoritarian.dds"
-		
-		ideology = islamic_authoritarian
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "No Step Back" }
+		}
+		set_technology = {
+			gwtank = 1
+		}
 	}
 }

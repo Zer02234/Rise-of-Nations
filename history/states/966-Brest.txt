@@ -1,0 +1,23 @@
+state={
+	id=966
+	name="STATE_966"
+
+	history = {
+		owner = RUS
+		buildings = {
+			infrastructure = 0
+		}
+		add_core_of = RUS
+		add_core_of = POL
+		add_core_of = BLR
+		add_core_of = UKR
+	}
+
+	provinces={
+		3256 3392 6546 11528 
+	}
+	manpower=1
+	state_category=enclave
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

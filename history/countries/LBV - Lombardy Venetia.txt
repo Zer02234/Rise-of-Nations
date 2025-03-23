@@ -1,34 +1,13 @@
 ﻿capital = 160
 
-
-
 set_research_slots = 3
 set_stability = 0.5
 set_war_support = 0.5
+
 add_ideas = {
+
 }
 
-recruit_character = LBV_adriano_visconti
-recruit_character = LBV_coi
-recruit_character = LBV_aa2
-recruit_character = LBV_democratic_guy
-recruit_character = LBV_acd2
-recruit_character = LBV_acr
-recruit_character = LBV_fascist_guy
-recruit_character = LBV_stc
-recruit_character = LBV_ncs
-recruit_character = LBV_awt
-recruit_character = LBV_mt
-recruit_character = LBV_communist_guy
-recruit_character = LBV_ai2
-recruit_character = LBV_ar
-recruit_character = LBV_acas
-recruit_character = LBV_acgs
-recruit_character = LBV_ncm
-recruit_character = LBV_nt
-recruit_character = LBV_pot
-recruit_character = LBV_nccr
-recruit_character = LBV_aco2
 
 # Starting tech
 set_technology = {
@@ -37,6 +16,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
+	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -51,7 +31,7 @@ set_technology = {
 	basic_train = 1
 	armored_car1 = 1 #Fiat AB611 entered service in 1933
 }
-if = {
+IF = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
@@ -60,7 +40,7 @@ if = {
 		basic_light_tank = 1
 	}
 }
-if = {
+IF = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
@@ -69,13 +49,13 @@ if = {
 		basic_light_tank_chassis = 1
 	}
 }
-if = {
+IF = {
 	limit = {
 		has_dlc = "Battle for the Bosporus"
 	}
 	set_technology = { camelry = 1 }
 }
-if = {
+IF = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 		set_technology = {
 		early_submarine = 1
@@ -88,7 +68,7 @@ if = {
 		transport = 1
 	}
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
 		basic_naval_mines = 1
@@ -131,17 +111,7 @@ set_popularities = {
 	neutrality = 60
 }
 
-
-
-create_country_leader = {
-	name = "Adriano Visconti"
-	picture = "gfx/leaders/LBV/Portrait_LOM_Adriano_Visconti.png"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-#
-	}
-}
+#recruit_character = LBV_robert_von_habsburg
 
 ### VARIANTS ###
 # 1936 Start #
@@ -156,7 +126,7 @@ create_equipment_variant = {
 			plane_reliability_upgrade = 1
 		}
 }
-if = {
+IF = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
@@ -178,7 +148,7 @@ if = {
 		icon = "GFX_ITA_basic_light_tank_medium"
 	}
 }
-if = {
+IF = {
 	limit = {
 		NOT = { has_dlc = "Man the Guns" }
 	}
@@ -263,7 +233,7 @@ if = {
 		}
 	}
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns"}
 	### Battleship Variants	
 	create_equipment_variant = {			# original configuration of class pre-refit (refit in 1937-40)

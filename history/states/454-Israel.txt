@@ -1,8 +1,9 @@
-state = {
-	id = 454
-	name = "STATE_454"
 
-	history = {
+state={
+	id=454
+	name="STATE_454"
+
+	history={
 		owner = OTT
 		buildings = {
 			infrastructure = 5
@@ -15,34 +16,24 @@ state = {
 
 		}
 		victory_points = {
-			1086 1
+			1086 20 
 		}
 		victory_points = {
-			4206 1
+			4206 5 
+		}
+		victory_points = {
+			1065 1 
 		}
 		add_core_of = PAL
 		add_core_of = ISR
-		add_core_of = OTT
-		1910.1.1 = {
-			owner = OTT
-			controller = OTT
-		}
-		1918.11.11 = {
-			owner = ENG
-			controller = ENG
-		}
-
-		1949.1.1 = {
-			owner = ISR
-			controller = ISR
-		}
 
 	}
 
-	provinces = {
-		1015 1065 1086 1201 4088 4206 7176 11970 13396 
+	provinces={
+		1 1015 1065 1086 1201 4088 4206 7107 7176 11970 14439 
 	}
-	manpower = 933142
-	buildings_max_level_factor = 1.000
-	state_category = town
+	manpower=933142
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
 }

@@ -1,890 +1,148 @@
-RON_universal_setup = yes
-
-
-
 capital = 126
-set_oob = "ENG_1900"
-
-set_research_slots = 4
-set_stability = 0.6
-set_war_support = 0.1
-set_variable = {
-	var = eng_gateway_to_europe_influence
-	value = 0
-}
-
-add_ideas = {
-	press_free
-	export_focus
-	tax_average
-	tariffs_average
-	civilian_economy
-	press_free
-	key_industries
-	fdi_allowed
-	train_medium
-	officer_train_low
-	security_liberty_first
-	education_budget5
-	health_budget5
-	foreign_interventionism
-	foreign_volunteers
-	army_budget3
-	airforce_budget3
-	navy_budget5
-	police_budget5
-	industry_budget4
-	engineering_budget4
-	infrastructure_budget4
-	education_budget5
-	health_budget5
-}
 
 if = {
 	limit = {
-		has_start_date < 1909.01.01
+		NOT = {
+			has_dlc = "No Step Back"
+		}
 	}
-	add_ideas = {
-		DNC_splendid_isolation
-		ENG_pax_britannica
+	#set_oob = "ENG_1936"
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	#set_oob = "ENG_1936_nsb"
+}
+
+starting_train_buffer = 4
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	#set_naval_oob = "ENG_1936_Naval"
+	else = {
+		#set_naval_oob = "ENG_1936_Naval_Legacy"
 	}
 }
 
 if = {
-	limit = {
-		has_start_date < 1906.1.1
-	}
-	add_ideas = {
-		DNC_naval_arms_race
-	}
-}
-
-if = {
-	limit = {
-		has_start_date < 1946.01.01
-	}
-	add_ideas = {
-		DNC_sun_never_sets
-		ENG_overextended_empire
-	}
-}
-
-if = {
-	limit = {
-		has_start_date < 1921.01.01
-	}
-	add_ideas = {
-		foreign_rule_the_waves
-	}
-}
-
-if = {
-	limit = {
-		has_start_date < 1905.01.01
-	}
-	add_ideas = {
-		ENG_victorian_era
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "ENG_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			engines_1 = 1
+			engines_2 = 1
+			early_bombs = 1
+			aircraft_construction = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+			basic_medium_airframe = 1
+			basic_small_airframe = 1
+			air_torpedoe_1 = 1
+			bba_early_transport_plane = 1
+		}
+	else = {
+		#set_air_oob = "ENG_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			cv_early_fighter = 1
+			cv_naval_bomber1 = 1
+			naval_bomber1 = 1
+			early_bomber = 1
+			CAS1 = 1
+			early_transport_plane = 1
+		}
 	}
 }
-
 if = {
 	limit = {
-		has_start_date < 1918.01.01
-	}
-	add_ideas = {
-		civilian_economy
-		volunteer_only
-		stiff_upper_lip
-		ww1_Scramble_for_Africa
-	}
-}
-
-if = {
-	limit = {
-		has_start_date > 1910.05.06
-		has_start_date < 1937.01.01
-	}
-	add_ideas = {
-		george_v
-	}
-}
-
-### Guarantee Belgium
-if = {
-	limit = {
-		has_start_date < 1919.01.01
+		has_dlc = "Gotterdammerung"
 	}
 	give_guarantee = BEL
 }
-
 if = {
 	limit = {
-		has_start_date < 1903.01.01
+		has_dlc = "Graveyard of Empires"
 	}
-	declare_war_on = { target = OFR type = annex_everything }
-	declare_war_on = { target = SRE type = annex_everything }
-	add_ideas = {
-		ENG_second_boer_war
-		ENG_boer_offensive
+	give_guarantee = IRQ
+	IRQ = {
+		give_military_access = ENG
 	}
 }
 
-if = {
-	limit = {
-		has_start_date < 1905.01.01
-	}
-	declare_war_on = { target = MAL type = annex_everything }
+set_research_slots = 4
+
+set_stability = 0.6
+set_war_support = 0.1
+add_command_power = 20
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+	fuel_silos = 1
+	fuel_refining = 1
 }
 
-if = {
-	limit = {
-		has_start_date < 1921.01.01
-	}
-	declare_war_on = { target = DER type = annex_everything }
-	set_global_flag = dervish_war_flag
-}
-	
-############################
-#### [PARLIAMENT START] ####
-############################
-add_ideas = parliamentary_system
-
-set_convoys = 800
-
-
-set_politics = {
-	ruling_party = democratic
-	last_election = "1895.9.1"
-	election_frequency = 60
-	elections_allowed = yes
+complete_special_project = {
+	project = sp:sp_air_radar
+	scientist = ENG_robert_watson_watt
 }
 
-cleanup_coalition = yes
-set_variable = { communist_popularity = 0.3 }
-set_variable = { democratic_socialist_popularity = 0 }
-set_variable = { social_democrat_popularity = 0 }
-set_variable = { progressive_popularity = 0 }
-set_variable = { social_liberal_popularity = 27.2 }
-set_variable = { market_liberal_popularity = 13.823 }
-set_variable = { conservative_popularity = 46.277 }
-set_variable = { islamist_popularity = 0 }
-set_variable = { monarchist_popularity = 0 }
-set_variable = { reactionary_popularity = 0 }
-set_variable = { nationalist_popularity = 12.4 }
-set_variable = { fascist_popularity = 0 }
-set_country_flag = government_conservative
-# set_country_flag = has_parliament #NO PARLIAMENT FOR NON-DEMOCRATIC LEADERS/NOT NEEDED IN DEMOCRATIC NATIONS
-set_country_flag = has_coalition
-set_country_flag = coalition_market_liberal
-
-set_popularities = {
-	democratic = 98
-	communism = 2
+add_breakthrough_progress = {
+	specialization = specialization_naval
+	value = 0.6
 }
-
-# PUPPET MALAYSIA
-if = {
-	limit = {
-		has_start_date > 1909.12.31
-		has_start_date < 1957.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = MAL
-			autonomous_state = autonomy_integrated_puppet
-		}
-	}
-	else = {
-		puppet = MAL
-	}
-}
-
-# PUPPET INDIA
-if = {
-	limit = {
-		has_start_date < 1947.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = RAJ
-			autonomous_state = autonomy_colony
-			freedom_level = 0.35
-		}
-	}
-	else = {
-		puppet = RAJ
-	}
-}
-
-# CANADA DOMINION
-if = {
-	limit = {
-		has_start_date < 1982.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = CAN
-			autonomous_state = autonomy_dominion
-			freedom_level = 0.4
-		}
-	}
-	else = {
-		puppet = CAN
-	}
-}
-
-# SOUTH AFRICA DOMINION
-if = {
-	limit = {
-		has_start_date > 1909.12.31
-		has_start_date < 1961.01.01
-
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = SAF
-			autonomous_state = autonomy_dominion
-			freedom_level = 0.4
-		}
-	}
-	else = {
-		puppet = SAF
-	}
-}
-
-# AUSTRALIA DOMINION
-if = {
-	limit = {
-		has_start_date > 1904.12.31
-		has_start_date < 1986.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = AST
-			autonomous_state = autonomy_dominion
-			freedom_level = 0.2
-		}
-	}
-	else = {
-		puppet = AST
-	}
-}
-
-# NEW ZEALAND DOMINION
-if = {
-	limit = {
-		has_start_date > 1907.01.01
-		has_start_date < 1986.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = NZL
-			autonomous_state = autonomy_dominion
-			freedom_level = 0.2
-		}
-	}
-	else = {
-		puppet = NZL
-	}
-}
-
-# EGYPT DOMINION
-if = {
-	limit = {
-		has_start_date > 1922.01.01
-		has_start_date < 1952.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = EGY
-			autonomous_state = autonomy_dominion
-			freedom_level = 0.1
-		}
-	}
-	else = {
-		puppet = EGY
-	}
-}
-
-# IRELAND DOMINION
-if = {
-	limit = {
-		has_start_date > 1916.01.01
-		has_start_date < 1937.01.01
-	}
-	if = {
-		limit = {
-			OR = {
-				has_dlc = "Together for Victory"
-				has_dlc = "Man the Guns"
-			}
-		}
-		set_autonomy = {
-			target = IRE
-			autonomous_state = autonomy_dominion
-			freedom_level = 0.1
-		}
-	}
-	else = {
-		puppet = IRE
-	}
+add_breakthrough_progress = {
+	specialization = specialization_air
+	value = 0.5
 }
 
 if = {
 	limit = {
-		has_dlc = "Together for Victory"
+		NOT = { has_dlc = "No Step Back" }
 	}
-	add_to_tech_sharing_group = commonwealth_research
-}
-
-if = {
-	limit = {
-		has_start_date < 1950.01.01
-	}
-	set_cosmetic_tag = ENG_EMPIRE
-}
-
-recruit_character = ENG_queen_victoria 
-ENG_queen_victoria = {
-	promote_character = {
-		Ideology = despotism #neutral
-	}
-}
-ENG_queen_victoria = {
-	promote_character = {
-		Ideology = constitutional_monarchism #democratic
-	}
-}
-
-recruit_character = ENG_leopold_canning 
-ENG_leopold_canning = {
-	promote_character = {
-		Ideology = british_fascism #fascism
-	}
-}
-
-recruit_character = ENG_henry_hyndman 
-ENG_henry_hyndman = {
-	promote_character = {
-		Ideology = marxism #communism
-	}
-}
-
-recruit_character = ENG_ramsay_macdonald #democracy
-recruit_character = ENG_oswald_mosley 
-recruit_character = ENG_harry_pollitt 
-recruit_character = ENG_stanley_baldwin
-recruit_character = ENG_neville_chamberlain
-recruit_character = ENG_elizabeth_ii
-
-#Unit leaders
-recruit_character = ENG_henry_wilson
-recruit_character = ENG_alan_brooke
-recruit_character = ENG_bernard_montgomery
-recruit_character = ENG_claude_auchinleck
-recruit_character = ENG_neil_ritchie
-recruit_character = ENG_alan_cunningham
-recruit_character = ENG_william_slim
-recruit_character = ENG_richard_oconnor
-recruit_character = ENG_william_platt
-recruit_character = ENG_george_giffard
-recruit_character = ENG_harold_alexander
-recruit_character = ENG_jackie_smyth
-recruit_character = ENG_thomas_jacomb_hutton
-recruit_character = ENG_arthur_percival
-recruit_character = ENG_merton_beckwithsmith
-recruit_character = ENG_henry_pownall
-recruit_character = ENG_john_vereker_lord_gort
-recruit_character = ENG_william_gott
-recruit_character = ENG_jock_campbell
-recruit_character = ENG_oliver_leese
-recruit_character = ENG_miles_dempsey
-recruit_character = ENG_brian_horrocks
-recruit_character = ENG_archibald_wavell
-recruit_character = ENG_james_fownes_somerville
-recruit_character = ENG_henry_harwood
-recruit_character = ENG_andrew_cunningham
-recruit_character = ENG_bruce_fraser
-recruit_character = ENG_john_tovey
-recruit_character = ENG_bernard_rawlings
-recruit_character = ENG_john_cunningham
-recruit_character = ENG_charles_forbes
-recruit_character = ENG_algernon_willis
-recruit_character = ENG_arthur_power
-
-##advisors
-recruit_character = ENG_clement_attlee
-recruit_character = ENG_john_beckett
-recruit_character = ENG_philip_kerr
-recruit_character = ENG_nevile_henderson
-recruit_character = ENG_maxwell_aitken
-recruit_character = ENG_leslie_hore_belisha
-recruit_character = ENG_ernest_bevin
-recruit_character = ENG_mary_sophia_allen
-recruit_character = ENG_george_orwell
-recruit_character = ENG_sylvia_pankhurst
-recruit_character = ENG_winston_churchill_advisor
-recruit_character = EN1_David_Lloyd_George
-
-#random communist advisors
-recruit_character = ENG_random_communist_minister_1
-recruit_character = ENG_random_communist_minister_2
-recruit_character = ENG_random_communist_minister_3
-recruit_character = ENG_random_communist_minister_4
-recruit_character = ENG_random_communist_minister_5
-recruit_character = ENG_random_communist_minister_6
-recruit_character = ENG_random_communist_minister_7
-recruit_character = ENG_random_communist_minister_8
-recruit_character = ENG_random_communist_minister_9
-recruit_character = ENG_random_communist_minister_10
-recruit_character = ENG_random_communist_minister_11
-recruit_character = ENG_random_communist_minister_12
-recruit_character = ENG_random_communist_minister_13
-recruit_character = ENG_random_communist_minister_14
-recruit_character = ENG_random_communist_minister_15
-
-#special advisors
-recruit_character = ENG_corgis_1
-recruit_character = ENG_corgis_2
-recruit_character = ENG_corgis_3
-recruit_character = ENG_stewart_menzies
-recruit_character = ENG_alan_turing
-
-#army chiefs/navy chiefs/air chiefs
-recruit_character = ENG_john_vereker
-recruit_character = ENG_edmund_ironside
-		
-recruit_character = ENG_ernle_chatfield
-recruit_character = ENG_dudley_pound
-		
-recruit_character = ENG_cyril_newall
-recruit_character = ENG_charles_portal
-recruit_character = ENG_edward_ellington
-
-#high command army/navy/air
-recruit_character = ENG_kenneth_anderson
-recruit_character = ENG_louis_mountbatten
-recruit_character = ENG_david_stirling
-
-recruit_character = ENG_frederick_bowhill
-recruit_character = ENG_max_horton
-		
-recruit_character = ENG_sholto_douglas
-recruit_character = trafford_leigh_mallory
-
-#theorists
-recruit_character = ENG_raymond_briggs
-recruit_character = ENG_james_chadwick
-recruit_character = ENG_james_somerville
-recruit_character = ENG_tom_phillips
-recruit_character = ENG_hugh_dowding
-recruit_character = ENG_arthur_harris
-recruit_character = ENG_frank_whittle
-recruit_character = ENG_jfc_fuller
-recruit_character = ENG_john_cockcroft
-recruit_character = ENG_charles_goodeve
-recruit_character = ENG_nevil_shute
-recruit_character = ENG_robert_watson_watt
-
-if = {
-	limit = {
-		has_start_date < 1933.01.01
-	}
-
-	## unit leaders
-	
-	recruit_character = ENG_sir_douglas_haig
-	recruit_character = ENG_john_french
-	recruit_character = ENG_sir_william_robertson
-	recruit_character = ENG_henry_horne
-	recruit_character = ENG_henry_rawlinson
-	recruit_character = ENG_ian_hamilton
-	recruit_character = ENG_reginald_wingate
-	recruit_character = ENG_lord_kitchener
-	recruit_character = ENG_edmund_allenby
-	recruit_character = ENG_lionel_dunsterville
-	recruit_character = ENG_george_milne
-	recruit_character = ENG_herbert_plumer
-	recruit_character = ENG_horace_smith
-	recruit_character = ENG_hubert_gough
-	recruit_character = ENG_ian_standish
-	recruit_character = ENG_julian_byng
-	recruit_character = ENG_arthur_balfour
-	recruit_character = ENG_henry_jackson
-	recruit_character = ENG_prince_louis_of_battenberg
-	recruit_character = ENG_john_fisher
-	recruit_character = ENG_christopher_cradock
-	recruit_character = ENG_archibald_berkely_milne
-	recruit_character = ENG_david_beatty
-	recruit_character = ENG_dudley_de_chair
-	recruit_character = ENG_george_callaghan
-	recruit_character = ENG_john_jellicoe
-	recruit_character = ENG_lionel_halsey
-	recruit_character = ENG_reginald_bacon
-	recruit_character = ENG_reginald_tyrwhitt
-	recruit_character = ENG_winston_churchill
-	add_advisor_role = {
-		character = ENG_winston_churchill
-		advisor={
-			slot = political_advisor
-			idea_token = ENG_winston_churchill
-			allowed = {
-				original_tag = ENG
-			}
-			available = {
-				date < 1933.1.1
-			}
-			visible = {
-				date < 1933.1.1
-			}
-			traits = {
-				navy_amphibious_assault_2
-			}
-			ai_will_do = {
-				factor = 3
-			}
-		}
-	}
-
-	### advisors
-
-	recruit_character = EN1_Edward_Grey
-	recruit_character = EN1_George_Curzon
-	recruit_character = EN1_Austen_Chamberlain
-	recruit_character = EN1_John_Simon
-	recruit_character = EN1_Herbert_Samuel
-	recruit_character = EN1_George_Cave
-	recruit_character = EN1_Reginald_McKenna
-	recruit_character = EN1_Andrew_Bonar_Law
-	recruit_character = EN1_Richard_Haldane
-	recruit_character = EN1_John_Edward_Seely
-	recruit_character = EN1_Herbert_Henry_Asquith
-	#recruit_character = EN1_David_Lloyd_George
-	recruit_character = EN1_John_Morley
-
-	recruit_character = EN1_Henry_Wilson
-	recruit_character = EN1_Charles_Callwell
-	recruit_character = EN1_Frederick_Maurice
-
-	recruit_character = EN1_John_Arbuthnot_Fisher
-	recruit_character = EN1_Arthur_Knyvet_Wilson
-	recruit_character = EN1_Francis_Bridgeman
-
-	recruit_character = EN1_David_Henderson
-	recruit_character = EN1_Frederick_Sykes
-	recruit_character = EN1_Hugh_Trenchard
-	recruit_character = EN1_Alexander_Bannerman
-	recruit_character = EN1_Charles_Rumney_Samson
-	recruit_character = EN1_Murray_Sueter
-	recruit_character = EN1_Charles_Vaughan_Lee
-
-	recruit_character = EN1_Charles_Douglas
-	recruit_character = EN1_William_Nicholson
-	recruit_character = EN1_James_Wolfe_Murray
-	recruit_character = EN1_Archibald_Murray
-}
-
-### WW1 Start Date
-
-1900.02.01 = {
-	if = {
-		limit = {
-			has_start_date < 1914.01.01
-
-		}
-		add_ideas = {
-			ENG_dreadnought_race
-		}
-	}
-}
-
-1910.1.1 = {
-	set_oob = "ENG_1910"
-
-	if = {
-		limit = {
-			has_start_date > 1909.1.1
-			has_start_date < 1911.1.1
-		}
-		country_event = { id = ww1_britain.43 days = 125 }
-	}
-
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1910.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-
-	set_popularities = {
-		democratic = 98
-		communism = 2
-	}
-
-	retire_character = ENG_queen_victoria
-	recruit_character = ENG_edward_vii 
-	ENG_edward_vii = {
-		promote_character = {
-			Ideology = despotism #neutral
-		}
-	}
-	ENG_edward_vii = {
-		promote_character = {
-			Ideology = constitutional_monarchism #democratic
-		}
-	}
-
 	set_technology = {
-		tech_support = 1
-		early_infantry_weapons = 1
-		light_field_gun1 = 1
-		heavy_field_gun1 = 1
-		early_support_weapons = 1
-		ww1_armoured_car = 1
-		tank_engine = 1
-		WW1_tech_engineers = 1
-		WW1_tech_recon = 1
-		WW1_tech_military_police = 1
-		WW1_tech_maintenance_company = 1
-		tech_mortar = 1
-		# Navy
-		ww1_heavy_cruiser0 = 1
-		ww1_heavy_cruiser1 = 1
-		ww1_battlecruiser0 = 1
-		ww1_battlecruiser1 = 1
-		ww1_light_cruiser0 = 1
-		ww1_light_cruiser1 = 1
-		ww1_light_cruiser2 = 1
-		ww1_light_cruiser3 = 1
-		ww1_submarine0 = 1
-		ww1_submarine1 = 1
-		ww1_coastal_submarine1 = 1
-		ww1_battleship0 = 1
-		ww1_battleship1 = 1
-		ww1_battleship2 = 1
-		ww1_battleship3 = 1
-		ww1_destroyer0 = 1
-		ww1_destroyer1 = 1
-		ww1_destroyer2 = 1
-		ww1_destroyer3 = 1
-		ww1_moduleMTG_mines = 1    # Mines
-		transport = 1
-		horses = 1
-		ww1_motorised_infantry = 1
-		ww1_electronic_mechanical_engineering = 1
-	}
-
-}
-
-
-1914.1.1 = {
-	oob = "ENG_1914"
-
-
-	retire_character = ENG_edward_vii
-	recruit_character = ENG_george_v 
-	ENG_george_v = {
-		promote_character = {
-			Ideology = despotism #neutral
-		}
-	}
-	ENG_george_v = {
-		promote_character = {
-			Ideology = constitutional_monarchism #democratic
-		}
-	}
-
-	if = {
-		limit = {
-			has_start_date > 1913.01.01
-			has_start_date < 1919.01.01
-		}
-		unlock_national_focus = ENG1_the_general_election
-		unlock_national_focus = ENG1_democracy
-		unlock_national_focus = ENG1_liberal_victory
-		unlock_national_focus = ENG1_constutional_crisis
-		unlock_national_focus = ENG1_the_liberals_keep_power
-		unlock_national_focus = ENG1_peoples_budget
-		unlock_national_focus = ENG1_the_parliament_act
-		unlock_national_focus = ENG1_the_irish_question
-		unlock_national_focus = ENG1_introduce_the_third_home_rule_bill
-		unlock_national_focus = ENG1_appoint_a_naval_staff
-		unlock_national_focus = ENG1_order_new_dreadnoughts
-		unlock_national_focus = ENG1_order_more_armoured_cruisers
-		unlock_national_focus = ENG1_open_a_new_european_office
-		unlock_national_focus = ENG1_open_channels_with_france
-		unlock_national_focus = ENG1_foster_russojapanese_talks
-		unlock_national_focus = ENG1_hold_a_second_anglorussian_confrence
-		unlock_national_focus = ENG1_hold_further_talks_with_france_and_russia
-		unlock_national_focus = ENG1_renew_our_alliance_with_japan
-		unlock_national_focus = ENG1_allign_the_dominions
-		unlock_national_focus = ENG1_reaffirm_our_promises_to_belgium
-	}
-
-}
-
-1919.1.1 = {
-	oob = "ENG_1919"
-	set_naval_oob = "ENG_1919_naval_legacy"
-
-	if = {
-		limit = {
-			has_start_date > 1918.01.01
-			has_start_date < 1920.01.01
-		}
-		create_faction = "British Empire"
-	}
-}
-
-1933.1.1 = {
-	set_air_oob = "ENG_1936_air_bba"
-
-	if = {
-		limit = {
-			has_start_date > 1932.01.01
-			has_start_date < 1949.01.01
-		}
-		add_ideas = {
-			ENG_the_war_to_end_all_wars
-			stiff_upper_lip
-			#ENG_anglo-iranian_oil_company
-			red_line_agreement
-			ENG_trade_war
-		}
-
-		
-		remove_unit_leader_role = ENG_henry_wilson
-		add_field_marshal_role = {
-			character = ENG_henry_wilson
-			traits={ british_army_trait }
-			skill=1
-			attack_skill=1
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=1
-		}
-
-		set_portraits = {
-			character = EN1_David_Lloyd_George
-			army={
-				small="gfx/interface/ideas/Britain/advisors/idea_david_lloyd_george.dds"
-			}
-		}
-	}
-
-	oob = "ENG_1933"
-	set_naval_oob = "ENG_1933_naval_legacy"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1933.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 97
-		fascism = 2
-		communism = 1
-	}
-	remove_country_leader_role = {
-		character = ENG_george_v
-		ideology = constitutional_monarchism
-	}
-	ENG_ramsay_macdonald = {
-		promote_character = {
-			Ideology = socialism
-		}
-	}
-	retire_character = ENG_leopold_canning
-	ENG_oswald_mosley = {
-		promote_character = {
-			Ideology = british_fascism #fascism
-		}
-	}
-	retire_character = ENG_henry_hyndman
-	ENG_harry_pollitt = {
-		promote_character = {
-			Ideology = leninism #communism
-		}
-	}
-}
-
-1936.1.1 = {
-	set_air_oob = "ENG_1936_air_bba"
-
-	if = {
-		limit = {
-			has_dlc = "Man the Guns"
-			has_start_date > 1935.01.01
-			has_start_date < 1948.01.01
-		}
-		add_ideas = MTG_naval_treaty_adherent
-	}
-	set_oob = "ENG_1936"
-	set_naval_oob = "ENG_1936_Naval_Legacy"
-	#load_oob = "ENG_Motorized"
-	# Starting tech
-	set_technology = {
-		infantry_weapons = 1
-		infantry_weapons1 = 1
-		tech_support = 1
-		tech_engineers = 1
-		tech_recon = 1
-		motorised_infantry = 1
-		gw_artillery = 1
-		interwar_antiair = 1
+		gwtank = 1
 		basic_light_tank = 1
-		#improved_light_tank = 1  # PLACEHOLDER
-		#basic_heavy_tank = 1  # PLACEHOLDER
-		#basic_medium_tank = 1 # PLACEHOLDER
-		trench_warfare = 1
-		fleet_in_being = 1
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		fuel_silos = 1
-		fuel_refining = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Battle for the Bosporus"
+	}
+	set_technology = { camelry = 1 }
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
 		early_submarine = 1
 		early_destroyer = 1
 		basic_destroyer = 1
@@ -895,304 +153,528 @@ if = {
 		early_carrier = 1
 		transport = 1
 	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		smoke_generator = 1
+		basic_depth_charges = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		basic_fire_control_system = 1
+		basic_dp_light_battery = 1
+	}
+	add_ideas = MTG_naval_treaty_adherent
+	set_global_flag = MTG_second_london_conference
+	set_global_flag = { flag = MTG_naval_treaty_signatories value = 5 }
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+
+IF = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	load_oob = "ENG_LAR_Motorized"
+	ELSE = {
+		load_oob = "ENG_Motorized"
+	}
+}
+
+set_variable = { var = eng_gateway_to_europe_influence value = 0 }
+
+add_ideas = {
+	stiff_upper_lip
+	ENG_the_war_to_end_all_wars
+	george_v
+}
+	
+
+set_convoys = 1000
+
+# DIPLOMACY
+set_autonomy = {
+	target = MAL
+	autonomous_state = autonomy_integrated_puppet
+}
+set_autonomy = {
+	target = RAJ
+	autonomous_state = autonomy_colony
+	freedom_level = 0.35
+}
+set_autonomy = {
+	target = OMA
+	autonomous_state = autonomy_colony
+	freedom_level = 0.35
+}
+set_autonomy = {
+	target = CAN
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = SAF
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = AST
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+set_autonomy = {
+	target = NZL
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+set_autonomy = {
+	target = EGY
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+
+add_to_tech_sharing_group = commonwealth_research
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#adding ministers
+	add_ideas = {
+		ENG_ernest_bevin
+		bernard_montgomery
+		rsaf_enfield
+		archibald_wavell
+		charles_portal
+		english_electric		
+
+		#laws
+		partial_economic_mobilisation
+		limited_conscription
+
+		ENG_george_vi
+	}
+
+	#recruit_character = ENG_neville_chamberlain
+	promote_character = ENG_neville_chamberlain
+	retire_character = ENG_stanley_baldwin
+	remove_ideas = george_v #Dead
+
+	complete_national_focus = limited_rearmament_focus
+	complete_national_focus = air_defense_focus
+	complete_national_focus = radar_focus
+	complete_national_focus = shadow_scheme_focus
+	complete_national_focus = uk_empire_focus
+	complete_national_focus = uk_service_focus
+	complete_national_focus = uk_colonial_focus
+	complete_national_focus = uk_mediterranean_focus
+	complete_national_focus = uk_asia_focus
+	complete_national_focus = uk_commonwealth_focus
+	complete_national_focus = uk_industrial_focus
+	complete_national_focus = ENG_vickers_experimental_facility_focus
+	complete_national_focus = ENG_steady_as_she_goes
+
+	give_guarantee = POL
+
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "No Step Back"
+			}
+		}
+		#set_oob = "ENG_1939"
+	}
 	if = {
 		limit = {
 			has_dlc = "No Step Back"
+		}
+		#set_oob = "ENG_1939_nsb"
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		#set_naval_oob = "ENG_1939_Naval"
+		else = {
+			#set_naval_oob = "ENG_1939_Naval_Legacy"
+		}
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "ENG_1939_air_bba"
+		set_technology = {
+			basic_small_airframe = 1
+			improved_small_airframe = 1
+			basic_medium_airframe = 1
+			basic_large_airframe = 1
+			aa_cannon_1 = 1
+			engines_3 = 1
+			range_improvements = 1
+			air_torpedoe_1 = 1
+		}
+		else = {
+			#set_air_oob = "ENG_1939_air_legacy"
+			set_technology = {
+				fighter1 = 1
+				fighter2 = 1
+				heavy_fighter1 = 1
+				heavy_fighter2 = 1
+				CAS2 = 1
+				naval_bomber2 = 1
+				tactical_bomber1 = 1
+				tactical_bomber2 = 1
+				strategic_bomber1 = 1
+				cv_CAS1 = 1
+				cv_fighter1 = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+			has_guaranteed = BEL
+		}
+		diplomatic_relation = { 
+			country = BEL
+			relation = guarantee 
+			active = no
+		}
+	}
+
+	complete_special_project = {
+		project = sp:sp_naval_torpedo_cruiser
+		scientist = ENG_charles_goodeve
+		state = 127
+	}
+
+	set_technology = {
+		
+		interwar_artillery = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		
+
+		#doctrines
+		#Air
+		air_superiority = 1
+		home_defence = 1
+		naval_strike_tactics = 1
+
+			grand_battle_plan = 1
+
+		prepared_defense = 1
+		battlefleet_concentration = 1
+		subsidiary_carrier_role = 1
+		convoy_sailing = 1
+		convoy_escorts = 1
+		submarine_operations = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		cavity_magnatron = 1
+		centimetric_radar = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		fuel_refining2 = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "No Step Back"
+			}
 		}
 		set_technology = {
-			motorised_infantry = 1
-			tank_support_eq = 1
-			tank_support_eq_1 = 1
-			gwtank_chassis = 1
-			gwtank_chassis_2 = 1
-			gwtank_chassis_heavy = 1
-			gwtank_chassis_heavy_2 = 1
-			tank_armor_1a = 1
-			tank_armor_1b = 1
-			tank_armor_2a = 1
-			NSB_early_tank_engine = 1
-			engine_tech_1 = 1
-			engine_tech_2 = 1
-			engine_tech_3 = 1
-			NSB_early_tank_gun = 1
-			tank_gun_1 = 1
-			tank_gun_2 = 1
-			basic_light_tank_chassis = 1
-			#improved_light_tank_chassis = 1
-			#basic_medium_tank_chassis = 1
-			#basic_heavy_tank_chassis = 1
+			improved_light_tank = 1
+			basic_medium_tank = 1
+			basic_heavy_tank = 1
 		}
 	}
 	if = {
 		limit = {
-			has_start_date > 1935.01.01
-			has_start_date < 1946.01.01
-		}
-		create_faction = Allies
-		add_to_faction = ENG
-		#add_to_faction = FRA
-		add_to_faction = CAN
-		add_to_faction = AST
-		add_to_faction = NZL
-		add_to_faction = SAF
-		give_military_access = RAJ
-		add_to_faction = RAJ        # Must be after puppet
-		add_to_faction = MAL
-		#give_guarantee = CZE
-	}
-
-
-
-
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1935.11.14"
-		election_frequency = 60
-		elections_allowed = yes        ##suspended through duration of war, which is handled via event
-	}
-	set_popularities = {
-		democratic = 97
-		fascism = 2
-		communism = 1
-	}
-	retire_character = ENG_ramsay_macdonald
-	recruit_character = ENG_stanley_baldwin 
-	ENG_stanley_baldwin = {
-		promote_character = {
-			Ideology = liberalism #democracy
-		}
-	}
-	if = {
-		limit = {
+			
 			has_dlc = "No Step Back"
+			
 		}
-		create_equipment_variant = {
-			name = "Light Tank Mk. IV"
-			type = light_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_heavy_machine_gun
-				turret_type_slot = tank_light_one_man_tank_turret
-				suspension_type_slot = tank_christie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-			}
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 2
-			#	tank_nsb_armor_upgrade = 1
-			#}
-			icon = "GFX_ENG_basic_light_tank_medium"
-			obsolete = yes #used for oob
-		}
-		create_equipment_variant = {
-			name = "Light Tank Mk. VI"
-			type = light_tank_chassis_1
-			parent_version = 1
-			modules = {
-				main_armament_slot = tank_heavy_machine_gun
-				turret_type_slot = tank_light_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_1
-				special_type_slot_2 = smoke_launchers
-			}
-			icon = "GFX_ENG_basic_light_tank_medium"
-			#upgrades = {
-			#	tank_nsb_engine_upgrade = 2
-			#	tank_nsb_armor_upgrade = 2
-			#}
-		}
-
-		create_equipment_variant = {
-			name = "Medium Mk. II"
-			type = medium_tank_chassis_0
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_medium_three_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_1
-			}
-			#upgrades = {
-			#	tank_nsb_armor_upgrade = 1
-			#	tank_nsb_engine_upgrade = 2
-			#}
-			icon = "GFX_ENG_basic_light_tank_medium"
-		}
-
-		create_equipment_variant = {
-			name = "Vickers 6 ton A"
-			type = gw_light_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_heavy_machine_gun
-				turret_type_slot = tank_light_one_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = secondary_turret_hmg
-			}
-			#upgrades = {
-			#	tank_nsb_armor_upgrade = 3
-			#	tank_nsb_engine_upgrade = 2
-			#}
-			icon = "GFX_ENG_light_BAB_camo"
-			obsolete = yes #export only
-		}
-
-		create_equipment_variant = {
-			name = "Vickers 6 ton B"
-			type = gw_light_tank_chassis_1
-			parent_version = 1
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_light_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-			}
-			#upgrades = {
-			#	tank_nsb_armor_upgrade = 3
-			#	tank_nsb_engine_upgrade = 2
-			#}
-			icon = "GFX_ENG_light_BAB_camo"
-			obsolete = yes #export only
+		set_technology = {
+			improved_light_tank_chassis = 1
+			basic_medium_tank_chassis = 1
+			basic_heavy_tank_chassis = 1
+			armor_tech_1 = 1
+			engine_tech_1 = 1
 		}
 	}
-	#create_country_leader = {
-	#name = "Rajani Palme Dutt"
-	#desc = "POLITICS_PALME_DUTT_DESC"
-	#picture = "Portrait_Britain_Palme_Dutt.dds"
-	#
-	#ideology = leninism
-	#traits = {
-	#
-	#}
-	#}
+	if = {
+		limit = {
+			not = { has_dlc = "Man the Guns"}
+		}
+		set_technology = {
+			basic_submarine = 1
+			improved_submarine = 1
+			improved_destroyer = 1
+			basic_light_cruiser = 1
+			improved_light_cruiser = 1
+			basic_battleship = 1
+			basic_carrier = 1
+			improved_carrier = 1
+		}
+		
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			basic_ship_hull_submarine = 1
+			improved_ship_hull_submarine = 1
+			improved_ship_hull_light = 1
+			improved_ship_hull_cruiser = 1
+			basic_ship_hull_heavy = 1
+			
+			improved_ship_hull_carrier = 1
+			advanced_dp_light_battery = 1
+			improved_sonar = 1
+		}
+		remove_ideas = MTG_naval_treaty_adherent
+		add_ideas = MTG_naval_treaty_adherent_reduced
+		clr_global_flag = MTG_second_london_conference
+		modify_global_flag = { flag = MTG_naval_treaty_signatories value = -2 }
+	}
 
-	### Ship Variants ###
-	#if = {
-		#limit = { not = { has_dlc = "Man the Guns" } }
-		create_equipment_variant = {
-			name = "A/B/C/D Class"
-			type = destroyer_1
-			upgrades = {
-				ship_torpedo_upgrade = 1
-				ship_engine_upgrade = 1
-				ship_ASW_upgrade = 1
-				ship_anti_air_upgrade = 1
-			}
-		}
-		# Submarines #
-		create_equipment_variant = {
-			name = "O/P/R Class"
-			type = submarine_1
-			parent_version = 0
-			upgrades = {
-				ship_reliability_upgrade = 3
-				sub_engine_upgrade = 2
-				sub_stealth_upgrade = 2
-				sub_torpedo_upgrade = 3
-			}
-		}
-		create_equipment_variant = {
-			name = "S Class"
-			type = submarine_1
-			parent_version = 1
-			upgrades = {
-				ship_reliability_upgrade = 2
-				sub_engine_upgrade = 0
-				sub_stealth_upgrade = 2
-				sub_torpedo_upgrade = 3
-			}
-		}
-		create_equipment_variant = {
-			name = "Tribal Class"
-			type = destroyer_1
-			upgrades = {
-				ship_torpedo_upgrade = 2
-				ship_engine_upgrade = 2
-				ship_ASW_upgrade = 2
-				ship_anti_air_upgrade = 2
-			}
-		}
-		create_equipment_variant = {
-			name = "Emerald Class"
-			type = light_cruiser_1
-			upgrades = {
-				ship_reliability_upgrade = 1
-				ship_engine_upgrade = 1
-				ship_gun_upgrade = 1
-				ship_anti_air_upgrade = 1
-			}
-		}
-		create_equipment_variant = {
-			name = "Amphion Class"
-			type = light_cruiser_1
-			upgrades = {
-				ship_reliability_upgrade = 2
-				ship_engine_upgrade = 2
-				ship_gun_upgrade = 2
-				ship_anti_air_upgrade = 2
-			}
-		}
-	
-	
-	#}
-	#
-	
-	#}
-	#
-	#create_equipment_variant = {
-	#name = "Edinburgh Class"
-	#type = light_cruiser_2
-	#upgrades = {
-	#ship_reliability_upgrade = 3
-	#ship_engine_upgrade = 3
-	#ship_gun_upgrade = 3
-	#ship_anti_air_upgrade = 3
-	#}
-	#}
-	#
-	#create_equipment_variant = {
-	#name = "County Class"
-	#type = heavy_cruiser_1
-	#upgrades = {
-	#ship_reliability_upgrade = 2
-	#ship_engine_upgrade = 2
-	#ship_armor_upgrade = 2
-	#ship_gun_upgrade = 2
-	#}
-	#}
-	#
-	#create_equipment_variant = {
-	#name = "Admiral Class"
-	#type = battle_cruiser_1
-	#upgrades = {
-	#ship_reliability_upgrade = 1
-	#ship_engine_upgrade = 1
-	#ship_armor_upgrade = 1
-	#ship_gun_upgrade = 1
-	#}
-	#}
-	#
-	#create_equipment_variant = {
-	#name = "Nelson Class"
-	#type = battleship_1
-	#upgrades = {
-	#ship_reliability_upgrade = 1
-	#ship_engine_upgrade = 1
-	#ship_armor_upgrade = 1
-	#ship_gun_upgrade = 1
-	#}
-	#}
+	set_convoys = 200
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.11.14"
+	election_frequency = 48
+	elections_allowed = yes ##suspended through duration of war, which is handled via event
+}
+set_popularities = {
+	democratic = 97
+	fascism = 2
+	communism = 1
+}
+
+
+create_faction = Allies
+add_to_faction = ENG
+add_to_faction = CAN
+add_to_faction = AST
+add_to_faction = NZL
+add_to_faction = SAF
+give_military_access = RAJ
+add_to_faction = RAJ
+add_to_faction = MAL
+
+# Order matters - here Chamberlain becomes starting leader
+#recruit_character = ENG_oswald_mosley
+#recruit_character = ENG_stanley_baldwin
+#recruit_character = ENG_winston_churchill
+#recruit_character = ENG_harry_pollitt
+#recruit_character = ENG_alan_brooke
+#recruit_character = ENG_bernard_montgomery
+#recruit_character = ENG_claude_auchinleck
+#recruit_character = ENG_neil_ritchie
+#recruit_character = ENG_alan_cunningham
+#recruit_character = ENG_william_slim
+#recruit_character = ENG_richard_oconnor
+#recruit_character = ENG_william_platt
+#recruit_character = ENG_george_giffard
+#recruit_character = ENG_harold_alexander
+#recruit_character = ENG_jackie_smyth
+#recruit_character = ENG_thomas_jacomb_hutton
+#recruit_character = ENG_arthur_percival
+#recruit_character = ENG_merton_beckwithsmith
+#recruit_character = ENG_henry_pownall
+#recruit_character = ENG_john_vereker
+#recruit_character = ENG_henry_wilson
+#recruit_character = ENG_william_gott
+#recruit_character = ENG_jock_campbell
+#recruit_character = ENG_oliver_leese
+#recruit_character = ENG_miles_dempsey
+#recruit_character = ENG_brian_horrocks
+#recruit_character = ENG_archibald_wavell
+#recruit_character = ENG_james_fownes_somerville
+#recruit_character = ENG_henry_harwood
+#recruit_character = ENG_andrew_cunningham
+#recruit_character = ENG_bruce_fraser
+#recruit_character = ENG_john_tovey
+#recruit_character = ENG_bernard_rawlings
+#recruit_character = ENG_john_cunningham
+#recruit_character = ENG_charles_forbes
+#recruit_character = ENG_algernon_willis
+#recruit_character = ENG_arthur_power
+#recruit_character = ENG_horatio_dundas
+#recruit_character = ENG_edmund_ironside
+#recruit_character = ENG_david_stirling
+#recruit_character = ENG_james_somerville
+#recruit_character = ENG_kenneth_anderson
+#recruit_character = ENG_louis_mountbatten
+#recruit_character = ENG_arthur_harris
+#recruit_character = ENG_james_chadwick
+#recruit_character = ENG_jfc_fuller
+#recruit_character = ENG_frank_whittle
+#recruit_character = ENG_random_communist_minister_15
+#recruit_character = ENG_random_communist_minister_14
+#recruit_character = ENG_ernle_chatfield
+#recruit_character = ENG_trafford_leigh_mallory
+#recruit_character = ENG_max_horton
+#recruit_character = ENG_tom_phillips
+#recruit_character = ENG_hugh_dowding
+#recruit_character = ENG_charles_portal
+#recruit_character = ENG_dudley_pound
+#recruit_character = ENG_raymond_briggs
+#recruit_character = ENG_frederick_bowhill
+#recruit_character = ENG_cyril_newall
+#recruit_character = ENG_sholto_douglas
+#recruit_character = ENG_edward_ellington
+
+
+
+#recruit_character = ENG_john_beckett
+#recruit_character = ENG_corgis_1
+#recruit_character = ENG_corgis_2
+#recruit_character = ENG_corgis_3
+#recruit_character = ENG_alan_turing
+#recruit_character = ENG_clement_attlee
+#recruit_character = ENG_ernest_bevin
+#recruit_character = ENG_leslie_hore_belisha
+#recruit_character = ENG_george_orwell
+#recruit_character = ENG_nevile_henderson
+#recruit_character = ENG_random_communist_minister_8
+#recruit_character = ENG_random_communist_minister_9
+#recruit_character = ENG_david_lloyd_george
+#recruit_character = ENG_random_communist_minister_1
+#recruit_character = ENG_random_communist_minister_2
+#recruit_character = ENG_random_communist_minister_3
+#recruit_character = ENG_random_communist_minister_4
+#recruit_character = ENG_random_communist_minister_5
+#recruit_character = ENG_random_communist_minister_6
+#recruit_character = ENG_random_communist_minister_7
+#recruit_character = ENG_random_communist_minister_13
+#recruit_character = ENG_random_communist_minister_12
+#recruit_character = ENG_random_communist_minister_11
+#recruit_character = ENG_random_communist_minister_10
+#recruit_character = ENG_mary_sophia_allen
+#recruit_character = ENG_philip_kerr
+#recruit_character = ENG_sylvia_pankhurst
+#recruit_character = ENG_stewart_menzies
+#recruit_character = ENG_maxwell_aitken
+#recruit_character = ENG_thomas_moore
+
+#recruit_character = ENG_john_cockcroft
+#recruit_character = ENG_charles_goodeve
+#recruit_character = ENG_nevil_shute
+#recruit_character = ENG_robert_watson_watt
+
+if = {
+	limit = {
+		has_dlc = "Graveyard of Empires"
+	}
+	#recruit_character = ENG_jack_churchill 
+}
+
+
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Nancy Wake"
+		GFX = GFX_portrait_nancy_wake
+		traits = { operative_escape_artist }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { ENG }
+	}
+
+	create_operative_leader = {
+		name = "Diana Rowden"
+		GFX = GFX_portrait_diana_rowden
+		traits = { }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { ENG }
+	}
+
+	create_operative_leader = {
+		name = "Juan Pujol"
+		GFX = GFX_portrait_juan_pujol
+		traits = { operative_double_agent }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { ENG GER }
+	}
+
+	create_operative_leader = {
+		name = "Dusko Popov"
+		GFX = GFX_portrait_dusko_popov
+		traits = { operative_double_agent }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { ENG GER YUG }
+	}
+}
+
+
+### Ship Variants ###
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
 	### Variants ###
 	# Submarines #
 	create_equipment_variant = {
-		name = "O_P_R Class"
+		name = "O/P/R Class"
 		type = submarine_1
 		parent_version = 0
 		upgrades = {
@@ -1215,7 +697,7 @@ if = {
 	}
 	# Destroyers #
 	create_equipment_variant = {
-		name = "A_B_C_D Class"
+		name = "A/B/C/D Class"
 		type = destroyer_1
 		parent_version = 0
 		upgrades = {
@@ -1296,13 +778,566 @@ if = {
 			ship_armor_upgrade = 1
 		}
 	}
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = { #Note: There is a copy of this variant in Finnish National Focus file (FIN_bring_foreign_armor_experts). Any changes here should also be applied there
+		name = "Light Tank Mk. IV"
+		type = light_tank_chassis_1
+		parent_version = 0
+		show_position = no
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 1
+		}
+		icon = "GFX_ENG_basic_light_tank_medium"
+		obsolete = yes #used for #oob
+	}
+	create_equipment_variant = {
+		name = "Light Tank Mk. VI"
+		type = light_tank_chassis_1
+		parent_version = 1
+		show_position = no
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+			special_type_slot_2 = smoke_launchers
+		}
+		icon = "GFX_ENG_basic_light_tank_medium"
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 2
+		}
+	}
+
+	create_equipment_variant = {
+		name = "Medium Mk. II"
+		type = medium_tank_chassis_0
+		design_team = mio:ENG_vickers_armstrong_eng_organization
+		parent_version = 0
+		show_position = no
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 1
+			tank_nsb_engine_upgrade = 2
+		}
+		icon = "GFX_ENG_basic_light_tank_medium"
+	}
+
+	create_equipment_variant = {
+		name = "Vickers 6 ton A"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 3
+			tank_nsb_engine_upgrade = 2
+		}
+		icon = "GFX_ENG_light_BAB_camo"
+		obsolete = yes #export only
+	}
+
+	create_equipment_variant = {
+		name = "Vickers 6 ton B"
+		type = light_tank_chassis_0
+		parent_version = 1
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 3
+			tank_nsb_engine_upgrade = 2
+		}
+		icon = "GFX_ENG_light_BAB_camo"
+		obsolete = yes #export only
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	### Variants ###
+	# Submarines #
+	create_equipment_variant = {
+		name = "O/P/R Class"
+		type = ship_hull_submarine_1
+		name_group = ENG_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "S Class"
+		type = ship_hull_submarine_1
+		name_group = ENG_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_torpedo_sub_1
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "A/B/C/D Class"
+		type = ship_hull_light_1
+		name_group = ENG_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = dp_light_battery_2
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = ship_sonar_1
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "E/F/G/H Class"
+		type = ship_hull_light_2
+		name_group = ENG_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = dp_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = ship_sonar_1
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+	create_equipment_variant = {
+		name = "V/W Class"
+		type = ship_hull_light_1
+		name_group = ENG_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = dp_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "S Class"
+		type = ship_hull_light_1
+		name_group = ENG_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+		obsolete = yes
+	}
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "C-Class"
+		type = ship_hull_cruiser_1
+		name_group = ENG_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Danae Class"
+		type = ship_hull_cruiser_1
+		name_group = ENG_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Emerald Class"
+		type = ship_hull_cruiser_2
+		name_group = ENG_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_light_medium_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Leander Class"
+		type = ship_hull_cruiser_2
+		name_group = ENG_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_airplane_launcher_1
+			rear_1_custom_slot = ship_light_medium_battery_2
+		}
+	}
+	create_equipment_variant = {
+		name = "Adventure Class"						# cruiser minelayer
+		type = ship_hull_cruiser_1
+		name_group = ENG_MINELAYERS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = dp_ship_secondaries_2
+			mid_1_custom_slot = ship_mine_layer_1
+			mid_2_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	create_equipment_variant = {
+			name = "Town Class"
+			type = ship_hull_cruiser_2
+			name_group = ENG_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot = ship_secondaries_2
+				rear_1_custom_slot = ship_light_medium_battery_2
+			}
+		}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "County Class"
+		type = ship_hull_cruiser_1
+		name_group = ENG_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_medium_battery_2
+		}
+	}
+	create_equipment_variant = {
+		name = "York Class"
+		type = ship_hull_cruiser_1
+		name_group = ENG_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Hawkins Class"
+		type = ship_hull_cruiser_1
+		name_group = ENG_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	# Battlecruisers #
+	create_equipment_variant = {
+		name = "Renown Class"
+		type = ship_hull_heavy_1
+		name_group = ENG_BC_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_2
+			fixed_ship_secondaries_slot = dp_ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = ship_anti_air_1
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	# Battlecruisers #
+	create_equipment_variant = {
+		name = "Admiral Class"
+		type = ship_hull_heavy_1
+		name_group = ENG_BC_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_2
+			fixed_ship_secondaries_slot = dp_ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bc_2
+			front_1_custom_slot = ship_anti_air_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+	}
+
+	create_equipment_variant = {
+		name = "G3 Design"
+		type = ship_hull_heavy_1
+		name_group = ENG_BC_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_2
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bc_2
+			front_1_custom_slot = ship_heavy_battery_2
+			mid_1_custom_slot = dp_ship_secondaries_1
+			mid_2_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = empty
+		}
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "Nelson Class"
+		type = ship_hull_heavy_1
+		name_group = ENG_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bb_2
+			front_1_custom_slot = ship_heavy_battery_2
+			mid_1_custom_slot = dp_ship_secondaries_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Queen Elizabeth Class"
+		type = ship_hull_heavy_1
+		name_group = ENG_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Revenge Class"
+		type = ship_hull_heavy_1
+		name_group = ENG_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Eagle Class"
+		type = ship_hull_carrier_conversion_bb
+		name_group = ENG_CV_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			mid_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	
+	create_equipment_variant = {
+		name = "Hermes Class"
+		type = ship_hull_carrier_conversion_ca
+		name_group = ENG_CVL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = empty
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Courageous Class"
+		type = ship_hull_carrier_conversion_bb
+		name_group = ENG_CV_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_2
+			fixed_ship_secondaries_slot = dp_ship_secondaries_1
+			mid_1_custom_slot = ship_deck_space
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+			name = "Ark Royal Class"
+			type = ship_hull_carrier_1
+			name_group = ENG_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = carrier_ship_engine_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_deck_space
+			}
+		}
+	}
 	if = {
 		limit = {
 			has_dlc = "By Blood Alone"
 		}
 		create_equipment_variant = {
 			name = "Hawker Fury" #also covers Gloster Gauntlet, Hawker Demon
-			type = small_plane_airframe_7
+			type = small_plane_airframe_0
 			modules = {
 				fixed_main_weapon_slot = light_mg_2x
 				engine_type_slot = engine_1_1x
@@ -1312,7 +1347,6 @@ if = {
 		}
 
 		create_equipment_variant = {
-			
 			name = "Hawker Nimrod" 
 			type = cv_small_plane_airframe_0
 			modules = {
@@ -1325,7 +1359,7 @@ if = {
 
 		create_equipment_variant = {
 			name = "Gloster Gladiator" 
-			type = small_plane_airframe_7
+			type = small_plane_airframe_0
 			modules = {
 				fixed_main_weapon_slot = light_mg_4x
 				engine_type_slot = engine_1_1x
@@ -1335,9 +1369,9 @@ if = {
 
 		create_equipment_variant = {
 			name = "Fairey Gordon" 
-			type = small_plane_cas_airframe_7
+			type = small_plane_cas_airframe_0
 			modules = {
-				fixed_main_weapon_slot = bomb_locks_2
+				fixed_main_weapon_slot = bomb_locks
 				engine_type_slot = engine_1_1x
 				special_type_slot_1 = empty
 			}
@@ -1346,9 +1380,9 @@ if = {
 		}
 		create_equipment_variant = {
 			name = "Vickers Vildebeest" 
-			type = small_plane_naval_bomber_airframe_7
+			type = small_plane_naval_bomber_airframe_0
 			modules = {
-				fixed_main_weapon_slot = torpedo_mounting_2
+				fixed_main_weapon_slot = torpedo_mounting
 				engine_type_slot = engine_1_1x
 				special_type_slot_1 = empty
 			}
@@ -1358,7 +1392,7 @@ if = {
 			name = "Blackburn Shark" 
 			type = cv_small_plane_naval_bomber_airframe_0
 			modules = {
-				fixed_main_weapon_slot = torpedo_mounting_2
+				fixed_main_weapon_slot = torpedo_mounting
 				engine_type_slot = engine_1_1x
 				special_type_slot_1 = empty
 			}
@@ -1366,587 +1400,443 @@ if = {
 		}
 		create_equipment_variant = {
 			name = "Handley Page Heyford" 
-			type = medium_plane_airframe_1
+			type = medium_plane_airframe_0
 			modules = {
-				fixed_main_weapon_slot = medium_bomb_bay_2
-				engine_type_slot = engine_6_2x
+				fixed_main_weapon_slot = medium_bomb_bay
+				engine_type_slot = engine_1_2x
 				special_type_slot_1 = empty
 			}
 			obsolete = yes
 		}
 		create_equipment_variant = {
 			name = "Bristol Blenheim" 
-			type = medium_plane_airframe_2
+			type = medium_plane_airframe_1
 			modules = {
-				fixed_main_weapon_slot = medium_bomb_bay_2
-				engine_type_slot = engine_6_2x
+				fixed_main_weapon_slot = medium_bomb_bay
+				engine_type_slot = engine_2_2x
 				special_type_slot_1 = lmg_defense_turret
 			}
 			icon = "GFX_ENG_heavy_fighter1_medium"
 		}
-		set_air_oob = "ENG_1936_air_bba"
-
-		else = {
-			set_air_oob = "ENG_1936_air_legacy"
-		}
 	}
-}
-
 1939.1.1 = {
-	oob = "ENG_1939"
-
 	if = {
 		limit = {
-			has_start_date > 1939.01.01
-			has_start_date < 1946.01.01
+			not = { has_dlc = "Man the Guns" }
 		}
-		add_to_faction = FRA
-		add_ideas = {
-			war_economy
-			extensive_conscription
-			age_18
-			age_45
-		}
-	}
-
-	retire_character = ENG_stanley_baldwin
-	recruit_character = ENG_neville_chamberlain 
-	ENG_neville_chamberlain = {
-		promote_character = {
-			Ideology = conservatism #democracy
-		}
-	}
-	retire_character = ENG_george_v
-	recruit_character = ENG_george_vi 
-	ENG_george_vi = {
-		promote_character = {
-			Ideology = despotism #neutral
-		}
-	}
-
-	set_naval_oob = "ENG_1939_naval_legacy"
-	remove_ideas = george_v    #Dead
-	if = {
-		limit = {
-			has_start_date > 1936.01.01
-			has_start_date < 1953.01.01
-		}
-		add_ideas = {
-			ENG_george_vi
-		}
-	}
-
-	### SPECIFIC 1939 STUFF
-	if = {
-		limit = {
-			has_start_date > 1939.01.01
-			has_start_date < 1940.01.01
-		}
-		give_guarantee = POL
-	}
-
-}
-
-1940.1.1 = {
-
-	if = {
-		limit = {
-			has_start_date > 1940.01.01
-			has_start_date < 1946.01.01
-		}
-		declare_war_on = { target = GER type = annex_everything }
-		FRA = { declare_war_on = { target = GER type = annex_everything } }
-		add_to_faction = BEL
-		add_to_faction = HOL
-		BEL = { declare_war_on = { target = GER type = annex_everything } }
-		HOL = { declare_war_on = { target = GER type = annex_everything } }
-		#### WW2 War Mobilization
-		add_ideas = {
-			war_economy
-			extensive_conscription
-			age_18
-			age_45
-		}
-	}
-
-	retire_character = ENG_neville_chamberlain
-	recruit_character = ENG_winston_churchill 
-	ENG_winston_churchill = {
-		remove_unit_leader_role = yes
-		add_country_leader_role = {
-			country_leader = {
-				desc="POLITICS_WINSTON_CHURCHILL_DESC"
-				ideology = conservatism
-				expire = "1965.1.24"
-				traits = {
-					dealbroker
-					british_bulldog
-				}
+		create_equipment_variant = {
+			name = "Tribal Class"
+			type = destroyer_2
+			upgrades = {
+				ship_torpedo_upgrade = 2
+				destroyer_engine_upgrade = 2
+				ship_ASW_upgrade = 2
+				ship_anti_air_upgrade = 2
 			}
 		}
-		promote_character = {
-			Ideology = conservatism #democracy
+		create_equipment_variant = {
+			name = "Edinburgh Class"
+			type = light_cruiser_2
+			upgrades = {
+				ship_reliability_upgrade = 3
+				ship_engine_upgrade = 3
+				ship_gun_upgrade = 3
+				ship_anti_air_upgrade = 3
+			}
 		}
 	}
-	set_portraits = {
-		character = ENG_winston_churchill
-		army={
-			small="gfx/interface/ideas/Britain/advisors/idea_winston_churchill.dds"
-		}
-		civilian = {
-			large ="gfx/leaders/ENG/Portrait_Britain_Winston_Churchill.dds"
-		}
-	}
-
-
-	oob = "ENG_1940"
-	set_naval_oob = "ENG_1940_naval_legacy"
-}
-
-1941.1.1 = {
-	oob = "ENG_1941"
-	set_naval_oob = "ENG_1941_naval_legacy"
-}
-
-1942.1.1 = {
-	oob = "ENG_1942"
-	set_naval_oob = "ENG_1942_naval_legacy"
-
 	if = {
 		limit = {
-			has_start_date > 1942.01.01
-			has_start_date < 1945.01.01
+			has_dlc = "Man the Guns"
 		}
-		declare_war_on = { target = FIN type = annex_everything }
+		
+		create_equipment_variant = {
+			name = "Illustrious Class"
+			type = ship_hull_carrier_2
+			name_group = ENG_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = carrier_ship_engine_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_deck_space
+				mid_1_custom_slot = ship_armor_carrier_deck
+			}
+		}
+		create_equipment_variant = {
+			name = "Dido Class"
+			type = ship_hull_cruiser_2
+			name_group = ENG_CLAA_HISTORICAL
+			parent_version = 1
+			modules = {
+				fixed_ship_battery_slot = dp_light_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				fixed_ship_secondaries_slot = dp_ship_secondaries_3
+				front_1_custom_slot = empty
+				mid_1_custom_slot = ship_anti_air_1
+				mid_2_custom_slot = ship_torpedo_1
+				rear_1_custom_slot = dp_light_battery_3
+			}
+		}
+		create_equipment_variant = {
+			name = "Crown Colony Class"
+			type = ship_hull_cruiser_3
+			name_group = ENG_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				front_1_custom_slot = ship_anti_air_1
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot = dp_ship_secondaries_2
+				rear_1_custom_slot = ship_light_medium_battery_2
+				rear_2_custom_slot = ship_anti_air_1
+			}
+		}
+		create_equipment_variant = {
+			name = "Tribal Class"
+			type = ship_hull_light_2
+			name_group = ENG_DD_HISTORICAL
+			modules = {
+				fixed_ship_battery_slot = dp_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = ship_sonar_2
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_light_battery_2
+				rear_1_custom_slot = ship_depth_charge_2
+			}
+		}
+		create_equipment_variant = {
+			name = "J/K/N Class"
+			type = ship_hull_light_3
+			name_group = ENG_DD_HISTORICAL
+			modules = {
+				fixed_ship_battery_slot = dp_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = ship_sonar_2
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				front_1_custom_slot = empty
+				mid_1_custom_slot = ship_torpedo_2
+				rear_1_custom_slot = ship_depth_charge_2
+			}
+		}
+		create_equipment_variant = {
+			name = "King George V Class"
+			type = ship_hull_heavy_2
+			name_group = ENG_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_3
+				fixed_ship_armor_slot = ship_armor_bb_2
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_airplane_launcher_1
+				mid_2_custom_slot = dp_ship_secondaries_3
+				rear_1_custom_slot = ship_heavy_battery_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Lion Class" # 1938 variant
+			type = ship_hull_heavy_2
+			name_group = ENG_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_3
+				fixed_ship_armor_slot = ship_armor_bb_2
+				front_1_custom_slot = ship_anti_air_1
+				mid_1_custom_slot = ship_airplane_launcher_1
+				mid_2_custom_slot = dp_ship_secondaries_3
+				rear_1_custom_slot = ship_heavy_battery_3
+			}
+		}
+		create_equipment_variant = {
+			name = "T Class"
+			type = ship_hull_submarine_2
+			name_group = ENG_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = empty
+			}
+		}
+		create_equipment_variant = {
+			name = "Grampus Class"
+			type = ship_hull_submarine_2
+			name_group = ENG_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = ship_mine_layer_sub
+			}
+		}
+		create_equipment_variant = {
+			name = "U Class"
+			type = ship_hull_submarine_1
+			name_group = ENG_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = empty
+			}
+		}
 	}
-
 	if = {
 		limit = {
-			has_start_date > 1942.01.01
-			has_start_date < 1946.01.01
+			has_dlc = "No Step Back"
 		}
-		add_to_faction = USA
+		create_equipment_variant = {
+			name = "Matilda I"
+			type = light_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = 6
+			}
+			icon = "GFX_ENG_improved_light_tank_medium"
+			obsolete = yes
+		}
+
+		create_equipment_variant = {
+			name = "Matilda II"
+			type = heavy_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon_2
+				turret_type_slot = tank_heavy_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = smoke_launchers
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = 8
+			}
+			icon = "GFX_ENG_improved_light_tank_medium"
+		}
+
+		create_equipment_variant = {
+			name = "Cruiser Mk. I"
+			type = medium_tank_chassis_1
+			parent_version = 0
+			show_position = no
+			modules = {
+				main_armament_slot = tank_small_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = secondary_turret_hmg
+				special_type_slot_3 = secondary_turret_hmg
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_ENG_light_CCA_camo"
+		}
+
+		create_equipment_variant = {
+			name = "Cruiser Mk. IV"
+			type = medium_tank_chassis_1
+			parent_version = 1
+			show_position = no
+			modules = {
+				main_armament_slot = tank_small_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 7
+				tank_nsb_armor_upgrade = 3
+			}
+			icon = "GFX_ENG_light_CCA_camo"
+		}
 	}
-
-}
-
-1943.1.1 = {
-	oob = "ENG_1943"
-	set_naval_oob = ""
-
 	if = {
 		limit = {
-			has_start_date > 1943.01.01
-			has_start_date < 1946.01.01
+			has_dlc = "By Blood Alone"
 		}
-		add_to_faction = MEX
-		add_to_faction = BRA
-		MEX = { declare_war_on = { target = GER type = annex_everything } }
-		BRA = { declare_war_on = { target = GER type = annex_everything } }
-	}
+		create_equipment_variant = {
+			name = "Sea Gladiator" 
+			type = cv_small_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+		}
+		create_equipment_variant = {
+			name = "Blackburn Skua" 
+			type = cv_small_plane_cas_airframe_1
+			modules = {
+				fixed_main_weapon_slot = bomb_locks
+				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = dive_brakes_small
+				special_type_slot_2 = fuel_tanks_small
+			}
+			icon = "GFX_ENG_CAS1_medium"
+		}
+		create_equipment_variant = {
+			name = "Fairey Swordfish" 
+			type = cv_small_plane_naval_bomber_airframe_1
+			modules = {
+				fixed_main_weapon_slot = torpedo_mounting
+				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+			}
+			icon = "GFX_ENG_nav_bomber1_medium"
+		}
+		create_equipment_variant = {
+			name = "Hawker Hurricane" 
+			type = small_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+			icon = "GFX_ENG_fighter1_medium"
+		}
+		create_equipment_variant = {
+			name = "Supermarine Spitfire" 
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+			icon = "GFX_ENG_fighter2_medium"
+		}
+		create_equipment_variant = {
+			name = "Fairey Battle" 
+			type = small_plane_cas_airframe_1
+			modules = {
+				fixed_main_weapon_slot = small_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = bomb_locks
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+			icon = "GFX_ENG_light_plane_1_medium"
+		}
+		create_equipment_variant = {
+			name = "Bristol Blenheim IF" 
+			type = medium_plane_fighter_airframe_1
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = lmg_defense_turret
+			}
+			icon = "GFX_ENG_heavy_fighter1_medium"
+		}
+		create_equipment_variant = {
+			name = "HP Hampden" 
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = lmg_defense_turret
+			}
+		}
+		create_equipment_variant = {
+			name = "Vickers Wellington" 
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = lmg_defense_turret_2x
+				special_type_slot_2 = lmg_defense_turret
 
-}
+			}
+			icon = "GFX_ENG_tactical_bomber1_medium"
+		}
+		create_equipment_variant = {
+			name = "Short Sunderland" 
+			type = large_plane_maritime_patrol_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = torpedo_mounting 
+				fixed_auxiliary_weapon_slot_1 = empty
+				engine_type_slot = engine_2_4x
+				special_type_slot_1 = lmg_defense_turret_2x
+				special_type_slot_2 = lmg_defense_turret_2x
+				special_type_slot_3 = lmg_defense_turret_2x
+				special_type_slot_4 = flying_boat_large
+				special_type_slot_5 = self_sealing_fuel_tanks_large
 
-1944.1.1 = {
-	oob = "ENG_1944"
+			}
+			icon = "GFX_ENG_heavy_plane_1_medium"
+		}
+		create_equipment_variant = {
+			name = "HP Halifax" 
+			type = large_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = large_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+				engine_type_slot = engine_3_4x #Increased tier due to thrust/weight issues
+				special_type_slot_1 = lmg_defense_turret_2x
+				special_type_slot_2 = lmg_defense_turret
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				special_type_slot_5 = self_sealing_fuel_tanks_large
 
-	if = {
-		limit = {
-			has_start_date > 1944.01.01
-			has_start_date < 1946.01.01
+			}
+			icon = "GFX_ENG_strategic_bomber1_medium"
 		}
-		add_to_faction = ITA
-		ITA = { declare_war_on = { target = GER type = annex_everything } }
-	}
-}
-
-1945.1.1 = {
-	oob = "ENG_1944_D"
-
-	if = {
-		limit = {
-			has_start_date > 1945.01.01
-			has_start_date < 1946.01.01
-		}
-		add_to_faction = FIN
-		add_to_faction = GRE
-		add_to_faction = LUX
-		FIN = { declare_war_on = { target = GER type = annex_everything } }
-		GRE = { declare_war_on = { target = GER type = annex_everything } }
-		LUX = { declare_war_on = { target = GER type = annex_everything } }
-	}
-}
-
-1949.1.1 = {
-	set_oob = "ENG_1949"
-	set_naval_oob = "ENG_1949_Naval_Legacy"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1949.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 96
-		communism = 4
-	}
-
-	set_variable = {119.color = 2}
-	set_variable = {120.color = 2}
-	set_variable = {121.color = 1}
-	set_variable = {122.color = 1}
-	set_variable = {123.color = 2}
-	set_variable = {125.color = 1}
-	set_variable = {126.color = 1}
-	set_variable = {127.color = 2}
-	set_variable = {128.color = 1}
-	set_variable = {129.color = 1}
-	set_variable = {130.color = 2}
-	set_variable = {131.color = 1}
-	set_variable = {132.color = 1}
-	set_variable = {133.color = 2}
-	set_variable = {136.color = 2}
-	set_variable = {338.color = 2}
-	set_variable = {861.color = 3}
-	if = {
-		limit = {
-			has_start_date > 1949.01.01
-			has_start_date < 2000.01.01
-		}
-
-		##unit leaders
-		recruit_character = ENG_gerald_templer
-
-		recruit_character = ENG_anthony_deanedrummond
-		recruit_character = ENG_charles_keightley
-		recruit_character = ENG_david_smiley
-		recruit_character = ENG_harold_briggs
-		recruit_character = ENG_hugh_stockwell
-		recruit_character = ENG_jeremy_moore
-		recruit_character = ENG_julian_thompson
-		recruit_character = ENG_peter_de_la_billière
-		recruit_character = ENG_robert_urquhart
-		recruit_character = ENG_tony_wilson
-		recruit_character = ENG_walter_walker
-
-		recruit_character = ENG_andrew_lewis
-		recruit_character = ENG_benjamin_bathhurst
-		recruit_character = ENG_cecil_harcourt
-		recruit_character = ENG_charles_lambe
-		recruit_character = ENG_david_williams
-		recruit_character = ENG_deric_hollandmartin
-		recruit_character = ENG_edward_ashmore
-		recruit_character = ENG_frank_twiss
-		recruit_character = ENG_gordon_trait
-		recruit_character = ENG_guy_russel
-		recruit_character = ENG_henry_conyers_leach
-		recruit_character = ENG_james_eberle
-		recruit_character = ENG_john_fieldhouse
-		recruit_character = ENG_john_forster
-		recruit_character = ENG_john_treacher
-		recruit_character = ENG_manley_laurence_power
-		recruit_character = ENG_peter_hill_norton
-		recruit_character = ENG_simon_casels
-		recruit_character = ENG_terence_lewin
-	}
-	
-	retire_character = ENG_winston_churchill
-	add_country_leader_role = { #democracy
-		Character = ENG_clement_attlee
-		Country_leader = {
-			ideology = socialism
-			expire = "1967.1.3"
-		}
-	}
-	remove_advisor_role = {
-		character = ENG_clement_attlee
-		slot = political_advisor
-	}
-	ENG_clement_attlee = {
-		promote_character = {
-			Ideology = socialism #democracy
-		}
-	}
-	set_portraits = {
-		character = ENG_oswald_mosley
-		civilian = {
-			large ="gfx/leaders/ENG/CW/Portrait_Britain_Oswald_Mosley_1950.dds"
-		}
-	}
-	set_portraits = {
-		character = ENG_harry_pollitt
-		civilian = {
-			large ="gfx/leaders/ENG/CW/Portrait_Britain_Harry_Pollitt_1950.dds"
-		}
-	}
-	set_portraits = {
-		character = ENG_george_vi
-		civilian = {
-			large ="gfx/leaders/ENG/CW/George_VI.dds"
-		}
-	}
-	create_country_leader = {
-		name = "Clement Attlee"
-		picture = "gfx/leaders/ENG/CW/Clement_Attlee.dds"
-		ideology = socialism
-	}
-	create_country_leader = {
-        name = "George VI"
-        picture = "gfx/leaders/ENG/CW/George_VI.dds"
-        ideology = despotism
-    }
-    create_country_leader = {
-        name = "Harry Pollitt"
-        picture = "gfx/leaders/ENG/CW/Harry_Pollitt.dds"
-        ideology = marxism
-    }
-    create_country_leader = {
-        name = "Oswald Mosley"
-        picture = "gfx/leaders/ENG/CW/Oswald_Mosley.dds"
-        ideology = british_fascism
-    }
-}
-
-1952.1.1 = {
-	set_technology = {
-		atomic_research = 1
-		nuclear_reactor = 1
-		nukes = 1
-	}
-	retire_character = ENG_george_vi
-	
-	ENG_elizabeth_ii = {
-		promote_character = {
-			Ideology = despotism #neutral
-		}
-	}
-	set_portraits = {
-		character = ENG_elizabeth_ii
-		civilian = {
-			large ="gfx/leaders/ENG/CW/Britain_Queen_Elizabeth_1950.dds"
-		}
-	}
-}
-
-1960.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1960.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 100
-	}
-	retire_character = ENG_clement_attlee
-	recruit_character = ENG_harold_macmillan
-	ENG_harold_macmillan = {
-		promote_character = {
-			Ideology = conservatism #democracy
-		}
-	}
-}
-
-1970.1.1 = {
-	set_oob = "ENG_1970"
-	set_naval_oob = "ENG_1970_Naval_Legacy"
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1970.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 100
-	}
-	retire_character = ENG_harold_macmillan
-	recruit_character = ENG_harold_wilson
-	ENG_harold_wilson = {
-		promote_character = {
-			Ideology = socialism #democracy
-		}
-	}
-	retire_character = ENG_harry_pollitt
-	recruit_character = ENG_john_gollan 
-	ENG_john_gollan = {
-		promote_character = {
-			Ideology = marxism #communism
-		}
-	}
-	set_portraits = {
-		character = ENG_oswald_mosley
-		civilian = {
-			large ="gfx/leaders/ENG/CW/Portrait_Britain_Oswald_Mosley_1970.dds"
-		}
-	}
-	set_portraits = {
-		character = ENG_elizabeth_ii
-		civilian = {
-			large ="gfx/leaders/ENG/CW/Britain_Queen_Elizabeth_Despotism_1970.dds"
-		}
-	}
-}
-
-1980.1.1 = {
-	retire_character = ENG_harold_wilson
-	recruit_character = ENG_margaret_thatcher
-	ENG_margaret_thatcher = {
-		promote_character = {
-			Ideology = conservatism #democracy
-		}
-	}
-}
-
-2000.1.1 = {
-	oob = "ENG_2000"
-	set_naval_oob = "ENG_2000_naval_legacy"
-
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1997.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 95
-		neutrality = 2
-		fascism = 1
-		communism = 1
-		islamism = 1
-	}
-
-	if = {
-		limit = {
-			has_start_date > 2000.1.1
-		}
-		recruit_character = ENG_sir_stuart_peach
-		recruit_character = ENG_patrick_sanders
-		recruit_character = ENG_sir_richard_shirreff
-		recruit_character = ENG_sir_christopher_deverell
-
-		recruit_character = ENG_glenn_haughton
-		recruit_character = ENG_paul_anthony_edward_nanson
-		recruit_character = ENG_andrew_hughes
-		recruit_character = ENG_philip_napier
-		recruit_character = ENG_mike_elviss
-		recruit_character = ENG_tom_beckett
-		recruit_character = ENG_richard_william_dennis
-		recruit_character = ENG_bob_bruce
-		recruit_character = ENG_colin_weir
-		recruit_character = ENG_ralph_wooddisse
-		recruit_character = ENG_charlie_herbert
-		recruit_character = ENG_richard_felton
-		recruit_character = ENG_tyrone_urch
-		recruit_character = ENG_alastair_aitken
-		recruit_character = ENG_david_neal
-		recruit_character = ENG_benjamin_bathurst
-		recruit_character = ENG_mike_walliker
-		recruit_character = ENG_james_illingworth
-		recruit_character = ENG_russell_la_forte
-		recruit_character = ENG_james_robert_chiswell
-		recruit_character = ENG_oliver_stokes
-		recruit_character = ENG_andy_hadfield
-		recruit_character = ENG_david_middleton
-		recruit_character = ENG_sir_stephen_hillier
-		recruit_character = ENG_robert_magowan
-		recruit_character = ENG_matt_pierson
-		recruit_character = ENG_richard_cantrill
-		recruit_character = ENG_graeme_fraser
-		recruit_character = ENG_tony_turner
-		recruit_character = ENG_paul_lynch
-		recruit_character = ENG_graeme_armour
-		recruit_character = ENG_ed_davis
-		recruit_character = ENG_patrick_cordingley
-		recruit_character = ENG_michael_rose
-		recruit_character = ENG_peter_wall
-		recruit_character = ENG_richard_dannatt
-		recruit_character = ENG_rupert_smith
-
-		recruit_character = ENG_jock_slater
-		recruit_character = ENG_mark_stanhope
-		recruit_character = ENG_michael_boyce
-		recruit_character = ENG_philip_jones
-		recruit_character = ENG_duncan_potts
-		recruit_character = ENG_alasdair_walker
-		recruit_character = ENG_ben_key
-		recruit_character = ENG_jonathan_woodcock
-		recruit_character = ENG_tom_karsten
-		recruit_character = ENG_paul_bennett
-		recruit_character = ENG_robert_tarrant
-		recruit_character = ENG_alex_burton
-		recruit_character = ENG_john_weale
-		recruit_character = ENG_simon_williams
-		recruit_character = ENG_john_clink
-	}
-
-	retire_character = ENG_margaret_thatcher
-	recruit_character = ENG_tony_blair
-	ENG_tony_blair = {
-		promote_character = {
-			Ideology = socialism #democracy
-		}
-	}
-	ENG_anjem_choudary = {
-		promote_character = {
-			Ideology = islamic_authoritarian #islam
-		}
-	}
-	set_portraits = {
-		character = ENG_elizabeth_ii
-		civilian = {
-			large ="gfx/leaders/ENG/MD/Portrait_Britain_Queen_Elizabeth_II.dds"
-		}
-	}
-	retire_character = ENG_oswald_mosley
-	recruit_character = ENG_nick_griffin
-	ENG_nick_griffin = {
-		promote_character = {
-			Ideology = british_fascism #fascism
-		}
-	}
-	retire_character = ENG_john_gollan
-	recruit_character = ENG_robert_griffiths
-	ENG_robert_griffiths = {
-		promote_character = {
-			Ideology = leninism #communism
-		}
-	}
-
-}
-2008.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2007.1.1"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	retire_character = ENG_tony_blair
-	recruit_character = ENG_gordon_brown
-	ENG_gordon_brown = {
-		promote_character = {
-			Ideology = democratic_socialism #democracy
-		}
-	}
-}
-
-
-2016.1.1 = {
-	oob = "ENG_2016"
-	retire_character = ENG_gordon_brown
-	recruit_character = ENG_david_cameron
-	ENG_david_cameron = {
-		promote_character = {
-			Ideology = conservatism #democracy
-		}
-	}
-}
-
-2020.1.1 = {
-	retire_character = ENG_david_cameron
-	recruit_character = ENG_boris_johnson
-	ENG_boris_johnson = {
-		promote_character = {
-			Ideology = conservatism #democracy
+		create_equipment_variant = {
+			name = "Whitley" 
+			type = medium_plane_airframe_0
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = lmg_defense_turret_2x
+			}
 		}
 	}
 }

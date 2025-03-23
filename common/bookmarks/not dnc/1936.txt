@@ -1,0 +1,470 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "GER"
+		default = no
+		"FRA" = {
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"USA" = {
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ENG" = {
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"GER" = {
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ITA" = {
+			history = "ITA_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"JAP" = {
+			history = "JAP_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"SOV" = {
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"ALB" = {
+			history = "ALB_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ARG" = {
+			history = "ARG_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"AST" = {
+			history = "AST_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"AUS" = {
+			history = "AUS_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"BEL" = {
+			history = "BEL_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"BOL" = {
+			minor = yes
+			history = "BOL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"BRA" = {
+			minor = yes
+			history = "BRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"RAJ" = {
+			minor = yes
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"BUL" = {
+			minor = yes
+			history = "BUL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CAN" = {
+			minor = yes
+			history = "CAN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CHL" = {
+			minor = yes
+			history = "CHL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CHI" = {
+			minor = yes
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"COL" = {
+			minor = yes
+			history = "COL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"PRC" = {
+			minor = yes
+			history = "PRC_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CUB" = {
+			minor = yes
+			history = "CUB_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CZE" = {
+			minor = yes
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"DEN" = {
+			minor = yes
+			history = "DEN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"INS" = {
+			minor = yes
+			history = "INS_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"EST" = {
+			minor = yes
+			history = "EST_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"FIN" = {
+			minor = yes
+			history = "FIN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"GRE" = {
+			minor = yes
+			history = "GRE_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"HUN" = {
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"PER" = {
+			minor = yes
+			history = "PER_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"IRQ" = {
+			minor = yes
+			history = "IRQ_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"IRE" = {
+			minor = yes
+			history = "IRE_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"LAT" = {
+			minor = yes
+			history = "LAT_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"LIB" = {
+			minor = yes
+			history = "LIB_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"LIT" = {
+			minor = yes
+			history = "LIT_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"LUX" = {
+			minor = yes
+			history = "LUX_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"MAL" = {
+			minor = yes
+			history = "MAL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"MAN" = {
+			minor = yes
+			history = "MAN_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"MEN" = {
+			minor = yes
+			history = "MEN_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"MEX" = {
+			minor = yes
+			history = "MEX_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"MON" = {
+			minor = yes
+			history = "MON_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"HOL" = {
+			minor = yes
+			history = "HOL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"NZL" = {
+			minor = yes
+			history = "NZL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"NOR" = {
+			minor = yes
+			history = "NOR_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"PAR" = {
+			minor = yes
+			history = "PAR_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"PRU" = {
+			minor = yes
+			history = "PRU_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"POL" = {
+			minor = yes
+			history = "POL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"POR" = {
+			minor = yes
+			history = "POR_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"ROM" = {
+			minor = yes
+			history = "ROM_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"SAU" = {
+			minor = yes
+			history = "SAJ_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"SIA" = {
+			minor = yes
+			history = "SIA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"---" = {
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+		effect = {
+			randomize_weather = 22345            # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
